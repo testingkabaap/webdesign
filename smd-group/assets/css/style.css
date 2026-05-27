@@ -1,5 +1,4 @@
- <style>
-/* ===== RESET & ROOT ===== */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -691,7 +690,7 @@ footer {
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   .hero-content { padding: 0 6vw; }
-  .hero-stats { flex-wrap: wrap; gap: 32px; left: 6vw; }
+  .hero-stats { flex-wrap: wrap; gap: 32px; left: 6vw;bottom:18px; }
   .hero-circle-1, .hero-circle-2, .hero-circle-3 { display: none; }
   .why-grid { grid-template-columns: 1fr; }
   .project-content { padding: 40px 32px; }
@@ -700,4 +699,3 @@ footer {
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 }
-</style>

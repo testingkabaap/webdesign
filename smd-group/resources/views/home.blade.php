@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/icon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>SMD Group – Building the Future. Creating Landmarks.</title>
     @include('template/head')
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -14,7 +19,7 @@
     {{-- NAVBAR --}}
     <nav id="navbar">
         <a href="#" class="nav-brand">
-            <div class="nav-logo-circle">SMD</div>
+            <div class="nav-logo-circle"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo" width="40" height="auto"/></div>
             <div class="nav-brand-text">
                 <span class="nav-brand-name">SMD GROUP</span>
                 <span class="nav-brand-sub">Since 2013</span>
@@ -675,9 +680,11 @@
                             <ellipse cx="490" cy="310" rx="45" ry="35" fill="#1e3d26" />
                             <rect x="486" y="345" width="8" height="40" fill="#0f2010" />
 
-                            <ellipse cx="260" cy="330" rx="30" ry="24" fill="#152a18" />
+                            <ellipse cx="260" cy="330" rx="30" ry="24"
+                                fill="#152a18" />
                             <rect x="256" y="354" width="6" height="28" fill="#0f2010" />
-                            <ellipse cx="310" cy="322" rx="35" ry="28" fill="#1a3320" />
+                            <ellipse cx="310" cy="322" rx="35" ry="28"
+                                fill="#1a3320" />
                             <rect x="306" y="350" width="6" height="35" fill="#0f2010" />
                         </g>
 
@@ -1002,7 +1009,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copy">© 2026 SMD GROUP · All Rights Reserved · Powered by Shilp Network</p>
+            <p class="footer-copy">© 2026 SMD GROUP · All Rights Reserved · Powered by <a
+                    href="https://astrologydivine.com/">Astrology Divine</a> </p>
             <div class="footer-bottom-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Use</a>
@@ -1166,25 +1174,24 @@
     if (heroStats) statsObserver.observe(heroStats);
 </script>
 <script>
-   
-    document.addEventListener('contextmenu', e => e.preventDefault());
+    // document.addEventListener('contextmenu', e => e.preventDefault());
 
-   
-    document.addEventListener('keydown', function(e) {
-      if (
-        e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key))
-      ) {
-        e.preventDefault();
-      }
-    });
 
-   
-    (function() {
-      setInterval(function() {
-        debugger;
-      }, 50);
-    })();
+    // document.addEventListener('keydown', function(e) {
+    //     if (
+    //         e.key === 'F12' ||
+    //         (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key))
+    //     ) {
+    //         e.preventDefault();
+    //     }
+    // });
+
+
+    // (function() {
+    //     setInterval(function() {
+    //         debugger;
+    //     }, 50);
+    // })();
 </script>
 
 
