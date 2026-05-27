@@ -699,6 +699,6 @@ footer {
   .projects-header { padding: 0 6vw; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-.hero {    min-height: 119vh;}
+.hero {    min-height: 129vh;}
   .marquee-section{margin-top: 30px;}
 }
