@@ -685,6 +685,7 @@ footer {
   .timeline-item:nth-child(odd) .timeline-desc { margin-left: 0; }
 }
 @media (max-width: 768px) {
+  .hero-title{font-size: clamp(45px, 5vw, 96px);}
   nav { padding: 16px 24px; }
   nav.scrolled { padding: 12px 24px; }
   .nav-links, .nav-cta { display: none; }
