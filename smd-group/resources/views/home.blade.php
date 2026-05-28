@@ -892,30 +892,30 @@
         });
 
         // ====== MEDIA UPLOAD ======
-        function previewMedia(input, itemId, type) {
-            if (!input.files[0]) return;
-            const item = document.getElementById(itemId);
-            const url = URL.createObjectURL(input.files[0]);
-            const inner = item.querySelector('.media-upload-inner');
-            const fileInput = item.querySelector('input[type="file"]');
-            if (type === 'video') {
-                const vid = document.createElement('video');
-                vid.src = url;
-                vid.className = 'preview-video';
-                vid.autoplay = true;
-                vid.muted = true;
-                vid.loop = true;
-                vid.controls = true;
-                item.appendChild(vid);
-            } else {
-                const img = document.createElement('img');
-                img.src = url;
-                img.className = 'preview-img';
-                item.appendChild(img);
-            }
-            inner.style.display = 'none';
-            fileInput.style.zIndex = '0';
-        }
+        // function previewMedia(input, itemId, type) {
+        //     if (!input.files[0]) return;
+        //     const item = document.getElementById(itemId);
+        //     const url = URL.createObjectURL(input.files[0]);
+        //     const inner = item.querySelector('.media-upload-inner');
+        //     const fileInput = item.querySelector('input[type="file"]');
+        //     if (type === 'video') {
+        //         const vid = document.createElement('video');
+        //         vid.src = url;
+        //         vid.className = 'preview-video';
+        //         vid.autoplay = true;
+        //         vid.muted = true;
+        //         vid.loop = true;
+        //         vid.controls = true;
+        //         item.appendChild(vid);
+        //     } else {
+        //         const img = document.createElement('img');
+        //         img.src = url;
+        //         img.className = 'preview-img';
+        //         item.appendChild(img);
+        //     }
+        //     inner.style.display = 'none';
+        //     fileInput.style.zIndex = '0';
+        // }
 
         function removeMedia(itemId) {
             const item = document.getElementById(itemId);
