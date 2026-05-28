@@ -16,1183 +16,1009 @@
 </head>
 
 <body>
-    {{-- NAVBAR --}}
+
+
+    <!-- ====== NAV ====== -->
     <nav id="navbar">
-        <a href="#" class="nav-brand">
-            <div class="nav-logo-circle"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo" width="40" height="auto"/></div>
-            <div class="nav-brand-text">
-                <span class="nav-brand-name">SMD GROUP</span>
-                <span class="nav-brand-sub">Since 2013</span>
+        <div class="nav-logo">
+            <div class="logo-emblem"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo" width="40" height="auto"/></div>
+            <div class="logo-text">
+                <span>SMD GROUP</span>
+                <span>Building the Future. Creating Landmarks.</span>
             </div>
-        </a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#journey">Journey</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="https://wa.me/8307050700" class="nav-cta">Enquire Now</a>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
         </div>
+        <ul class="nav-links">
+            <li><a href="{{ url('/about') }}">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#directors">Directors</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
+        </ul>
     </nav>
 
-    {{-- MOBILE MENU --}}
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-close" id="mobileClose">✕</button>
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#projects" class="mobile-link">Projects</a>
-        <a href="#journey" class="mobile-link">Journey</a>
-        <a href="https://summermultidevelopers.com/lucky-draw/" class="mobile-link">Lucky Draw</a>
-        <a href="#contact" class="mobile-link">Contact</a>
-    </div>
-
-    {{-- HERO --}}
+    <!-- ====== HERO ====== -->
     <section class="hero" id="home">
-        <div class="hero-grid"></div>
-        <div class="hero-circle-1"></div>
-        <div class="hero-circle-2"></div>
-        <div class="hero-circle-3"></div>
-
-        {{-- CSS Landscape --}}
-        <svg class="hero-landscape" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#c8a84b" stop-opacity="0.3" />
-                    <stop offset="100%" stop-color="#c8a84b" stop-opacity="0" />
-                </linearGradient>
-            </defs>
-            {{-- Mountains --}}
-            <polygon points="0,400 120,180 240,400" fill="#1a3320" opacity="0.8" />
-            <polygon points="80,400 220,120 360,400" fill="#2a4a30" opacity="0.7" />
-            <polygon points="200,400 370,80 540,400" fill="#1a3320" opacity="0.9" />
-            <polygon points="350,400 500,150 650,400" fill="#2a4a30" opacity="0.6" />
-            <polygon points="500,400 620,200 700,400" fill="#112214" opacity="0.8" />
-            {{-- Ground --}}
-            <ellipse cx="350" cy="420" rx="400" ry="60" fill="#0a1f0f" opacity="0.9" />
-            {{-- Trees --}}
-            <g fill="#1a3320" opacity="0.9">
-                <polygon points="80,400 95,340 110,400" />
-                <polygon points="150,400 168,320 186,400" />
-                <polygon points="260,400 280,330 300,400" />
-                <polygon points="420,400 438,360 456,400" />
-                <polygon points="540,400 558,340 576,400" />
-            </g>
-            {{-- Sun/Moon  --}}
-            <circle cx="350" cy="140" r="32" fill="none" stroke="#c8a84b" stroke-width="1"
-                opacity="0.4" />
-            <circle cx="350" cy="140" r="20" fill="#c8a84b" opacity="0.15" />
-            {{-- Stars --}}
-            <circle cx="100" cy="80" r="1.5" fill="#c8a84b" opacity="0.6" />
-            <circle cx="180" cy="50" r="1" fill="#c8a84b" opacity="0.5" />
-            <circle cx="480" cy="60" r="1.5" fill="#c8a84b" opacity="0.5" />
-            <circle cx="580" cy="40" r="1" fill="#c8a84b" opacity="0.7" />
-            <circle cx="620" cy="100" r="1" fill="#c8a84b" opacity="0.4" />
-        </svg>
-
+        <div class="hero-media" id="heroMedia">
+            <!-- Upload hero video/image -->
+            <label class="upload-placeholder" id="heroUploadLabel" for="heroFileInput"
+                title="Click to upload hero background video or image">
+                <svg viewBox="0 0 48 48">
+                    <path d="M24 32V16m-8 8 8-8 8 8" />
+                    <rect x="4" y="28" width="40" height="16" rx="2" />
+                </svg>
+                <span>UPLOAD HERO BACKGROUND VIDEO / IMAGE</span>
+            </label>
+            <input type="file" id="heroFileInput" accept="image/*,video/*" style="display:none">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-lines"></div>
         <div class="hero-content">
-            <p class="hero-eyebrow">Est. 2013 · Premium Real Estate</p>
-            <h1 class="hero-title">
-                Building the<br>
-                <em>Future.</em> Creating<br>
-                <strong>Landmarks.</strong>
-            </h1>
-            <p class="hero-subtitle">Premium farmhouse plots & luxury living across Uttar Pradesh & Uttarakhand.
-                Trusted by hundreds of families.</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn-gold">View Projects</a>
-                <a href="https://summermultidevelopers.com/lucky-draw/" class="btn-outline">🎁 Lucky Draw</a>
+            <div class="hero-eyebrow">Est. 2025 &nbsp;&bull;&nbsp; CIN: U68100UP2025PTC236249</div>
+            <h1 class="hero-title">SMD <span>GROUP</span></h1>
+            <p class="hero-subtitle">Where Luxury Meets Legacy</p>
+            <p class="hero-tagline">Premium Farmhouse &amp; Residential Plots · Uttar Pradesh &amp; Uttarakhand</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-royal">Explore Projects</a>
+                <a href="#contact" class="btn-outline">Book Site Visit</a>
             </div>
         </div>
-
-        <div class="hero-stats">
-            <div class="stat">
-                <div class="stat-num" data-target="10">0</div>
-                <div class="stat-label">Years of Excellence</div>
-            </div>
-            <div class="stat">
-                <div class="stat-num" data-target="5">0</div>
-                <div class="stat-label">Premium Projects</div>
-            </div>
-            <div class="stat">
-                <div class="stat-num" data-target="500">0</div>
-                <div class="stat-label">Happy Families</div>
-            </div>
-            <div class="stat">
-                <div class="stat-num" data-target="2">0</div>
-                <div class="stat-label">States Covered</div>
-            </div>
-        </div>
-
-        {{-- <div class="scroll-indicator">
-            <span>Scroll</span>
+        <div class="hero-scroll">
             <div class="scroll-line"></div>
-        </div> --}}
+            <div class="scroll-text">Scroll</div>
+        </div>
     </section>
 
-    {{-- MARQUEE --}}
-    <div class="marquee-section">
-        <div class="marquee-track">
-            {{-- Repeated twice for seamless loop --}}
-            <span class="marquee-item">Anandvan Resorts <span class="marquee-dot"></span></span>
-            <span class="marquee-item">The Royal Orchid Farms <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Alaknanda Farms <span class="marquee-dot"></span></span>
-            <span class="marquee-item">OAK Hill Gardens <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Shri Krishna Enclave <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Premium Land · Trusted Developer <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Anandvan Resorts <span class="marquee-dot"></span></span>
-            <span class="marquee-item">The Royal Orchid Farms <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Alaknanda Farms <span class="marquee-dot"></span></span>
-            <span class="marquee-item">OAK Hill Gardens <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Shri Krishna Enclave <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Premium Land · Trusted Developer <span class="marquee-dot"></span></span>
+    <!-- ====== LUCKY DRAW ====== -->
+    <div class="lucky-draw-banner reveal">
+        <p>🏆 &nbsp;<strong style="color:var(--gold);letter-spacing:2px;">SMD LUCKY DRAW IS LIVE!</strong> &nbsp; Book a
+            site visit or register today and get a chance to win exclusive rewards. &nbsp; <a href="#contact">Enter Now
+                →</a></p>
+    </div>
+
+    <!-- ====== STATS ====== -->
+    <div class="stats-bar reveal">
+        <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years of Expertise</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Premium Projects</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Happy Families</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <div class="stat-number">2</div>
+            <div class="stat-label">States Covered</div>
         </div>
     </div>
-    {{-- ABOUT --}}
+
+    <!-- ====== ABOUT ====== -->
     <section class="about" id="about">
-        <div class="about-visual reveal-left">
-            {{-- CSS Landscape Scene --}}
-            <svg class="landscape-svg" viewBox="0 0 560 480" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="skyAbout" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#0a1f0f" />
-                        <stop offset="100%" stop-color="#1a3320" />
-                    </linearGradient>
-                    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stop-color="#c8a84b" stop-opacity="0" />
-                        <stop offset="50%" stop-color="#c8a84b" stop-opacity="1" />
-                        <stop offset="100%" stop-color="#c8a84b" stop-opacity="0" />
-                    </linearGradient>
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-                        <feMerge>
-                            <feMergeNode in="coloredBlur" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                </defs>
-                {{-- Background --}}
-                <rect width="560" height="480" fill="url(#skyAbout)" rx="4" />
-                {{-- Border --}}
-                <rect width="560" height="480" fill="none" stroke="#c8a84b" stroke-width="1"
-                    opacity="0.2" rx="4" />
-                <rect x="8" y="8" width="544" height="464" fill="none" stroke="#c8a84b" stroke-width="0.5"
-                    opacity="0.1" rx="2" />
-                {{-- Mountains bg --}}
-                <polygon points="0,480 80,260 180,480" fill="#112214" opacity="0.9" />
-                <polygon points="60,480 200,180 330,480" fill="#1a3320" />
-                <polygon points="220,480 360,140 500,480" fill="#0f2415" opacity="0.95" />
-                <polygon points="380,480 490,220 560,480" fill="#1a3320" opacity="0.8" />
-
-                {{-- Snow caps --}}
-                <polygon points="200,180 215,210 185,210" fill="rgba(200,168,75,0.15)" />
-                <polygon points="360,140 378,175 342,175" fill="rgba(200,168,75,0.12)" />
-
-                {{-- Golden horizon glow --}}
-                <ellipse cx="280" cy="280" rx="200" ry="30"
-                    fill="rgba(200,168,75,0.06)" />
-                <line x1="40" y1="280" x2="520" y2="280" stroke="url(#goldLine)"
-                    stroke-width="1" opacity="0.4" />
-
-                {{-- Trees row --}}
-                <g fill="#0a1f0f">
-                    <polygon points="30,480 45,400 60,480" />
-                    <polygon points="60,480 78,380 96,480" />
-                    <polygon points="100,480 120,390 140,480" />
-                    <polygon points="150,480 168,410 186,480" />
-                    <polygon points="380,480 398,400 416,480" />
-                    <polygon points="420,480 440,380 460,480" />
-                    <polygon points="470,480 490,400 510,480" />
-                    <polygon points="510,480 530,420 550,480" />
-                </g>
-
-                {{-- Moon + glow --}}
-                <circle cx="280" cy="120" r="40" fill="rgba(200,168,75,0.05)" filter="url(#glow)" />
-                <circle cx="280" cy="120" r="26" fill="none" stroke="#c8a84b" stroke-width="1"
-                    opacity="0.5" />
-                <circle cx="280" cy="120" r="14" fill="#c8a84b" opacity="0.2" />
-
-                {{-- Stars --}}
-                <circle cx="80" cy="80" r="1.5" fill="#c8a84b" opacity="0.7" />
-                <circle cx="140" cy="50" r="1" fill="#c8a84b" opacity="0.6" />
-                <circle cx="200" cy="90" r="1.2" fill="#c8a84b" opacity="0.5" />
-                <circle cx="380" cy="60" r="1.5" fill="#c8a84b" opacity="0.7" />
-                <circle cx="450" cy="40" r="1" fill="#c8a84b" opacity="0.5" />
-                <circle cx="500" cy="90" r="1.2" fill="#c8a84b" opacity="0.6" />
-                <circle cx="160" cy="110" r="0.8" fill="#c8a84b" opacity="0.5" />
-                <circle cx="420" cy="100" r="0.8" fill="#c8a84b" opacity="0.5" />
-
-                {{-- House / Estate --}}
-                <rect x="230" y="350" width="100" height="70" fill="#1a3320" stroke="#c8a84b"
-                    stroke-width="0.8" opacity="0.8" />
-                <polygon points="210,350 280,300 350,350" fill="#112214" stroke="#c8a84b" stroke-width="0.8"
-                    opacity="0.8" />
-                <rect x="262" y="390" width="20" height="30" fill="#0a1f0f" />
-                <rect x="238" y="360" width="16" height="14" fill="rgba(200,168,75,0.2)" stroke="#c8a84b"
-                    stroke-width="0.5" />
-                <rect x="306" y="360" width="16" height="14" fill="rgba(200,168,75,0.2)" stroke="#c8a84b"
-                    stroke-width="0.5" />
-
-                {{-- Path --}}
-                <ellipse cx="280" cy="440" rx="18" ry="5" fill="rgba(200,168,75,0.1)" />
-                <rect x="272" y="420" width="16" height="20" fill="rgba(200,168,75,0.06)" rx="1" />
-
-                {{-- Gold frame corner accents --}}
-                <path d="M 20 20 L 20 40 M 20 20 L 40 20" stroke="#c8a84b" stroke-width="1" opacity="0.4"
-                    fill="none" />
-                <path d="M 540 20 L 540 40 M 540 20 L 520 20" stroke="#c8a84b" stroke-width="1" opacity="0.4"
-                    fill="none" />
-                <path d="M 20 460 L 20 440 M 20 460 L 40 460" stroke="#c8a84b" stroke-width="1" opacity="0.4"
-                    fill="none" />
-                <path d="M 540 460 L 540 440 M 540 460 L 520 460" stroke="#c8a84b" stroke-width="1" opacity="0.4"
-                    fill="none" />
-
-                {{-- Label --}}
-                <text x="280" y="472" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10"
-                    fill="#c8a84b" opacity="0.5" letter-spacing="3">SMD GROUP · EST. 2013</text>
-            </svg>
+        <div class="reveal">
+            <div class="section-label">Our Story</div>
+            <h2 class="section-title">Crafting Dreams into <span>Landmarks</span></h2>
+            <p class="section-desc">A trusted name in premium land development, SMD Group transforms landscapes into
+                legacy properties across the finest locations of North India.</p>
         </div>
-
-        <div class="about-content reveal-right">
-            <p class="section-label">About SMD Group</p>
-            <h2 class="section-title">Building Trust,<br><em>One Plot</em> at a Time</h2>
-            <p class="about-text">
-                Welcome to <strong>SMD Group</strong>, a name that stands for <strong>transparency, trust, and timeless
-                    value</strong> in the real estate industry. With <strong>over a decade of experience</strong>, we
-                have established ourselves as a leading developer and planner for premium land and farmhouse projects in
-                <strong>Uttar Pradesh & Uttarakhand</strong>.
-            </p>
-            <p class="about-text" style="margin-top: -16px;">
-                We understand that buying land is not just an investment — it's a dream, a step toward a secure and
-                peaceful future. That's why we deliver <strong>legally verified, well-planned, and future-ready
-                    properties</strong> that match your lifestyle and investment goals.
-            </p>
-
-            <div class="values-grid">
-                <div class="value-card reveal delay-1">
-                    <div class="value-icon">⚖️</div>
-                    <div class="value-title">Integrity</div>
-                    <div class="value-desc">Honest and fair practices in every transaction, no compromises.</div>
+        <div class="about-grid">
+            <div class="about-image-container reveal">
+                <div class="about-image" id="aboutImgWrap">
+                    <label class="img-placeholder" for="aboutImgInput">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
+                        </svg>
+                        <span>UPLOAD COMPANY IMAGE</span>
+                    </label>
+                    <input type="file" id="aboutImgInput" accept="image/*" style="display:none">
                 </div>
-                <div class="value-card reveal delay-2">
-                    <div class="value-icon">📋</div>
-                    <div class="value-title">Transparency</div>
-                    <div class="value-desc">Clear documentation and legal approvals backing every project.</div>
+                <div class="about-accent"></div>
+                <div class="about-badge">
+                    <div class="num">10+</div>
+                    <div class="lbl">Years</div>
                 </div>
-                <div class="value-card reveal delay-3">
-                    <div class="value-icon">🤝</div>
-                    <div class="value-title">Commitment</div>
-                    <div class="value-desc">We stand by our promises and deliver on time, every time.</div>
-                </div>
-                <div class="value-card reveal delay-4">
-                    <div class="value-icon">🌱</div>
-                    <div class="value-title">Eco-Friendly</div>
-                    <div class="value-desc">Thoughtfully planned, environmentally conscious development.</div>
+            </div>
+            <div class="about-text reveal" style="transition-delay:0.2s">
+                <div class="section-label">Who We Are</div>
+                <h3 class="section-title" style="font-size:36px;">Building Trust, <span>One Plot at a Time</span></h3>
+                <p class="section-desc" style="font-size:17px;margin-bottom:20px;">
+                    Welcome to SMD Group — a premier real estate developer specializing in luxury farmhouse plots and
+                    residential land across the scenic landscapes of Uttar Pradesh and Uttarakhand.
+                </p>
+                <p style="font-size:13px;color:var(--text-light);line-height:1.9;margin-bottom:32px;">
+                    Our mission is simple: to make land ownership accessible, transparent, and rewarding. Every project
+                    is RERA-approved, legally verified, and crafted for long-term value.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">✦</div>
+                        <div class="feature-text">
+                            <h4>RERA Approved & Legally Verified</h4>
+                            <p>All our properties are fully compliant, RERA-registered, and legally clear for
+                                hassle-free ownership.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✦</div>
+                        <div class="feature-text">
+                            <h4>Transparent Dealings</h4>
+                            <p>Zero hidden charges — what you see is what you pay. Full documentation from day one.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✦</div>
+                        <div class="feature-text">
+                            <h4>End-to-End Assistance</h4>
+                            <p>We guide you from selection to possession — legal, financial, and beyond.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- WHY CHOOSE SMD --}}
-    <section class="why">
-        <div class="why-header reveal">
-            <p class="section-label" style="justify-content: center;">Why Choose Us</p>
-            <h2 class="section-title">The SMD <em>Difference</em></h2>
-        </div>
-        <div class="why-grid">
-            <div class="why-card reveal delay-1">
-                <div class="why-num">01</div>
-                <div class="why-icon">🏅</div>
-                <div class="why-title">10+ Years of Expertise</div>
-                <div class="why-desc">A trusted decade of land development and farmhouse planning across two states —
-                    our experience speaks through every project delivered.</div>
-            </div>
-            <div class="why-card reveal delay-2">
-                <div class="why-num">02</div>
-                <div class="why-icon">✅</div>
-                <div class="why-title">Legally Verified Properties</div>
-                <div class="why-desc">100% RERA-approved and legally verified plots. Complete documentation
-                    transparency — zero hidden charges, zero surprises.</div>
-            </div>
-            <div class="why-card reveal delay-3">
-                <div class="why-num">03</div>
-                <div class="why-icon">📍</div>
-                <div class="why-title">Prime Locations</div>
-                <div class="why-desc">Strategically chosen sites across UP & Uttarakhand — close to nature,
-                    well-connected to cities, ideal for retreats and investment.</div>
-            </div>
-            <div class="why-card reveal delay-4">
-                <div class="why-num">04</div>
-                <div class="why-icon">🛡️</div>
-                <div class="why-title">End-to-End Guidance</div>
-                <div class="why-desc">From documentation to possession, our dedicated team holds your hand through
-                    every step of your land ownership journey.</div>
-            </div>
-            <div class="why-card reveal delay-5">
-                <div class="why-num">05</div>
-                <div class="why-icon">📈</div>
-                <div class="why-title">Long-Term Investment Growth</div>
-                <div class="why-desc">Our projects are selected for assured appreciation. Your land doesn't just sit —
-                    it grows in value year after year.</div>
-            </div>
-            <div class="why-card reveal delay-6">
-                <div class="why-num">06</div>
-                <div class="why-icon">💚</div>
-                <div class="why-title">Eco-Conscious Development</div>
-                <div class="why-desc">Green surroundings, thoughtful layouts, and sustainable planning ensure your
-                    investment stands the test of time and nature.</div>
-            </div>
-        </div>
-    </section>
-
-    {{-- PROJECTS --}}
+    <!-- ====== PROJECTS ====== -->
     <section class="projects" id="projects">
-        <div class="projects-header">
-            <p class="section-label reveal">Our Portfolio</p>
-            <h2 class="section-title reveal delay-1">Landmark <em>Projects</em></h2>
-            <p style="font-size:13px; color:var(--text-dim); margin-top:16px; max-width:480px;"
-                class="reveal delay-2">Each property is a carefully crafted opportunity — scroll to explore our
-                signature developments.</p>
+        <div class="reveal">
+            <div class="section-label">Our Portfolio</div>
+            <h2 class="section-title">Signature <span>Projects</span></h2>
+            <p class="section-desc">From resort-style farmhouses to serene nature retreats — every SMD project is a
+                statement of refined living.</p>
         </div>
+        <div class="projects-grid reveal" style="transition-delay:0.2s">
 
-        {{-- Project progress dots --}}
-        <div class="projects-progress" id="projectsProgress">
-            <div class="progress-dot active" data-index="0" title="Anandvan Resorts"></div>
-            <div class="progress-dot" data-index="1" title="Royal Orchid Farms"></div>
-            <div class="progress-dot" data-index="2" title="Alaknanda Farms"></div>
-            <div class="progress-dot" data-index="3" title="OAK Hill Gardens"></div>
-            <div class="progress-dot" data-index="4" title="Shri Krishna Enclave"></div>
-        </div>
-
-        <div class="projects-track">
-
-            {{-- Project 1: Anandvan Resorts --}}
-            <div class="project-entry" data-project="1">
-                <div class="project-visual">
-                    <svg class="proj-scene" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="p1sky" x1="0" y1="0" x2="0"
-                                y2="1">
-                                <stop offset="0%" stop-color="#0d2411" />
-                                <stop offset="100%" stop-color="#1e3d24" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="560" height="420" fill="url(#p1sky)" />
-                        {{-- Hills --}}
-                        <ellipse cx="140" cy="360" rx="220" ry="100" fill="#0a1f0f" />
-                        <ellipse cx="420" cy="380" rx="200" ry="80" fill="#112214" />
-                        {{-- Forest line --}}
-                        <g fill="#0d2010">
-                            <polygon points="0,420 20,340 40,420" />
-                            <polygon points="30,420 55,320 80,420" />
-                            <polygon points="70,420 98,330 126,420" />
-                            <polygon points="430,420 458,330 486,420" />
-                            <polygon points="470,420 500,320 530,420" />
-                            <polygon points="510,420 540,340 560,420" />
-                        </g>
-                        {{-- Resort building --}}
-                        <rect x="180" y="280" width="200" height="100" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.8" />
-                        <polygon points="160,280 280,220 400,280" fill="#0f2415" stroke="#c8a84b"
-                            stroke-width="0.8" />
-                        {{-- Windows lit gold --}}
-                        <rect x="196" y="296" width="20" height="16" fill="rgba(200,168,75,0.25)"
-                            rx="1" />
-                        <rect x="228" y="296" width="20" height="16" fill="rgba(200,168,75,0.25)"
-                            rx="1" />
-                        <rect x="312" y="296" width="20" height="16" fill="rgba(200,168,75,0.25)"
-                            rx="1" />
-                        <rect x="344" y="296" width="20" height="16" fill="rgba(200,168,75,0.25)"
-                            rx="1" />
-
-                        <rect x="264" y="340" width="32" height="40" fill="#0a1f0f" rx="2" />
-
-                        <ellipse cx="280" cy="400" rx="90" ry="12"
-                            fill="rgba(200,168,75,0.08)" />
-
-                        <circle cx="440" cy="80" r="18" fill="none" stroke="#c8a84b"
-                            stroke-width="0.8" opacity="0.4" class="gold-glow" />
-                        <circle cx="440" cy="80" r="10" fill="rgba(200,168,75,0.1)"
-                            class="gold-glow" />
-
-                        <line x1="0" y1="280" x2="560" y2="280"
-                            stroke="rgba(200,168,75,0.1)" stroke-width="1" />
-
-                        <circle cx="100" cy="60" r="1.5" fill="#c8a84b" opacity="0.7"
-                            class="star-twinkle" style="animation-delay:0s" />
-                        <circle cx="200" cy="40" r="1" fill="#c8a84b" opacity="0.6"
-                            class="star-twinkle" style="animation-delay:0.7s" />
-                        <circle cx="380" cy="50" r="1.5" fill="#c8a84b" class="star-twinkle"
-                            style="animation-delay:1.2s" />
-                        <circle cx="460" cy="80" r="1" fill="#c8a84b" opacity="0.7"
-                            class="star-twinkle" style="animation-delay:0.4s" />
-
-                        <text x="280" y="170" text-anchor="middle" font-family="'Cormorant Garamond',serif"
-                            font-size="22" fill="#c8a84b" opacity="0.35" letter-spacing="4">ANANDVAN</text>
-                    </svg>
-                </div>
-                <div class="project-content">
-                    <div class="project-number">01</div>
-                    <p class="project-tag">Resort Living · Uttarakhand</p>
-                    <h3 class="project-name">Anandvan<br>Resorts</h3>
-                    <p class="project-desc">A serene resort-style development nestled in the lap of nature. Anandvan
-                        Resorts offers luxury farmhouse plots designed for those who seek the perfect blend of comfort,
-                        aesthetics, and tranquil mountain living.</p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <div class="meta-label">Type</div>
-                            <div class="meta-value">Resort Farmhouse</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">Region</div>
-                            <div class="meta-value">Uttarakhand</div>
-                        </div>
-                    </div>
-                    <a href="https://summermultidevelopers.com/wp-content/uploads/2025/10/Anandvan-Brochure.pdf"
-                        class="project-btn" target="_blank">
-                        <span>Download Brochure</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
+            <div class="project-card">
+                <div class="project-card-bg">
+                    <label class="img-upload" for="proj1" title="Upload Anandvan Resorts image">
+                        <svg style="width:32px;height:32px;fill:none;stroke:rgba(201,168,76,0.4);stroke-width:1.5"
+                            viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
                         </svg>
-                    </a>
+                        <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
+                    </label>
+                    <input type="file" id="proj1" accept="image/*" style="display:none"
+                        onchange="previewProjectImg(this)">
+                </div>
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                    <div class="project-tag">Resort Living</div>
+                    <div class="project-name">Anandvan Resorts</div>
+                    <div class="project-loc">📍 Uttarakhand</div>
+                    <a href="#" class="project-btn">View Brochure <span></span></a>
                 </div>
             </div>
 
-            {{-- Project 2: Royal Orchid Farms --}}
-            <div class="project-entry" data-project="2">
-                <div class="project-visual">
-                    <svg class="proj-scene" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="p2sky" x1="0" y1="0" x2="0"
-                                y2="1">
-                                <stop offset="0%" stop-color="#0a1f10" />
-                                <stop offset="100%" stop-color="#1c3822" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="560" height="420" fill="url(#p2sky)" />
-
-                        <ellipse cx="280" cy="440" rx="320" ry="100" fill="#0a1f0f" />
-
-                        <g stroke="rgba(200,168,75,0.06)" stroke-width="1" fill="none">
-                            <path d="M 60 380 Q 280 360 500 380" />
-                            <path d="M 80 370 Q 280 348 480 370" />
-                            <path d="M 100 360 Q 280 336 460 360" />
-                        </g>
-                        <g>
-                            <circle cx="100" cy="350" r="18" fill="#1a3320"
-                                stroke="rgba(200,168,75,0.1)" stroke-width="0.5" />
-                            <rect x="97" y="368" width="6" height="15" fill="#0f2415" />
-                            <circle cx="160" cy="345" r="22" fill="#1e3d26"
-                                stroke="rgba(200,168,75,0.1)" stroke-width="0.5" />
-                            <rect x="157" y="367" width="6" height="18" fill="#0f2415" />
-                            <circle cx="230" cy="352" r="16" fill="#1a3320" />
-                            <rect x="227" y="368" width="6" height="12" fill="#0f2415" />
-                            <circle cx="330" cy="348" r="20" fill="#1e3d26" />
-                            <rect x="327" y="368" width="6" height="16" fill="#0f2415" />
-                            <circle cx="400" cy="350" r="18" fill="#1a3320" />
-                            <rect x="397" y="368" width="6" height="15" fill="#0f2415" />
-                            <circle cx="460" cy="344" r="22" fill="#1e3d26" />
-                            <rect x="457" y="366" width="6" height="18" fill="#0f2415" />
-                        </g>
-
-                        <circle cx="100" cy="348" r="3" fill="rgba(200,168,75,0.4)" />
-                        <circle cx="160" cy="342" r="3.5" fill="rgba(200,168,75,0.4)" />
-                        <circle cx="330" cy="345" r="3" fill="rgba(200,168,75,0.4)" />
-                        <circle cx="460" cy="341" r="3.5" fill="rgba(200,168,75,0.4)" />
-
-                        <rect x="220" y="270" width="120" height="80" fill="#112214" stroke="#c8a84b"
-                            stroke-width="1" />
-
-                        <rect x="230" y="250" width="8" height="20" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.5" />
-                        <rect x="250" y="250" width="8" height="20" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.5" />
-                        <rect x="302" y="250" width="8" height="20" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.5" />
-                        <rect x="322" y="250" width="8" height="20" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.5" />
-                        <rect x="224" y="248" width="112" height="8" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.5" />
-
-                        <polygon points="208,270 280,230 352,270" fill="#0a1f0f" stroke="#c8a84b"
-                            stroke-width="0.8" />
-
-                        <rect x="232" y="282" width="22" height="18" fill="rgba(200,168,75,0.2)"
-                            rx="1" />
-                        <rect x="306" y="282" width="22" height="18" fill="rgba(200,168,75,0.2)"
-                            rx="1" />
-
-                        <rect x="266" y="314" width="28" height="36" fill="#0a1f0f" rx="2" />
-
-                        <circle cx="100" cy="60" r="1.5" fill="#c8a84b" opacity="0.6" />
-                        <circle cx="460" cy="50" r="1" fill="#c8a84b" opacity="0.7" />
-                        <circle cx="300" cy="90" r="1.2" fill="#c8a84b" opacity="0.5" />
-                        <circle cx="180" cy="100" r="22" fill="none" stroke="#c8a84b"
-                            stroke-width="0.8" opacity="0.3" />
-                        <circle cx="180" cy="100" r="12" fill="rgba(200,168,75,0.08)" />
-                        <text x="280" y="155" text-anchor="middle" font-family="'Cormorant Garamond',serif"
-                            font-size="18" fill="#c8a84b" opacity="0.3" letter-spacing="3">ROYAL ORCHID</text>
-                    </svg>
-                </div>
-                <div class="project-content">
-                    <div class="project-number">02</div>
-                    <p class="project-tag">Luxury Farmhouse · UP</p>
-                    <h3 class="project-name">The Royal<br>Orchid Farms</h3>
-                    <p class="project-desc">Where royalty meets rurality. The Royal Orchid Farms presents an exquisite
-                        collection of farmhouse plots surrounded by lush orchards — a premium investment with an
-                        unmatched lifestyle quotient.</p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <div class="meta-label">Type</div>
-                            <div class="meta-value">Luxury Farmhouse</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">Region</div>
-                            <div class="meta-value">Uttar Pradesh</div>
-                        </div>
-                    </div>
-                    <a href="https://summermultidevelopers.com/wp-content/uploads/2025/10/BROUCHER.FINAL01-1.pdf"
-                        class="project-btn" target="_blank">
-                        Download Brochure
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
+            <div class="project-card">
+                <div class="project-card-bg">
+                    <label class="img-upload" for="proj2" title="Upload Royal Orchid image">
+                        <svg style="width:32px;height:32px;fill:none;stroke:rgba(201,168,76,0.4);stroke-width:1.5"
+                            viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
                         </svg>
-                    </a>
+                        <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
+                    </label>
+                    <input type="file" id="proj2" accept="image/*" style="display:none"
+                        onchange="previewProjectImg(this)">
+                </div>
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                    <div class="project-tag">Luxury Farms</div>
+                    <div class="project-name">The Royal Orchid Farms</div>
+                    <div class="project-loc">📍 Uttarakhand</div>
+                    <a href="#" class="project-btn">View Brochure <span></span></a>
                 </div>
             </div>
 
-            {{-- Project 3: Alaknanda Farms --}}
-            <div class="project-entry" data-project="3">
-                <div class="project-visual">
-                    <svg class="proj-scene" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="p3sky" x1="0" y1="0" x2="0"
-                                y2="1">
-                                <stop offset="0%" stop-color="#081a0d" />
-                                <stop offset="100%" stop-color="#162e1c" />
-                            </linearGradient>
-                            <linearGradient id="riverGrad" x1="0" y1="0" x2="0"
-                                y2="1">
-                                <stop offset="0%" stop-color="rgba(200,168,75,0.15)" />
-                                <stop offset="100%" stop-color="rgba(200,168,75,0.03)" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="560" height="420" fill="url(#p3sky)" />
-
-                        <ellipse cx="280" cy="400" rx="280" ry="40"
-                            fill="url(#riverGrad)" />
-                        <path d="M 0 390 Q 140 370 280 390 Q 420 410 560 390 L 560 420 L 0 420 Z"
-                            fill="rgba(200,168,75,0.07)" />
-
-                        <line x1="80" y1="400" x2="120" y2="398"
-                            stroke="rgba(200,168,75,0.3)" stroke-width="1" />
-                        <line x1="220" y1="395" x2="260" y2="393"
-                            stroke="rgba(200,168,75,0.3)" stroke-width="1" />
-                        <line x1="380" y1="402" x2="420" y2="400"
-                            stroke="rgba(200,168,75,0.3)" stroke-width="1" />
-
-                        <polygon points="0,420 60,200 160,420" fill="#0a1f0f" />
-                        <polygon points="80,420 200,140 320,420" fill="#112214" opacity="0.95" />
-                        <polygon points="240,420 370,100 490,420" fill="#0a1f0f" />
-                        <polygon points="380,420 480,180 560,420" fill="#112214" opacity="0.8" />
-
-                        <polygon points="200,140 220,170 180,170" fill="rgba(200,168,75,0.12)" />
-                        <polygon points="370,100 392,135 348,135" fill="rgba(200,168,75,0.1)" />
-
-                        <rect x="210" y="310" width="140" height="75" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.8" />
-                        <polygon points="190,310 280,262 370,310" fill="#0f2415" stroke="#c8a84b"
-                            stroke-width="0.8" />
-                        <rect x="224" y="325" width="20" height="15" fill="rgba(200,168,75,0.2)"
-                            rx="1" />
-                        <rect x="316" y="325" width="20" height="15" fill="rgba(200,168,75,0.2)"
-                            rx="1" />
-                        <rect x="264" y="348" width="26" height="37" fill="#0a1f0f" rx="2" />
-
-                        <rect x="264" y="392" width="26" height="15" fill="rgba(200,168,75,0.06)" />
-
-                        <circle cx="80" cy="80" r="1.5" fill="#c8a84b" opacity="0.8" />
-                        <circle cx="150" cy="55" r="1" fill="#c8a84b" opacity="0.6" />
-                        <circle cx="430" cy="70" r="1.5" fill="#c8a84b" opacity="0.7" />
-                        <circle cx="490" cy="45" r="1" fill="#c8a84b" opacity="0.6" />
-
-                        <circle cx="100" cy="120" r="20" fill="none" stroke="#c8a84b"
-                            stroke-width="0.8" opacity="0.35" />
-                        <circle cx="100" cy="120" r="11" fill="rgba(200,168,75,0.1)" />
-                        <text x="280" y="200" text-anchor="middle" font-family="'Cormorant Garamond',serif"
-                            font-size="20" fill="#c8a84b" opacity="0.3" letter-spacing="4">ALAKNANDA</text>
-                    </svg>
-                </div>
-                <div class="project-content">
-                    <div class="project-number">03</div>
-                    <p class="project-tag">River-Side Plots · Uttarakhand</p>
-                    <h3 class="project-name">Alaknanda<br>Farms</h3>
-                    <p class="project-desc">Named after the sacred Alaknanda river, this development places you at the
-                        confluence of spiritual serenity and natural grandeur. Premium farmhouse plots with breathtaking
-                        Himalayan views and river proximity.</p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <div class="meta-label">Type</div>
-                            <div class="meta-value">River-Side Farm</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">Region</div>
-                            <div class="meta-value">Uttarakhand</div>
-                        </div>
-                    </div>
-                    <a href="https://summermultidevelopers.com/wp-content/uploads/2025/10/Alaknanda-Farms-Brochue.pdf"
-                        class="project-btn" target="_blank">
-                        Download Brochure
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
+            <div class="project-card">
+                <div class="project-card-bg">
+                    <label class="img-upload" for="proj3" title="Upload Alaknanda image">
+                        <svg style="width:32px;height:32px;fill:none;stroke:rgba(201,168,76,0.4);stroke-width:1.5"
+                            viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
                         </svg>
-                    </a>
+                        <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
+                    </label>
+                    <input type="file" id="proj3" accept="image/*" style="display:none"
+                        onchange="previewProjectImg(this)">
+                </div>
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                    <div class="project-tag">Nature Retreat</div>
+                    <div class="project-name">Alaknanda Farms</div>
+                    <div class="project-loc">📍 Uttarakhand</div>
+                    <a href="#" class="project-btn">View Brochure <span></span></a>
                 </div>
             </div>
 
-            {{-- Project 4: OAK Hill Gardens --}}
-            <div class="project-entry" data-project="4">
-                <div class="project-visual">
-                    <svg class="proj-scene" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="p4sky" x1="0" y1="0" x2="0"
-                                y2="1">
-                                <stop offset="0%" stop-color="#0b1f10" />
-                                <stop offset="100%" stop-color="#183020" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="560" height="420" fill="url(#p4sky)" />
-
-                        <ellipse cx="150" cy="420" rx="250" ry="90" fill="#0a1f0f" />
-                        <ellipse cx="420" cy="430" rx="220" ry="80" fill="#112214" />
-
-                        <g>
-
-                            <ellipse cx="70" cy="310" rx="45" ry="35" fill="#1a3320" />
-                            <rect x="66" y="345" width="8" height="40" fill="#0f2010" />
-                            <ellipse cx="160" cy="295" rx="55" ry="40" fill="#1e3d26" />
-                            <rect x="156" y="335" width="8" height="50" fill="#0f2010" />
-                            <ellipse cx="390" cy="300" rx="50" ry="38" fill="#1a3320" />
-                            <rect x="386" y="338" width="8" height="45" fill="#0f2010" />
-                            <ellipse cx="490" cy="310" rx="45" ry="35" fill="#1e3d26" />
-                            <rect x="486" y="345" width="8" height="40" fill="#0f2010" />
-
-                            <ellipse cx="260" cy="330" rx="30" ry="24"
-                                fill="#152a18" />
-                            <rect x="256" y="354" width="6" height="28" fill="#0f2010" />
-                            <ellipse cx="310" cy="322" rx="35" ry="28"
-                                fill="#1a3320" />
-                            <rect x="306" y="350" width="6" height="35" fill="#0f2010" />
-                        </g>
-
-                        <path d="M 220 420 Q 280 390 340 420" fill="none" stroke="rgba(200,168,75,0.15)"
-                            stroke-width="6" />
-
-                        <rect x="225" y="300" width="110" height="80" fill="#112214" stroke="#c8a84b"
-                            stroke-width="0.8" />
-                        <polygon points="210,300 280,255 350,300" fill="#0a1f0f" stroke="#c8a84b"
-                            stroke-width="0.8" />
-
-                        <rect x="295" y="248" width="10" height="22" fill="#0f2415" stroke="#c8a84b"
-                            stroke-width="0.5" />
-
-                        <rect x="237" y="315" width="20" height="16" fill="rgba(200,168,75,0.2)"
-                            rx="1" />
-                        <rect x="303" y="315" width="20" height="16" fill="rgba(200,168,75,0.2)"
-                            rx="1" />
-
-                        <rect x="264" y="342" width="24" height="38" fill="#081509" rx="12 12 0 0" />
-
-                        <circle cx="200" cy="385" r="4" fill="rgba(200,168,75,0.3)" />
-                        <circle cx="215" cy="390" r="3" fill="rgba(200,168,75,0.25)" />
-                        <circle cx="355" cy="380" r="4" fill="rgba(200,168,75,0.3)" />
-                        <circle cx="370" cy="388" r="3" fill="rgba(200,168,75,0.25)" />
-
-                        <circle cx="100" cy="60" r="1.5" fill="#c8a84b" opacity="0.6" />
-                        <circle cx="200" cy="80" r="1" fill="#c8a84b" opacity="0.5" />
-                        <circle cx="400" cy="55" r="1.5" fill="#c8a84b" opacity="0.7" />
-                        <circle cx="500" cy="75" r="1" fill="#c8a84b" opacity="0.6" />
-
-                        <path d="M 450 90 A 22 22 0 1 1 450 134 A 14 14 0 1 0 450 90" fill="rgba(200,168,75,0.12)"
-                            stroke="#c8a84b" stroke-width="0.5" opacity="0.4" />
-                        <text x="280" y="175" text-anchor="middle" font-family="'Cormorant Garamond',serif"
-                            font-size="18" fill="#c8a84b" opacity="0.3" letter-spacing="3">OAK HILL
-                            GARDENS</text>
-                    </svg>
-                </div>
-                <div class="project-content">
-                    <div class="project-number">04</div>
-                    <p class="project-tag">Garden Estates · Uttarakhand</p>
-                    <h3 class="project-name">OAK Hill<br>Gardens</h3>
-                    <p class="project-desc">Inspired by old-world garden estates, OAK Hill Gardens offers a rare
-                        experience — lush manicured surroundings, towering oak canopies, and premium plots designed for
-                        the discerning homeowner who values nature's grandeur.</p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <div class="meta-label">Type</div>
-                            <div class="meta-value">Garden Estate</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">Region</div>
-                            <div class="meta-value">Uttarakhand</div>
-                        </div>
-                    </div>
-                    <a href="https://summermultidevelopers.com/wp-content/uploads/2025/11/Maple-Yards-Booklet.pdf"
-                        class="project-btn" target="_blank">
-                        Download Brochure
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
+            <div class="project-card">
+                <div class="project-card-bg">
+                    <label class="img-upload" for="proj4" title="Upload Oak Hill image">
+                        <svg style="width:32px;height:32px;fill:none;stroke:rgba(201,168,76,0.4);stroke-width:1.5"
+                            viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
                         </svg>
-                    </a>
+                        <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
+                    </label>
+                    <input type="file" id="proj4" accept="image/*" style="display:none"
+                        onchange="previewProjectImg(this)">
+                </div>
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                    <div class="project-tag">Garden Township</div>
+                    <div class="project-name">OAK Hill Gardens</div>
+                    <div class="project-loc">📍 Uttar Pradesh</div>
+                    <a href="#" class="project-btn">View Brochure <span></span></a>
                 </div>
             </div>
 
-            {{-- Project 5: Shri Krishna Enclave --}}
-            <div class="project-entry" data-project="5">
-                <div class="project-visual">
-                    <svg class="proj-scene" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="p5sky" x1="0" y1="0" x2="0"
-                                y2="1">
-                                <stop offset="0%" stop-color="#0a1c0e" />
-                                <stop offset="100%" stop-color="#1a3020" />
-                            </linearGradient>
-                            <radialGradient id="templeGlow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="rgba(200,168,75,0.15)" />
-                                <stop offset="100%" stop-color="transparent" />
-                            </radialGradient>
-                        </defs>
-                        <rect width="560" height="420" fill="url(#p5sky)" />
-
-                        <ellipse cx="280" cy="450" rx="300" ry="80" fill="#081509" />
-
-                        <circle cx="280" cy="180" r="80" fill="none"
-                            stroke="rgba(200,168,75,0.05)" stroke-width="2" />
-                        <circle cx="280" cy="180" r="60" fill="none"
-                            stroke="rgba(200,168,75,0.07)" stroke-width="1" />
-                        <circle cx="280" cy="180" r="40" fill="url(#templeGlow)" />
-
-
-                        <rect x="190" y="310" width="180" height="90" fill="#112214" stroke="#c8a84b"
-                            stroke-width="0.8" />
-
-                        <polygon points="260,200 280,140 300,200" fill="#0f2415" stroke="#c8a84b"
-                            stroke-width="1" />
-                        <polygon points="256,216 280,160 304,216" fill="#112214" stroke="#c8a84b"
-                            stroke-width="0.8" />
-                        <polygon points="250,232 280,185 310,232" fill="#0f2415" stroke="#c8a84b"
-                            stroke-width="0.8" />
-                        <polygon points="244,250 280,210 316,250" fill="#0a1f0f" stroke="#c8a84b"
-                            stroke-width="0.8" />
-
-                        <circle cx="280" cy="140" r="6" fill="#c8a84b" opacity="0.5" />
-                        <rect x="277" y="110" width="6" height="30" fill="#c8a84b" opacity="0.3" />
-
-                        <rect x="200" y="252" width="160" height="58" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.8" />
-
-                        <rect x="208" y="252" width="8" height="58" fill="#112214" stroke="#c8a84b"
-                            stroke-width="0.4" />
-                        <rect x="240" y="252" width="8" height="58" fill="#112214" stroke="#c8a84b"
-                            stroke-width="0.4" />
-                        <rect x="304" y="252" width="8" height="58" fill="#112214" stroke="#c8a84b"
-                            stroke-width="0.4" />
-                        <rect x="344" y="252" width="8" height="58" fill="#112214" stroke="#c8a84b"
-                            stroke-width="0.4" />
-
-                        <rect x="264" y="270" width="32" height="40" fill="#0a1f0f" rx="16 16 0 0" />
-
-                        <rect x="214" y="264" width="20" height="14" fill="rgba(200,168,75,0.15)"
-                            rx="10 10 0 0" />
-                        <rect x="326" y="264" width="20" height="14" fill="rgba(200,168,75,0.15)"
-                            rx="10 10 0 0" />
-
-                        <rect x="220" y="400" width="120" height="6" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.4" />
-                        <rect x="230" y="406" width="100" height="6" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.4" />
-                        <rect x="240" y="412" width="80" height="6" fill="#1a3320" stroke="#c8a84b"
-                            stroke-width="0.4" />
-
-                        <ellipse cx="280" cy="395" rx="50" ry="8"
-                            fill="rgba(200,168,75,0.08)" />
-
-                        <ellipse cx="100" cy="340" rx="35" ry="28" fill="#1a3320" />
-                        <rect x="96" y="368" width="8" height="32" fill="#0f2010" />
-                        <ellipse cx="460" cy="340" rx="35" ry="28" fill="#1a3320" />
-                        <rect x="456" y="368" width="8" height="32" fill="#0f2010" />
-
-                        <circle cx="100" cy="60" r="1.5" fill="#c8a84b" opacity="0.7" />
-                        <circle cx="180" cy="40" r="1" fill="#c8a84b" opacity="0.6" />
-                        <circle cx="420" cy="55" r="1.5" fill="#c8a84b" opacity="0.7" />
-                        <circle cx="480" cy="80" r="1" fill="#c8a84b" />
-
-                        <circle cx="200" cy="310" r="3" fill="rgba(200,168,75,0.5)" />
-                        <circle cx="360" cy="310" r="3" fill="rgba(200,168,75,0.5)" />
-                        <text x="280" y="88" text-anchor="middle" font-family="'Cormorant Garamond',serif"
-                            font-size="16" fill="#c8a84b" opacity="0.35" letter-spacing="3">SHRI KRISHNA</text>
-                    </svg>
-                </div>
-                <div class="project-content">
-                    <div class="project-number">05</div>
-                    <p class="project-tag">Residential Enclave · UP</p>
-                    <h3 class="project-name">Shri Krishna<br>Enclave</h3>
-                    <p class="project-desc">Blessed with divine inspiration, Shri Krishna Enclave is a thoughtfully
-                        planned residential development in Uttar Pradesh. Offering legally verified plots in a
-                        culturally rich, well-connected location for families seeking peace and prosperity.</p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <div class="meta-label">Type</div>
-                            <div class="meta-value">Residential Plots</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">Region</div>
-                            <div class="meta-value">Uttar Pradesh</div>
-                        </div>
-                    </div>
-                    <a href="https://summermultidevelopers.com/wp-content/uploads/2025/12/Shri-Krishna-Enclave-Brochure_2025-1.pdf"
-                        class="project-btn" target="_blank">
-                        Download Brochure
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
+            <div class="project-card">
+                <div class="project-card-bg">
+                    <label class="img-upload" for="proj5" title="Upload Shri Krishna image">
+                        <svg style="width:32px;height:32px;fill:none;stroke:rgba(201,168,76,0.4);stroke-width:1.5"
+                            viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
                         </svg>
-                    </a>
+                        <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
+                    </label>
+                    <input type="file" id="proj5" accept="image/*" style="display:none"
+                        onchange="previewProjectImg(this)">
+                </div>
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                    <div class="project-tag">Residential Enclave</div>
+                    <div class="project-name">Shri Krishna Enclave</div>
+                    <div class="project-loc">📍 Uttar Pradesh</div>
+                    <a href="#" class="project-btn">View Brochure <span></span></a>
                 </div>
             </div>
 
-        </div>
-        {{-- projects-track --}}
-    </section>
-
-    {{-- JOURNEY --}}
-    <section class="journey" id="journey">
-        <div class="journey-header reveal">
-            <p class="section-label" style="justify-content:center;">Our Journey</p>
-            <h2 class="section-title">A Decade of <em>Landmarks</em></h2>
-            <p
-                style="font-size:13px; color:var(--text-dim); margin-top:16px; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.8;">
-                Founded with a vision to redefine real estate with honesty and professionalism, our story is one of
-                trust earned and dreams delivered.</p>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2013</div>
-                    <div class="timeline-event">SMD Group Founded</div>
-                    <p class="timeline-desc">Started with a single mission — to make land ownership simple, safe, and
-                        profitable for every Indian family.</p>
-                </div>
-                <div class="timeline-dot"></div>
-                <div class="timeline-empty"></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-empty"></div>
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-year">2016</div>
-                    <div class="timeline-event">First Project Launched</div>
-                    <p class="timeline-desc">Successfully delivered our first land development project in Uttar
-                        Pradesh, earning the trust of our early clients.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2019</div>
-                    <div class="timeline-event">Expanded to Uttarakhand</div>
-                    <p class="timeline-desc">Entered the scenic Uttarakhand market, bringing premium farmhouse plots
-                        to the foothills of the Himalayas.</p>
-                </div>
-                <div class="timeline-dot"></div>
-                <div class="timeline-empty"></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-empty"></div>
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-event">500+ Families Served</div>
-                    <p class="timeline-desc">Crossed the milestone of 500 happy landowners — a testament to our
-                        commitment to trust and quality.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-event">5 Landmark Projects</div>
-                    <p class="timeline-desc">Launched Shri Krishna Enclave, completing our portfolio of 5 landmark
-                        projects across two states.</p>
-                </div>
-                <div class="timeline-dot"></div>
-                <div class="timeline-empty"></div>
-            </div>
-        </div>
-    </section>
-    {{-- CTA --}}
-    <section class="cta" id="contact">
-        <p class="section-label reveal" style="justify-content:center;">Start Your Journey</p>
-        <h2 class="cta-subtitle reveal delay-1">Ready to Own<br><em>Your Dream Land?</em></h2>
-        <p class="cta-desc reveal delay-2">Join hundreds of satisfied landowners across Uttar Pradesh & Uttarakhand.
-            Let's find the perfect plot for your dream.</p>
-        <div class="cta-actions reveal delay-3">
-            <a href="tel:+918307050700" class="btn-gold">📞 Call Us Now</a>
-            <a href="https://summermultidevelopers.com/lucky-draw/" class="cta-lucky">🎁 Enter Lucky Draw</a>
-            <a href="mailto:info@summermultidevelopers.com" class="btn-outline">✉ Email Us</a>
         </div>
     </section>
 
-    {{-- FOOTER --}}
-    <footer id="footer">
+    <!-- ====== MEDIA UPLOAD GALLERY ====== -->
+    <section class="media-upload" id="gallery">
+        <div class="reveal">
+            <div class="section-label">Visual Gallery</div>
+            <h2 class="section-title">Site Images <span>&amp; Videos</span></h2>
+            <p class="section-desc">Upload property images and walkthrough videos to showcase your premium projects to
+                potential buyers.</p>
+        </div>
+        <div class="media-grid reveal" style="transition-delay:0.2s">
+
+            <div class="media-item large" id="mediaItem1">
+                <input type="file" accept="image/*" onchange="previewMedia(this,'mediaItem1','image')">
+                <div class="media-upload-inner">
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
+                        </svg>
+                    </div>
+                    <h4>Main Property Image</h4>
+                    <p>Upload your featured property or site photo here</p>
+                    <span class="upload-formats">JPG · PNG · WEBP</span>
+                </div>
+                <button class="remove-btn" onclick="removeMedia('mediaItem1')">✕</button>
+            </div>
+
+            <div class="media-item small" id="mediaItem2">
+                <input type="file" accept="image/*" onchange="previewMedia(this,'mediaItem2','image')">
+                <div class="media-upload-inner">
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
+                        </svg>
+                    </div>
+                    <h4>Gallery Image 2</h4>
+                    <p>Interior or garden shot</p>
+                    <span class="upload-formats">JPG · PNG · WEBP</span>
+                </div>
+                <button class="remove-btn" onclick="removeMedia('mediaItem2')">✕</button>
+            </div>
+
+            <div class="media-item small" id="mediaItem3">
+                <input type="file" accept="image/*" onchange="previewMedia(this,'mediaItem3','image')">
+                <div class="media-upload-inner">
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
+                        </svg>
+                    </div>
+                    <h4>Gallery Image 3</h4>
+                    <p>Aerial or landscape view</p>
+                    <span class="upload-formats">JPG · PNG · WEBP</span>
+                </div>
+                <button class="remove-btn" onclick="removeMedia('mediaItem3')">✕</button>
+            </div>
+
+            <div class="media-item small" id="mediaItem4">
+                <input type="file" accept="image/*" onchange="previewMedia(this,'mediaItem4','image')">
+                <div class="media-upload-inner">
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="4" y="8" width="40" height="32" rx="3" />
+                            <circle cx="16" cy="20" r="4" />
+                            <path d="M4 34l10-10 8 8 6-6 12 12" />
+                        </svg>
+                    </div>
+                    <h4>Gallery Image 4</h4>
+                    <p>Amenities or location photo</p>
+                    <span class="upload-formats">JPG · PNG · WEBP</span>
+                </div>
+                <button class="remove-btn" onclick="removeMedia('mediaItem4')">✕</button>
+            </div>
+
+            <div class="media-item video-slot" id="mediaItemVideo">
+                <input type="file" accept="video/*" onchange="previewMedia(this,'mediaItemVideo','video')">
+                <div class="media-upload-inner">
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M4 12a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V12z" />
+                            <path d="m32 24-12-8v16l12-8z" />
+                        </svg>
+                    </div>
+                    <h4>Property Walkthrough Video</h4>
+                    <p>Upload a site visit or drone walkthrough video — this will be displayed as a full-width feature
+                        video</p>
+                    <span class="upload-formats">MP4 · MOV · WEBM — Max 500MB</span>
+                </div>
+                <button class="remove-btn" onclick="removeMedia('mediaItemVideo')">✕</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== VISION ====== -->
+    <section class="vision" id="vision">
+        <div class="reveal" style="text-align:center;margin-bottom:0">
+            <div class="section-label" style="justify-content:center">Why SMD Group</div>
+            <h2 class="section-title" style="text-align:center">Our <span>Core Values</span></h2>
+        </div>
+        <div class="vision-grid reveal" style="transition-delay:0.2s">
+            <div class="vision-item">
+                <div class="vision-icon">🏛️</div>
+                <h3>Legacy Building</h3>
+                <p>We don't just sell plots — we help families and investors build generational wealth through premium
+                    land assets.</p>
+            </div>
+            <div class="vision-item">
+                <div class="vision-icon">⚖️</div>
+                <h3>Legal Transparency</h3>
+                <p>RERA-approved, legally verified titles, zero hidden charges — complete peace of mind from inquiry to
+                    possession.</p>
+            </div>
+            <div class="vision-item">
+                <div class="vision-icon">🌿</div>
+                <h3>Nature + Connectivity</h3>
+                <p>Strategically located across UP & Uttarakhand, our projects blend serene landscapes with urban
+                    accessibility.</p>
+            </div>
+            <div class="vision-item">
+                <div class="vision-icon">🤝</div>
+                <h3>Client First</h3>
+                <p>Your journey doesn't end at booking. We provide end-to-end guidance through documentation,
+                    registration, and beyond.</p>
+            </div>
+            <div class="vision-item">
+                <div class="vision-icon">📈</div>
+                <h3>High ROI Potential</h3>
+                <p>Our locations are chosen for their growth trajectory — giving you investment-grade land with strong
+                    appreciation.</p>
+            </div>
+            <div class="vision-item">
+                <div class="vision-icon">🏅</div>
+                <h3>Trusted By Hundreds</h3>
+                <p>Over 500+ satisfied families and investors trust SMD Group — a testament to our commitment to quality
+                    and integrity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== DIRECTORS ====== -->
+    <section class="directors" id="directors">
+        <div class="reveal" style="text-align:center">
+            <div class="section-label" style="justify-content:center">Leadership</div>
+            <h2 class="section-title" style="text-align:center">Board of <span>Directors</span></h2>
+            <p class="section-desc" style="text-align:center;max-width:600px;margin:0 auto;">SMD Group is led by
+                visionary directors committed to ethical, transparent, and growth-driven real estate development.</p>
+        </div>
+        <div class="directors-grid reveal" style="transition-delay:0.2s">
+
+            <!-- Director 1 -->
+            <div class="director-card">
+                <div class="director-photo">
+                    <div class="photo-placeholder">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="18" r="10" />
+                            <path d="M6 42c0-10 8-18 18-18s18 8 18 18" />
+                        </svg>
+                        <span>UPLOAD</span>
+                    </div>
+                    <input type="file" accept="image/*" onchange="previewDirectorPhoto(this, 0)">
+                </div>
+                <div class="director-crown">✦ ✦ ✦</div>
+                <h3 class="director-name" id="dirName1" contenteditable="true" title="Click to edit name">Director
+                    Name 1</h3>
+                <div class="director-role" id="dirRole1" contenteditable="true" title="Click to edit designation">
+                    Managing Director</div>
+                <div class="director-divider"></div>
+                <div class="director-din" id="dirDin1" contenteditable="true">DIN: 00000001</div>
+                <div class="director-nationality" id="dirNat1" contenteditable="true">Nationality: Indian</div>
+            </div>
+
+            <!-- Director 2 -->
+            <div class="director-card">
+                <div class="director-photo">
+                    <div class="photo-placeholder">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="18" r="10" />
+                            <path d="M6 42c0-10 8-18 18-18s18 8 18 18" />
+                        </svg>
+                        <span>UPLOAD</span>
+                    </div>
+                    <input type="file" accept="image/*" onchange="previewDirectorPhoto(this, 1)">
+                </div>
+                <div class="director-crown">✦ ✦ ✦</div>
+                <h3 class="director-name" id="dirName2" contenteditable="true" title="Click to edit name">Director
+                    Name 2</h3>
+                <div class="director-role" id="dirRole2" contenteditable="true" title="Click to edit designation">
+                    Director</div>
+                <div class="director-divider"></div>
+                <div class="director-din" id="dirDin2" contenteditable="true">DIN: 00000002</div>
+                <div class="director-nationality" id="dirNat2" contenteditable="true">Nationality: Indian</div>
+            </div>
+
+            <!-- Director 3 -->
+            <div class="director-card">
+                <div class="director-photo">
+                    <div class="photo-placeholder">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="18" r="10" />
+                            <path d="M6 42c0-10 8-18 18-18s18 8 18 18" />
+                        </svg>
+                        <span>UPLOAD</span>
+                    </div>
+                    <input type="file" accept="image/*" onchange="previewDirectorPhoto(this, 2)">
+                </div>
+                <div class="director-crown">✦ ✦ ✦</div>
+                <h3 class="director-name" id="dirName3" contenteditable="true" title="Click to edit name">Director
+                    Name 3</h3>
+                <div class="director-role" id="dirRole3" contenteditable="true" title="Click to edit designation">
+                    Director</div>
+                <div class="director-divider"></div>
+                <div class="director-din" id="dirDin3" contenteditable="true">DIN: 00000003</div>
+                <div class="director-nationality" id="dirNat3" contenteditable="true">Nationality: Indian</div>
+            </div>
+
+        </div>
+        <p style="text-align:center;margin-top:24px;font-size:11px;color:rgba(201,168,76,0.5);letter-spacing:1px;">
+            ✎ Click on any text to edit &nbsp;·&nbsp; Click photo circle to upload photo
+        </p>
+    </section>
+
+    <!-- ====== REVIEWS ====== -->
+    <section class="reviews" id="reviews">
+        <div class="reveal" style="text-align:center">
+            <div class="section-label" style="justify-content:center">Testimonials</div>
+            <h2 class="section-title" style="text-align:center">What Our <span>Clients Say</span></h2>
+            <p class="section-desc" style="text-align:center;max-width:560px;margin:0 auto;">Hundreds of families have
+                trusted us with their dream of land ownership. Here is what they say.</p>
+        </div>
+
+        <div style="overflow:hidden">
+            <div class="reviews-track" id="reviewsTrack">
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">Bought a plot in Anandvan Resorts — the entire process was smooth,
+                        transparent, and professional. The team guided us at every step. Highly recommended!</p>
+                    <div class="review-author">
+                        <div class="review-avatar">R</div>
+                        <div class="review-info">
+                            <h4>Rajesh Sharma</h4>
+                            <p>Anandvan Resorts · Delhi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">The Royal Orchid Farms is truly royal in every sense. Beautiful location,
+                        clear paperwork, and a team that genuinely cares about your investment.</p>
+                    <div class="review-author">
+                        <div class="review-avatar">P</div>
+                        <div class="review-info">
+                            <h4>Priya Mehta</h4>
+                            <p>Royal Orchid Farms · Noida</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">SMD Group delivered exactly what they promised — RERA approved, clean title,
+                        and a gorgeous location. Our family's best investment decision.</p>
+                    <div class="review-author">
+                        <div class="review-avatar">A</div>
+                        <div class="review-info">
+                            <h4>Amit Verma</h4>
+                            <p>Alaknanda Farms · Ghaziabad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">OAK Hill Gardens is a gem. Perfect for weekend retreat and the value has
+                        already appreciated significantly. Transparent dealings from day one.</p>
+                    <div class="review-author">
+                        <div class="review-avatar">S</div>
+                        <div class="review-info">
+                            <h4>Sunita Agarwal</h4>
+                            <p>OAK Hill Gardens · Lucknow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">Purchased in Shri Krishna Enclave. The site visit experience was world-class
+                        and the after-sales support is outstanding. A truly trustworthy company.</p>
+                    <div class="review-author">
+                        <div class="review-avatar">M</div>
+                        <div class="review-info">
+                            <h4>Manoj Gupta</h4>
+                            <p>Shri Krishna Enclave · Meerut</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate for infinite scroll -->
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">Bought a plot in Anandvan Resorts — the entire process was smooth,
+                        transparent, and professional. The team guided us at every step. Highly recommended!</p>
+                    <div class="review-author">
+                        <div class="review-avatar">R</div>
+                        <div class="review-info">
+                            <h4>Rajesh Sharma</h4>
+                            <p>Anandvan Resorts · Delhi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">The Royal Orchid Farms is truly royal in every sense. Beautiful location,
+                        clear paperwork, and a team that genuinely cares about your investment.</p>
+                    <div class="review-author">
+                        <div class="review-avatar">P</div>
+                        <div class="review-info">
+                            <h4>Priya Mehta</h4>
+                            <p>Royal Orchid Farms · Noida</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">SMD Group delivered exactly what they promised — RERA approved, clean title,
+                        and a gorgeous location. Our family's best investment decision.</p>
+                    <div class="review-author">
+                        <div class="review-avatar">A</div>
+                        <div class="review-info">
+                            <h4>Amit Verma</h4>
+                            <p>Alaknanda Farms · Ghaziabad</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">OAK Hill Gardens is a gem. Perfect for weekend retreat and the value has
+                        already appreciated significantly. Transparent dealings from day one.</p>
+                    <div class="review-author">
+                        <div class="review-avatar">S</div>
+                        <div class="review-info">
+                            <h4>Sunita Agarwal</h4>
+                            <p>OAK Hill Gardens · Lucknow</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">Purchased in Shri Krishna Enclave. The site visit experience was world-class
+                        and the after-sales support is outstanding. A truly trustworthy company.</p>
+                    <div class="review-author">
+                        <div class="review-avatar">M</div>
+                        <div class="review-info">
+                            <h4>Manoj Gupta</h4>
+                            <p>Shri Krishna Enclave · Meerut</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-review-wrap reveal">
+            <button class="btn-add-review" onclick="document.getElementById('reviewModal').classList.add('active')">✦
+                &nbsp; Share Your Experience &nbsp; ✦</button>
+        </div>
+    </section>
+
+    <!-- ====== CONTACT ====== -->
+    <section class="contact" id="contact">
+        <div class="reveal" style="text-align:center">
+            <div class="section-label" style="justify-content:center">Get In Touch</div>
+            <h2 class="section-title" style="text-align:center">Book Your <span>Site Visit</span></h2>
+            <p class="section-desc" style="text-align:center;max-width:560px;margin:0 auto;">Take the first step
+                toward your dream property. Our team will guide you through every detail.</p>
+        </div>
+        <div class="contact-grid reveal" style="transition-delay:0.2s;margin-top:60px">
+            <div class="contact-info">
+                <h3>Office Locations</h3>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📞</div>
+                    <div class="contact-detail-text"><strong>Phone</strong>+91 8307 050 700 &nbsp;|&nbsp; +91 9548 051
+                        243</div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">✉️</div>
+                    <div class="contact-detail-text"><strong>Email</strong>info@summermultidevelopers.com</div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📍</div>
+                    <div class="contact-detail-text"><strong>Corporate Office</strong>A-324, Pacific Business Park,
+                        Sahibabad, Ghaziabad, Uttar Pradesh – 201010</div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📍</div>
+                    <div class="contact-detail-text"><strong>Branch Office</strong>Gali No 5, NTPC Colony, Pondha,
+                        Dehradun, Uttarakhand – 248007</div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">🏛️</div>
+                    <div class="contact-detail-text"><strong>CIN</strong>U68100UP2025PTC236249</div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Send Enquiry</h3>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your Full Name">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="+91 XXXXX XXXXX">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Project Interest</label>
+                    <select>
+                        <option>Select a Project</option>
+                        <option>Anandvan Resorts</option>
+                        <option>The Royal Orchid Farms</option>
+                        <option>Alaknanda Farms</option>
+                        <option>OAK Hill Gardens</option>
+                        <option>Shri Krishna Enclave</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Tell us about your requirements..."></textarea>
+                </div>
+                <button class="btn-submit" onclick="alert('Thank you! We will contact you within 24 hours.')">Send
+                    Enquiry →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
         <div class="footer-grid">
-            <div>
-                <div class="footer-brand-name">SMD GROUP</div>
-                <p class="footer-tagline">Premium plots & luxury farmhouses across Delhi NCR, Uttarakhand and Uttar
-                    Pradesh. Invest in land that grows with time and builds your future.</p>
-                <div class="footer-socials">
-                    <a href="https://www.facebook.com/share/1Fvk9VGm1x/" class="social-btn" title="Facebook">f</a>
-                    <a href="https://www.instagram.com/smdgr_oup" class="social-btn" title="Instagram">in</a>
-                    <a href="https://wa.me/8307050700" class="social-btn" title="WhatsApp">w</a>
-                    <a href="https://youtube.com/@smd_group-smd" class="social-btn" title="YouTube">▶</a>
+            <div class="footer-brand">
+                <div class="logo-text">
+                    <h3>SMD GROUP</h3>
+                    <p>Building the Future. Creating Landmarks.</p>
+                </div>
+                <p>Premium plots & luxury farmhouses across Delhi NCR, Uttarakhand, and Uttar Pradesh. Invest in land
+                    that grows with time.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1Fvk9VGm1x/" class="social-btn" target="_blank">f</a>
+                    <a href="https://www.instagram.com/smdgr_oup" class="social-btn" target="_blank">in</a>
+                    <a href="https://wa.me/8307050700" class="social-btn" target="_blank">w</a>
+                    <a href="https://youtube.com/@smd_group-smd" class="social-btn" target="_blank">yt</a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <ul class="footer-links">
+                <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="https://summermultidevelopers.com/lucky-draw/">Lucky Draw</a></li>
-                    <li><a href="https://summermultidevelopers.com/blogs/">Blogs</a></li>
+                    <li><a href="#directors">Directors</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Our Projects</h4>
-                <ul class="footer-links">
-                    <li><a href="https://summermultidevelopers.com/wp-content/uploads/2025/10/Anandvan-Brochure.pdf">Anandvan
-                            Resorts</a></li>
-                    <li><a href="https://summermultidevelopers.com/wp-content/uploads/2025/10/BROUCHER.FINAL01-1.pdf">The
-                            Royal Orchid Farms</a></li>
-                    <li><a
-                            href="https://summermultidevelopers.com/wp-content/uploads/2025/10/Alaknanda-Farms-Brochue.pdf">Alaknanda
-                            Farms</a></li>
-                    <li><a
-                            href="https://summermultidevelopers.com/wp-content/uploads/2025/11/Maple-Yards-Booklet.pdf">OAK
-                            Hill Gardens</a></li>
-                    <li><a
-                            href="https://summermultidevelopers.com/wp-content/uploads/2025/12/Shri-Krishna-Enclave-Brochure_2025-1.pdf">Shri
-                            Krishna Enclave</a></li>
+                <ul>
+                    <li><a href="#">Anandvan Resorts</a></li>
+                    <li><a href="#">The Royal Orchid Farms</a></li>
+                    <li><a href="#">Alaknanda Farms</a></li>
+                    <li><a href="#">OAK Hill Gardens</a></li>
+                    <li><a href="#">Shri Krishna Enclave</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contact Info</h4>
-                <div class="footer-contact-item">
-                    <span class="contact-icon">📞</span>
-                    <div class="contact-text">+91 8307 050 700<br>+91 9548 051 243</div>
-                </div>
-                <div class="footer-contact-item">
-                    <span class="contact-icon">✉</span>
-                    <div class="contact-text">info@summermultidevelopers.com</div>
-                </div>
-                <div class="footer-contact-item">
-                    <span class="contact-icon">📍</span>
-                    <div class="contact-text">A-324, Pacific Business Park, Sahibabad, Ghaziabad, UP – 201010</div>
-                </div>
-                <div class="footer-contact-item">
-                    <span class="contact-icon">📍</span>
-                    <div class="contact-text">Gali No 5, NTPC Colony, Pondha, Dehradun, Uttarakhand – 248007</div>
+                <p style="font-size:12px;color:var(--text-light);line-height:1.8;margin-bottom:16px;">
+                    +91 8307 050 700<br>
+                    +91 9548 051 243<br>
+                    info@summermultidevelopers.com
+                </p>
+                <div class="footer-rera">
+                    <span>RERA APPROVED</span>
+                    <p>All SMD Group projects are RERA-approved and legally verified.</p>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copy">© 2026 SMD GROUP · All Rights Reserved · Powered by <a
-                    href="https://astrologydivine.com/">Astrology Divine</a> </p>
-            <div class="footer-bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
-                <a href="#">RERA</a>
-            </div>
+            <p>© 2026 <span>SMD Group</span> — Summer Multidevelopers Private Limited. All rights reserved.</p>
+            <p>CIN: <span>U68100UP2025PTC236249</span> &nbsp;·&nbsp; Powered by <a
+                    href="https://astrologydivine.com/">Astrology Divine</a></p>
         </div>
     </footer>
-</body>
-<script>
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
 
-    // Hamburger
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileClose = document.getElementById('mobileClose');
-    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    });
+    <!-- ====== REVIEW MODAL ====== -->
+    <div class="modal-overlay" id="reviewModal">
+        <div class="modal-box">
+            <button class="modal-close"
+                onclick="document.getElementById('reviewModal').classList.remove('active')">×</button>
+            <h3>Share Your Experience</h3>
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="rName" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+                <label>Your Rating</label>
+                <div class="star-rating" id="starRating">
+                    <span onclick="setRating(1)">★</span>
+                    <span onclick="setRating(2)">★</span>
+                    <span onclick="setRating(3)">★</span>
+                    <span onclick="setRating(4)">★</span>
+                    <span onclick="setRating(5)">★</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Project</label>
+                <select id="rProject">
+                    <option>Anandvan Resorts</option>
+                    <option>The Royal Orchid Farms</option>
+                    <option>Alaknanda Farms</option>
+                    <option>OAK Hill Gardens</option>
+                    <option>Shri Krishna Enclave</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Your Review</label>
+                <textarea id="rText" placeholder="Share your experience with SMD Group..."></textarea>
+            </div>
+            <button class="btn-submit" onclick="submitReview()">Submit Review →</button>
+        </div>
+    </div>
 
-    // Intersection Observer — general reveal
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                revealObserver.unobserve(entry.target);
-            }
+    <script>
+        // ====== NAV SCROLL ======
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -60px 0px'
-    });
 
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-        revealObserver.observe(el);
-    });
-
-    // ===== PROJECT SCROLL MAGIC =====
-    const projectEntries = document.querySelectorAll('.project-entry');
-    const progressBar = document.getElementById('projectsProgress');
-    const progressDots = document.querySelectorAll('.progress-dot');
-
-    // Each project triggers independently — NO shared delay
-    const projectObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                projectObserver.unobserve(entry.target);
-            }
+        // ====== SCROLL REVEAL ======
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.12
         });
-    }, {
-        threshold: 0.18,
-        rootMargin: '0px 0px -60px 0px'
-    });
+        revealEls.forEach(el => observer.observe(el));
 
-    projectEntries.forEach(entry => {
-        entry.style.transitionDelay = '';
-        projectObserver.observe(entry);
-    });
+        // ====== HERO UPLOAD ======
+        document.getElementById('heroFileInput').addEventListener('change', function() {
+            if (!this.files[0]) return;
+            const media = document.getElementById('heroMedia');
+            const url = URL.createObjectURL(this.files[0]);
+            const isVideo = this.files[0].type.startsWith('video');
+            media.innerHTML = '';
+            const el = document.createElement(isVideo ? 'video' : 'img');
+            el.src = url;
+            el.style.cssText = 'width:100%;height:100%;object-fit:cover;opacity:0.35;';
+            if (isVideo) {
+                el.autoplay = true;
+                el.muted = true;
+                el.loop = true;
+            }
+            media.appendChild(el);
+        });
+        document.getElementById('heroUploadLabel').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.getElementById('heroFileInput').click();
+        });
 
-    // Progress dots click → scroll to project
-    progressDots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            const idx = parseInt(dot.dataset.index);
-            projectEntries[idx].scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
+        // ====== ABOUT IMAGE ======
+        document.getElementById('aboutImgInput').addEventListener('change', function() {
+            if (!this.files[0]) return;
+            const wrap = document.getElementById('aboutImgWrap');
+            const url = URL.createObjectURL(this.files[0]);
+            wrap.innerHTML = `<img src="${url}" style="width:100%;height:100%;object-fit:cover;">`;
+        });
+
+        // ====== MEDIA UPLOAD ======
+        function previewMedia(input, itemId, type) {
+            if (!input.files[0]) return;
+            const item = document.getElementById(itemId);
+            const url = URL.createObjectURL(input.files[0]);
+            const inner = item.querySelector('.media-upload-inner');
+            const fileInput = item.querySelector('input[type="file"]');
+            if (type === 'video') {
+                const vid = document.createElement('video');
+                vid.src = url;
+                vid.className = 'preview-video';
+                vid.autoplay = true;
+                vid.muted = true;
+                vid.loop = true;
+                vid.controls = true;
+                item.appendChild(vid);
+            } else {
+                const img = document.createElement('img');
+                img.src = url;
+                img.className = 'preview-img';
+                item.appendChild(img);
+            }
+            inner.style.display = 'none';
+            fileInput.style.zIndex = '0';
+        }
+
+        function removeMedia(itemId) {
+            const item = document.getElementById(itemId);
+            const preview = item.querySelector('.preview-img, .preview-video');
+            if (preview) preview.remove();
+            item.querySelector('.media-upload-inner').style.display = 'flex';
+            item.querySelector('input[type="file"]').style.zIndex = '10';
+        }
+
+        // ====== PROJECT IMG PREVIEW ======
+        function previewProjectImg(input) {
+            if (!input.files[0]) return;
+            const card = input.closest('.project-card');
+            const bg = card.querySelector('.project-card-bg');
+            const url = URL.createObjectURL(input.files[0]);
+            bg.innerHTML = `<img src="${url}" style="width:100%;height:100%;object-fit:cover;">`;
+        }
+
+        // ====== DIRECTOR PHOTO ======
+        function previewDirectorPhoto(input, idx) {
+            if (!input.files[0]) return;
+            const photo = input.closest('.director-photo');
+            const url = URL.createObjectURL(input.files[0]);
+            photo.querySelector('.photo-placeholder').style.display = 'none';
+            const img = document.createElement('img');
+            img.src = url;
+            img.style.cssText =
+                'width:100%;height:100%;object-fit:cover;border-radius:50%;position:absolute;inset:0;z-index:3;';
+            photo.appendChild(img);
+        }
+
+        // ====== STAR RATING ======
+        let currentRating = 5;
+
+        function setRating(val) {
+            currentRating = val;
+            document.querySelectorAll('#starRating span').forEach((s, i) => {
+                s.classList.toggle('active', i < val);
+            });
+        }
+        setRating(5);
+
+        // ====== SUBMIT REVIEW ======
+        function submitReview() {
+            const name = document.getElementById('rName').value.trim();
+            const text = document.getElementById('rText').value.trim();
+            const proj = document.getElementById('rProject').value;
+            if (!name || !text) {
+                alert('Please fill in your name and review.');
+                return;
+            }
+            const stars = '★'.repeat(currentRating) + '☆'.repeat(5 - currentRating);
+            const track = document.getElementById('reviewsTrack');
+            const card = document.createElement('div');
+            card.className = 'review-card';
+            card.innerHTML = `
+      <div class="review-quote">"</div>
+      <div class="review-stars">${stars}</div>
+      <p class="review-text">${text}</p>
+      <div class="review-author">
+        <div class="review-avatar">${name[0].toUpperCase()}</div>
+        <div class="review-info"><h4>${name}</h4><p>${proj}</p></div>
+      </div>`;
+            track.insertBefore(card, track.firstChild);
+            document.getElementById('reviewModal').classList.remove('active');
+            document.getElementById('rName').value = '';
+            document.getElementById('rText').value = '';
+            setRating(5);
+        }
+
+        // ====== SMOOTH SCROLL ======
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
-    });
-
-    // Active gold highlight — whichever project is most centered in viewport
-    function updateActiveProject() {
-        const mid = window.innerHeight / 2;
-        let closest = null,
-            closestDist = Infinity,
-            closestIdx = 0;
-
-        projectEntries.forEach((p, i) => {
-            const rect = p.getBoundingClientRect();
-            const center = rect.top + rect.height / 2;
-            const dist = Math.abs(center - mid);
-            if (dist < closestDist) {
-                closestDist = dist;
-                closest = p;
-                closestIdx = i;
-            }
-        });
-
-        projectEntries.forEach(p => p.classList.remove('active-project'));
-        progressDots.forEach(d => d.classList.remove('active'));
-
-        if (closest && closestDist < window.innerHeight * 0.6) {
-            closest.classList.add('active-project');
-            progressDots[closestIdx]?.classList.add('active');
-        }
-
-        // Show/hide progress bar based on whether projects section is in view
-        const section = document.getElementById('projects');
-        if (section) {
-            const r = section.getBoundingClientRect();
-            const inView = r.top < window.innerHeight && r.bottom > 0;
-            progressBar.classList.toggle('show', inView);
-        }
-    }
-    window.addEventListener('scroll', updateActiveProject, {
-        passive: true
-    });
-    updateActiveProject();
-
-    // Timeline observer
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    const timelineObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                timelineObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.3
-    });
-    timelineItems.forEach(item => timelineObserver.observe(item));
-
-    // Stat counter animation
-    function animateCounter(el, target, suffix = '') {
-        const duration = 2000;
-        const start = performance.now();
-        const update = (time) => {
-            const elapsed = time - start;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            el.textContent = Math.floor(eased * target) + (progress === 1 ? suffix : '');
-            if (progress < 1) requestAnimationFrame(update);
-            else el.textContent = target + suffix;
-        };
-        requestAnimationFrame(update);
-    }
-
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const nums = entry.target.querySelectorAll('[data-target]');
-                nums.forEach(el => {
-                    const target = parseInt(el.dataset.target);
-                    const suffix = target >= 100 ? '+' : (target >= 10 ? '+' : '');
-                    animateCounter(el, target, suffix);
-                });
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-    const heroStats = document.querySelector('.hero-stats');
-    if (heroStats) statsObserver.observe(heroStats);
-</script>
-<script>
-    // document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+    <script>
+        // document.addEventListener('contextmenu', e => e.preventDefault());
 
 
-    // document.addEventListener('keydown', function(e) {
-    //     if (
-    //         e.key === 'F12' ||
-    //         (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key))
-    //     ) {
-    //         e.preventDefault();
-    //     }
-    // });
+        // document.addEventListener('keydown', function(e) {
+        //     if (
+        //         e.key === 'F12' ||
+        //         (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key))
+        //     ) {
+        //         e.preventDefault();
+        //     }
+        // });
 
 
-    // (function() {
-    //     setInterval(function() {
-    //         debugger;
-    //     }, 50);
-    // })();
-</script>
+        // (function() {
+        //     setInterval(function() {
+        //         debugger;
+        //     }, 50);
+        // })();
+    </script>
 
 
 </html>
