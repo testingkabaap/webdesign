@@ -187,7 +187,7 @@
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
                     <input type="file" id="proj1" accept="image/*" style="display:none"
-                        onchange="previewProjectImg(this)">
+                        >
                 </div>
                 <div class="project-card-overlay"></div>
                 <div class="project-card-content">
@@ -210,7 +210,7 @@
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
                     <input type="file" id="proj2" accept="image/*" style="display:none"
-                        onchange="previewProjectImg(this)">
+                        >
                 </div>
                 <div class="project-card-overlay"></div>
                 <div class="project-card-content">
@@ -233,7 +233,7 @@
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
                     <input type="file" id="proj3" accept="image/*" style="display:none"
-                        onchange="previewProjectImg(this)">
+                        >
                 </div>
                 <div class="project-card-overlay"></div>
                 <div class="project-card-content">
@@ -256,7 +256,7 @@
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
                     <input type="file" id="proj4" accept="image/*" style="display:none"
-                        onchange="previewProjectImg(this)">
+                      >
                 </div>
                 <div class="project-card-overlay"></div>
                 <div class="project-card-content">
@@ -279,7 +279,7 @@
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
                     <input type="file" id="proj5" accept="image/*" style="display:none"
-                        onchange="previewProjectImg(this)">
+                       >
                 </div>
                 <div class="project-card-overlay"></div>
                 <div class="project-card-content">
@@ -457,7 +457,7 @@
                         </svg>
                         <span>UPLOAD</span>
                     </div>
-                    <input type="file" accept="image/*" onchange="previewDirectorPhoto(this, 0)">
+                    <input type="file" accept="image/*">
                 </div>
                 <div class="director-crown">✦ ✦ ✦</div>
                 <h3 class="director-name" id="dirName1" contenteditable="true" title="Click to edit name">Director
@@ -479,7 +479,7 @@
                         </svg>
                         <span>UPLOAD</span>
                     </div>
-                    <input type="file" accept="image/*" onchange="previewDirectorPhoto(this, 1)">
+                    <input type="file" accept="image/*">
                 </div>
                 <div class="director-crown">✦ ✦ ✦</div>
                 <h3 class="director-name" id="dirName2" contenteditable="true" title="Click to edit name">Director
@@ -501,7 +501,7 @@
                         </svg>
                         <span>UPLOAD</span>
                     </div>
-                    <input type="file" accept="image/*" onchange="previewDirectorPhoto(this, 2)">
+                    <input type="file" accept="image/*" >
                 </div>
                 <div class="director-crown">✦ ✦ ✦</div>
                 <h3 class="director-name" id="dirName3" contenteditable="true" title="Click to edit name">Director
