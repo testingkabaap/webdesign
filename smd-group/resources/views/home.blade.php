@@ -118,7 +118,7 @@
                         </svg>
                         <span>UPLOAD COMPANY IMAGE</span>
                     </label>
-                    <input type="file" id="aboutImgInput" accept="image/*" style="display:none">
+                    <input type="file" id="aboutImgInput" style="display:none">
                 </div>
                 <div class="about-accent"></div>
                 <div class="about-badge">
@@ -186,7 +186,7 @@
                         </svg>
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
-                    <input type="file" id="proj1" accept="image/*" style="display:none"
+                    <input type="file" id="proj1" style="display:none"
                         >
                 </div>
                 <div class="project-card-overlay"></div>
@@ -209,7 +209,7 @@
                         </svg>
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
-                    <input type="file" id="proj2" accept="image/*" style="display:none"
+                    <input type="file" id="proj2" style="display:none"
                         >
                 </div>
                 <div class="project-card-overlay"></div>
@@ -232,7 +232,7 @@
                         </svg>
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
-                    <input type="file" id="proj3" accept="image/*" style="display:none"
+                    <input type="file" id="proj3" style="display:none"
                         >
                 </div>
                 <div class="project-card-overlay"></div>
@@ -255,7 +255,7 @@
                         </svg>
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
-                    <input type="file" id="proj4" accept="image/*" style="display:none"
+                    <input type="file" id="proj4" style="display:none"
                       >
                 </div>
                 <div class="project-card-overlay"></div>
@@ -278,7 +278,7 @@
                         </svg>
                         <span style="color:rgba(201,168,76,0.5);font-size:10px;letter-spacing:2px">UPLOAD IMAGE</span>
                     </label>
-                    <input type="file" id="proj5" accept="image/*" style="display:none"
+                    <input type="file" id="proj5" style="display:none"
                        >
                 </div>
                 <div class="project-card-overlay"></div>
@@ -304,7 +304,7 @@
         <div class="media-grid reveal" style="transition-delay:0.2s">
 
             <div class="media-item large" id="mediaItem1">
-                <input type="file" accept="image/*" >
+                <input type="file" >
                 <div class="media-upload-inner">
                     <div class="upload-icon">
                         <svg viewBox="0 0 48 48">
@@ -355,7 +355,7 @@
             </div>
 
             <div class="media-item small" id="mediaItem4">
-                <input type="file" accept="image/*" >
+                <input type="file" >
                 <div class="media-upload-inner">
                     <div class="upload-icon">
                         <svg viewBox="0 0 48 48">
@@ -501,7 +501,7 @@
                         </svg>
                         <span>UPLOAD</span>
                     </div>
-                    <input type="file" accept="image/*" >
+                    <input type="file" >
                 </div>
                 <div class="director-crown">✦ ✦ ✦</div>
                 <h3 class="director-name" id="dirName3" contenteditable="true" title="Click to edit name">Director
