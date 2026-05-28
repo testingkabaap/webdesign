@@ -304,7 +304,7 @@
         <div class="media-grid reveal" style="transition-delay:0.2s">
 
             <div class="media-item large" id="mediaItem1">
-                <input type="file" accept="image/*" onchange="previewMedia(this,'mediaItem1','image')">
+                <input type="file" accept="image/*" >
                 <div class="media-upload-inner">
                     <div class="upload-icon">
                         <svg viewBox="0 0 48 48">
@@ -321,7 +321,7 @@
             </div>
 
             <div class="media-item small" id="mediaItem2">
-                <input type="file" accept="image/*" onchange="previewMedia(this,'mediaItem2','image')">
+                <input type="file" accept="image/*">
                 <div class="media-upload-inner">
                     <div class="upload-icon">
                         <svg viewBox="0 0 48 48">
@@ -334,11 +334,11 @@
                     <p>Interior or garden shot</p>
                     <span class="upload-formats">JPG · PNG · WEBP</span>
                 </div>
-                <button class="remove-btn" onclick="removeMedia('mediaItem2')">✕</button>
+                <button class="remove-btn">✕</button>
             </div>
 
             <div class="media-item small" id="mediaItem3">
-                <input type="file" accept="image/*" onchange="previewMedia(this,'mediaItem3','image')">
+                <input type="file" accept="image/*">
                 <div class="media-upload-inner">
                     <div class="upload-icon">
                         <svg viewBox="0 0 48 48">
@@ -355,7 +355,7 @@
             </div>
 
             <div class="media-item small" id="mediaItem4">
-                <input type="file" accept="image/*" onchange="previewMedia(this,'mediaItem4','image')">
+                <input type="file" accept="image/*" >
                 <div class="media-upload-inner">
                     <div class="upload-icon">
                         <svg viewBox="0 0 48 48">
@@ -372,7 +372,7 @@
             </div>
 
             <div class="media-item video-slot" id="mediaItemVideo">
-                <input type="file" accept="video/*" onchange="previewMedia(this,'mediaItemVideo','video')">
+                <input type="file" accept="video/*" >
                 <div class="media-upload-inner">
                     <div class="upload-icon">
                         <svg viewBox="0 0 48 48">
