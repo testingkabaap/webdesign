@@ -8,8 +8,2485 @@
         content="SMD Group — Building Wealth Through Luxury Living. Premium farmhouse projects, trusted land development, and high-ROI investments." />
     <title>SMD Group – Building the Future. Creating Landmarks.</title>
     @include('template/head')
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6a4c880f539b7e1d4b7d4f12/1jstf70bu';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    {{-- <link rel="stylesheet" href="./assets/css/style.css"> --}}
+    <style>
+        /* ═══════════════════════════════════════════
+   COLOR THEME — Deep Navy + Champagne Gold
+═══════════════════════════════════════════ */
+        :root {
+            --gold: #D4AF6A;
+            --soft-gold: #E2C47E;
+            --gold-dim: rgba(212, 175, 106, 0.15);
+            --gold-glow: rgba(212, 175, 106, 0.06);
 
+            /* Navy Accent */
+            --navy: #0F2444;
+            --navy-mid: #1A3A6B;
+            --navy-light: #2756A8;
+            --navy-pale: rgba(15, 36, 68, 0.5);
+            --navy-glow: rgba(39, 86, 168, 0.08);
+
+            --bg-deep: #05080F;
+            --bg-dark: #080D18;
+            --bg-card: rgba(212, 175, 106, 0.03);
+            --bg-card-hover: rgba(212, 175, 106, 0.06);
+
+            --text-bright: #EDE8DC;
+            --text-mid: rgba(237, 232, 220, 0.65);
+            --text-dim: rgba(237, 232, 220, 0.35);
+
+            --border: rgba(212, 175, 106, 0.12);
+            --border-em: rgba(212, 175, 106, 0.25);
+
+            --font-display: 'Cinzel', serif;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --font-italic: 'Cormorant Garamond', serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: var(--bg-deep);
+            color: var(--text-bright);
+            font-family: var(--font-body);
+            font-weight: 300;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit
+        }
+
+        /* ── SCROLLBAR ── */
+        ::-webkit-scrollbar {
+            width: 4px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-deep)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 2px
+        }
+
+        /* ── CURSOR ── */
+        #cursor {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width .2s, height .2s;
+        }
+
+        #cursor-ring {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(200, 168, 75, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: width .25s, height .25s;
+        }
+
+        /* ── PARTICLES ── */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.7
+        }
+
+        /* ── LOADER ── */
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9000;
+            background: var(--bg-deep);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .loader-logo {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 4vw, 2.8rem);
+            letter-spacing: 0.35em;
+            color: var(--gold)
+        }
+
+        .loader-tagline {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            color: var(--text-dim);
+            text-transform: uppercase
+        }
+
+        .loader-bar-wrap {
+            width: 200px;
+            height: 1px;
+            background: rgba(212, 175, 106, 0.15);
+            margin-top: 20px;
+            overflow: hidden
+        }
+
+        .loader-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--navy-light), var(--gold));
+            animation: loadBar 2s ease forwards
+        }
+
+        @keyframes loadBar {
+            to {
+                width: 100%
+            }
+        }
+
+        /* ── MOBILE MENU ── */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 8, 15, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 800;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s ease;
+        }
+
+        .mobile-menu.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            letter-spacing: 0.15em;
+            color: var(--text-mid);
+            text-transform: uppercase;
+            transition: .2s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold)
+        }
+
+        /* ── NAV ── */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 700;
+            padding: 22px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background .4s, padding .4s, box-shadow .4s;
+        }
+
+        #navbar.scrolled {
+            background: rgba(5, 8, 15, 0.96);
+            backdrop-filter: blur(20px);
+            padding: 14px 6%;
+            box-shadow: 0 1px 0 var(--border);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .nav-logo span {
+            font-size: 0.45rem;
+            letter-spacing: 0.2em;
+            color: var(--text-dim);
+            margin-top: 4px;
+            font-family: var(--font-body)
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 36px
+        }
+
+        .nav-links li a {
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            transition: .2s;
+            font-weight: 400;
+        }
+
+        .nav-links li a:hover {
+            color: var(--gold)
+        }
+
+        .nav-cta {
+            padding: 9px 22px !important;
+            border: 1px solid var(--gold) !important;
+            color: var(--gold) !important;
+            transition: background .25s, color .25s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold) !important;
+            color: #080C0B !important
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 810
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 1px;
+            background: var(--gold);
+            transition: .3s
+        }
+
+        /* ── SECTION COMMONS ── */
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 110px 6%
+        }
+
+        .sep {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 0 6%;
+            position: relative;
+            z-index: 1
+        }
+
+        .section-eyebrow {
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--navy-light);
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-family: var(--font-italic);
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--text-dim);
+            margin-top: 6px;
+        }
+
+        .gold {
+            color: var(--gold)
+        }
+
+        .gold-divider {
+            display: block;
+            width: 52px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--navy-light), var(--gold));
+            margin-bottom: 28px
+        }
+
+        /* ── BUTTONS ── */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 34px;
+            background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+            color: var(--text-bright);
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 500;
+            border: 1px solid rgba(39, 86, 168, 0.4);
+            transition: .3s;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--gold), var(--soft-gold));
+            opacity: 0;
+            transition: .4s;
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1
+        }
+
+        .btn-primary:hover {
+            color: #05080F
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            padding: 13px 33px;
+            border: 1px solid var(--border-em);
+            color: var(--text-mid);
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: .3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold)
+        }
+
+        /* ═══════════════════════════════════════════
+   main
+═══════════════════════════════════════════ */
+        #main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 6%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 65% 40%, rgba(27, 58, 107, 0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 15% 70%, rgba(212, 175, 106, 0.06) 0%, transparent 55%),
+                linear-gradient(160deg, #05080F 0%, #080D18 45%, #060A14 100%);
+        }
+
+        .main-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(200, 168, 75, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(200, 168, 75, 0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
+        }
+
+        .main-vertical-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, rgba(200, 168, 75, 0.08), transparent);
+            pointer-events: none;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            padding-top: 120px;
+        }
+
+        .main-eyebrow {
+            font-size: 0.65rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--navy-light);
+            margin-bottom: 22px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .main-eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 1px;
+            background: var(--navy-light)
+        }
+
+        .main-title {
+            font-family: var(--font-title);
+            font-size: clamp(3rem, 6.5vw, 5.5rem);
+            font-weight: 600;
+            line-height: 1.08;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(30px);
+            margin-bottom: 22px;
+        }
+
+        .main-title .line {
+            display: block
+        }
+
+        .main-subtitle {
+            font-family: var(--font-italic);
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            font-style: italic;
+            color: var(--text-mid);
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .main-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            opacity: 0;
+            transform: translateY(20px);
+            margin-bottom: 72px;
+        }
+
+        .main-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            border-top: 1px solid var(--border);
+            padding-top: 36px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .main-stat {
+            padding: 0 48px 0 0;
+            border-right: 1px solid var(--border);
+            margin-right: 48px;
+        }
+
+        .main-stat:last-child {
+            border-right: none;
+            margin-right: 0;
+            padding-right: 0
+        }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--gold);
+            letter-spacing: 0.04em;
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-top: 4px
+        }
+
+        .main-scroll {
+            position: absolute;
+            bottom: 36px;
+            left: 6%;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            opacity: 0;
+        }
+
+        .main-scroll-line {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            animation: scrollPulse 2s ease infinite
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                opacity: 0.3
+            }
+
+            50% {
+                opacity: 1
+            }
+        }
+
+        /* main architectural illustration */
+        .main-illustration {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42%;
+            height: 80%;
+            z-index: 1;
+            opacity: 0.55;
+            pointer-events: none;
+        }
+
+        /* ═══════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════ */
+        #about .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-image-collage {
+            position: relative;
+            height: 520px
+        }
+
+        .collage-main,
+        .collage-secondary {
+            position: absolute;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            overflow: hidden;
+        }
+
+        .collage-main {
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 78%
+        }
+
+        .collage-secondary {
+            bottom: 0;
+            right: 0;
+            width: 55%;
+            height: 50%
+        }
+
+        .collage-img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .collage-accent {
+            position: absolute;
+            bottom: 20%;
+            right: 20%;
+            width: 110px;
+            height: 110px;
+            border: 1px solid var(--gold);
+            background: var(--bg-deep);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .collage-accent-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px
+        }
+
+        .collage-accent-inner span {
+            font-size: 0.5rem;
+            letter-spacing: 0.15em;
+            color: var(--text-dim);
+            text-align: center;
+            text-transform: uppercase;
+            font-family: var(--font-body)
+        }
+
+        .collage-accent sup {
+            font-size: 1rem;
+            vertical-align: super
+        }
+
+        .about-content {}
+
+        .about-text {
+            font-size: 0.88rem;
+            line-height: 1.9;
+            color: var(--text-mid);
+            margin-bottom: 18px
+        }
+
+        .about-timeline {
+            margin-top: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 60px 1px 1fr;
+            gap: 0 20px;
+            align-items: start;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .timeline-year {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            padding-top: 2px
+        }
+
+        .timeline-dot {
+            width: 1px;
+            background: linear-gradient(180deg, var(--navy-light), transparent);
+            position: relative;
+            min-height: 50px
+        }
+
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: -3px;
+            width: 7px;
+            height: 7px;
+            background: var(--navy-light);
+            border-radius: 50%
+        }
+
+        .timeline-info h4 {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+            color: var(--text-bright)
+        }
+
+        .timeline-info p {
+            font-size: 0.75rem;
+            line-height: 1.6;
+            color: var(--text-dim)
+        }
+
+        /* ═══════════════════════════════════════════
+   WHY
+═══════════════════════════════════════════ */
+        #why {
+            text-align: center
+        }
+
+        .why-inner {
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .why-header {
+            margin-bottom: 64px
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px
+        }
+
+        .why-card {
+            padding: 40px 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            text-align: left;
+            cursor: default;
+            transition: border-color .3s, background .3s;
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 0;
+            background: linear-gradient(180deg, var(--navy-light), var(--gold));
+            transition: height .4s;
+        }
+
+        .why-card:hover {
+            border-color: rgba(200, 168, 75, 0.25);
+            background: var(--bg-card-hover)
+        }
+
+        .why-card:hover::before {
+            height: 100%
+        }
+
+        .why-icon {
+            width: 42px;
+            height: 42px;
+            margin-bottom: 20px;
+            color: var(--navy-light)
+        }
+
+        .why-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .why-card h3 {
+            font-family: var(--font-title);
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 12px
+        }
+
+        .why-card p {
+            font-size: 0.78rem;
+            line-height: 1.8;
+            color: var(--text-dim)
+        }
+
+
+        /* ═══════════════════════════════════════════
+   PROJECTS — Clean Tabbed Showcase (no scroll-jacking)
+═══════════════════════════════════════════ */
+        #projects {
+            background: var(--bg-deep)
+        }
+
+        .pshow-inner {
+            max-width: 1300px;
+            margin: 0 auto
+        }
+
+        .pshow-header {
+            margin-bottom: 56px;
+            max-width: 640px
+        }
+
+        .pshow-header p.section-subtitle {
+            margin-top: 14px
+        }
+
+        .pshow-layout {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 2px;
+            border: 1px solid var(--border);
+            background: var(--border);
+        }
+
+        /* ── Tab list ── */
+        .pshow-tabs {
+            background: var(--bg-dark);
+            display: flex;
+            flex-direction: column
+        }
+
+        .pshow-tab {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 22px 26px;
+            cursor: pointer;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+            transition: background .25s;
+        }
+
+        .pshow-tab:last-child {
+            border-bottom: none
+        }
+
+        .pshow-tab::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--navy-light), var(--gold));
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform .3s;
+        }
+
+        .pshow-tab:hover {
+            background: var(--bg-card-hover)
+        }
+
+        .pshow-tab.active {
+            background: var(--bg-card)
+        }
+
+        .pshow-tab.active::before {
+            transform: scaleY(1)
+        }
+
+        .pshow-tab-num {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+            min-width: 24px;
+            transition: color .25s;
+        }
+
+        .pshow-tab.active .pshow-tab-num {
+            color: var(--gold)
+        }
+
+        .pshow-tab-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .pshow-tab-name {
+            font-family: var(--font-title);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            transition: color .25s
+        }
+
+        .pshow-tab.active .pshow-tab-name {
+            color: var(--gold)
+        }
+
+        .pshow-tab-tag {
+            font-size: 0.62rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-dim)
+        }
+
+        .pshow-tab-arrow {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: var(--text-dim);
+            opacity: 0;
+            transform: translateX(-6px);
+            transition: .25s;
+        }
+
+        .pshow-tab-arrow svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8
+        }
+
+        .pshow-tab.active .pshow-tab-arrow {
+            opacity: 1;
+            transform: translateX(0);
+            color: var(--gold)
+        }
+
+        .pshow-progress {
+            height: 2px;
+            background: var(--border);
+            position: relative;
+            overflow: hidden
+        }
+
+        .pshow-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--navy-light), var(--gold));
+            transition: width .1s linear
+        }
+
+        /* ── Display panel ── */
+        .pshow-display {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-dark);
+            min-height: 560px
+        }
+
+        .pshow-scene {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity .55s ease;
+            pointer-events: none
+        }
+
+        .pshow-scene.active {
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .pshow-scene-bg {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden
+        }
+
+        .pshow-scene-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(5, 8, 15, 0.65) 0%, rgba(15, 36, 68, 0.18) 50%, rgba(5, 8, 15, 0.55) 100%)
+        }
+
+        .pshow-scene-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70%;
+            background: linear-gradient(0deg, rgba(5, 8, 15, 0.98) 0%, rgba(5, 8, 15, 0.6) 55%, transparent 100%)
+        }
+
+        .pshow-scene-ghost {
+            position: absolute;
+            top: 44px;
+            right: 5%;
+            font-family: var(--font-display);
+            font-size: clamp(6rem, 14vw, 11rem);
+            font-weight: 700;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(212, 175, 106, 0.06);
+            letter-spacing: -0.02em;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .pshow-corner {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-color: rgba(212, 175, 106, 0.14);
+            border-style: solid;
+            z-index: 2
+        }
+
+        .pshow-corner.tl {
+            top: 26px;
+            left: 26px;
+            border-width: 1px 0 0 1px
+        }
+
+        .pshow-corner.tr {
+            top: 26px;
+            right: 26px;
+            border-width: 1px 1px 0 0
+        }
+
+        .pshow-corner.bl {
+            bottom: 26px;
+            left: 26px;
+            border-width: 0 0 1px 1px
+        }
+
+        .pshow-scene-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 48px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%;
+        }
+
+        .pshow-scene-tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pshow-scene-tag::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: var(--gold);
+            display: inline-block
+        }
+
+        .pshow-scene-name {
+            font-family: var(--font-title);
+            font-size: clamp(1.7rem, 3vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 12px
+        }
+
+        .pshow-scene-loc {
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 18px
+        }
+
+        .pshow-scene-loc svg {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0
+        }
+
+        .pshow-scene-divider {
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--navy-light), var(--gold));
+            margin-bottom: 18px
+        }
+
+        .pshow-scene-meta {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 26px;
+            flex-wrap: wrap
+        }
+
+        .pshow-meta-label {
+            font-size: 0.54rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 4px
+        }
+
+        .pshow-meta-value {
+            font-size: 0.8rem;
+            color: var(--text-bright)
+        }
+
+        .pshow-meta-price {
+            font-family: var(--font-display);
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 0.04em
+        }
+
+        .pshow-scene-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 28px;
+            border: 1px solid var(--border-em);
+            font-size: 0.64rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            cursor: pointer;
+            width: fit-content;
+            transition: border-color .25s, color .25s;
+        }
+
+        .pshow-scene-cta:hover {
+            border-color: var(--gold);
+            color: var(--gold)
+        }
+
+        .pshow-scene-cta svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            transition: transform .25s
+        }
+
+        .pshow-scene-cta:hover svg {
+            transform: translateX(4px)
+        }
+
+        /* Arch scenes */
+        .arch-scene {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(170deg, #080D18 0%, #05080F 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center
+        }
+
+        .arch-h {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            height: 100%;
+            position: relative
+        }
+
+        .arch-h span {
+            background: linear-gradient(180deg, rgba(27, 58, 107, 0.3), rgba(212, 175, 106, 0.05));
+            border: 1px solid rgba(212, 175, 106, 0.08)
+        }
+
+        .arch-1 .arch-h span:nth-child(1) {
+            width: 80px;
+            height: 50%
+        }
+
+        .arch-1 .arch-h span:nth-child(2) {
+            width: 120px;
+            height: 72%
+        }
+
+        .arch-1 .arch-h span:nth-child(3) {
+            width: 80px;
+            height: 45%
+        }
+
+        .arch-2 .arch-h span {
+            width: 70px
+        }
+
+        .arch-2 .arch-h span:nth-child(1) {
+            height: 38%
+        }
+
+        .arch-2 .arch-h span:nth-child(2) {
+            height: 65%
+        }
+
+        .arch-2 .arch-h span:nth-child(3) {
+            height: 80%
+        }
+
+        .arch-2 .arch-h span:nth-child(4) {
+            height: 52%
+        }
+
+        .arch-3 .arch-h span:nth-child(1) {
+            width: 200px;
+            height: 68%
+        }
+
+        .arch-3 .arch-h span:nth-child(2) {
+            width: 140px;
+            height: 48%
+        }
+
+        .arch-4 .arch-h span {
+            width: 55px
+        }
+
+        .arch-4 .arch-h span:nth-child(1) {
+            height: 28%
+        }
+
+        .arch-4 .arch-h span:nth-child(2) {
+            height: 52%
+        }
+
+        .arch-4 .arch-h span:nth-child(3) {
+            height: 76%
+        }
+
+        .arch-4 .arch-h span:nth-child(4) {
+            height: 48%
+        }
+
+        .arch-4 .arch-h span:nth-child(5) {
+            height: 32%
+        }
+
+        .arch-5 .arch-h span:nth-child(1) {
+            width: 110px;
+            height: 58%
+        }
+
+        .arch-5 .arch-h span:nth-child(2) {
+            width: 150px;
+            height: 82%
+        }
+
+        .arch-5 .arch-h span:nth-child(3) {
+            width: 110px;
+            height: 52%
+        }
+
+        .arch-balcony {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 106, 0.3), transparent)
+        }
+
+        /* ═══════════════════════════════════════════
+   DIRECTOR — 3 Directors Layout
+═══════════════════════════════════════════ */
+        #director {
+            background: linear-gradient(180deg, var(--bg-deep), rgba(15, 36, 68, 0.08), var(--bg-deep))
+        }
+
+        .director-inner {
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .director-header {
+            text-align: center;
+            margin-bottom: 64px
+        }
+
+        .directors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .director-card {
+            padding: 44px 36px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: border-color .3s;
+        }
+
+        .director-card:hover {
+            border-color: rgba(212, 175, 106, 0.25)
+        }
+
+        .director-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--navy-light), var(--gold), transparent);
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .director-card:hover::after {
+            opacity: 1
+        }
+
+        /* Portrait */
+        .dir-portrait {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 1px solid var(--border-em);
+            background: rgba(27, 58, 107, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .dir-portrait::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(212, 175, 106, 0.1), transparent 70%);
+        }
+
+        .dir-initials {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dir-corner-ring {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 106, 0.15);
+        }
+
+        .dir-name {
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 4px
+        }
+
+        .dir-role {
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--navy-light);
+            margin-bottom: 20px;
+            font-weight: 500
+        }
+
+        .dir-divider {
+            width: 36px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--navy-light), var(--gold));
+            margin: 0 auto 20px
+        }
+
+        .dir-quote {
+            font-family: var(--font-italic);
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-mid);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .dir-bio {
+            font-size: 0.75rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            margin-bottom: 24px
+        }
+
+        .dir-creds {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center
+        }
+
+        .dir-cred {
+            padding: 5px 12px;
+            border: 1px solid var(--border);
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        .dir-signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        /* ═══════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════ */
+        #testimonials {}
+
+        .test-inner {
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .test-header {
+            text-align: center;
+            margin-bottom: 56px
+        }
+
+        .test-carousel {
+            overflow: hidden;
+            position: relative
+        }
+
+        .test-track {
+            display: flex;
+            gap: 2px;
+            transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .test-card {
+            min-width: calc(33.333% - 2px);
+            flex-shrink: 0;
+            padding: 40px 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .test-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(27, 58, 107, 0.2);
+            border: 1px solid rgba(27, 58, 107, 0.4);
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--navy-light);
+            margin-bottom: 20px;
+        }
+
+        .test-quote-icon {
+            font-family: var(--font-title);
+            font-size: 5rem;
+            line-height: 0;
+            color: rgba(212, 175, 106, 0.1);
+            position: absolute;
+            top: 36px;
+            right: 28px;
+        }
+
+        .test-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px
+        }
+
+        .test-stars svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--gold);
+            stroke: none
+        }
+
+        .test-text {
+            font-size: 0.82rem;
+            line-height: 1.85;
+            color: var(--text-mid);
+            margin-bottom: 28px;
+            font-family: var(--font-italic);
+            font-style: italic;
+            font-size: 1rem
+        }
+
+        .test-author {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .test-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--navy-mid), rgba(212, 175, 106, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--text-bright);
+            flex-shrink: 0;
+        }
+
+        .test-name {
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin-bottom: 2px
+        }
+
+        .test-role {
+            font-size: 0.67rem;
+            color: var(--text-dim);
+            letter-spacing: 0.06em
+        }
+
+        .test-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 36px;
+        }
+
+        .test-dot {
+            width: 20px;
+            height: 1px;
+            background: var(--border-em);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .test-dot.active {
+            background: var(--gold);
+            width: 40px
+        }
+
+        .test-arrows {
+            display: flex;
+            gap: 8px;
+            margin-left: 20px
+        }
+
+        .test-arrow {
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: .2s;
+            color: var(--text-mid);
+        }
+
+        .test-arrow:hover {
+            border-color: var(--gold);
+            color: var(--gold)
+        }
+
+        .test-arrow svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        /* ═══════════════════════════════════════════
+   INVESTMENT
+═══════════════════════════════════════════ */
+        #investment {
+            background: linear-gradient(135deg, rgba(27, 58, 107, 0.06), transparent)
+        }
+
+        .inv-inner {
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .inv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center
+        }
+
+        .inv-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px
+        }
+
+        .inv-stat-card {
+            padding: 36px 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border)
+        }
+
+        .inv-big-num {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            color: var(--gold);
+            line-height: 1
+        }
+
+        .inv-big-suffix {
+            font-size: 1.6rem
+        }
+
+        .inv-stat-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin: 10px 0
+        }
+
+        .inv-bar {
+            height: 1px;
+            background: var(--border);
+            position: relative;
+            overflow: hidden
+        }
+
+        .inv-bar-fill {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--navy-light), var(--gold));
+            transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1)
+        }
+
+        .inv-features {
+            display: flex;
+            flex-direction: column;
+            gap: 24px
+        }
+
+        .inv-feature {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start
+        }
+
+        .inv-feature-icon {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            color: var(--navy-light)
+        }
+
+        .inv-feature-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .inv-feature-text h4 {
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin-bottom: 4px
+        }
+
+        .inv-feature-text p {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            line-height: 1.7
+        }
+
+        /* ═══════════════════════════════════════════
+   GALLERY
+═══════════════════════════════════════════ */
+        #gallery {}
+
+        .gallery-inner {
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 56px
+        }
+
+        .gallery-masonry {
+            columns: 4;
+            column-gap: 2px;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 2px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            display: block;
+        }
+
+        .g-block {
+            width: 100%;
+            display: block
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(27, 58, 107, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1
+        }
+
+        .gallery-item-overlay svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: rgba(240, 237, 228, 0.8);
+            stroke-width: 1.5
+        }
+
+        /* ═══════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════ */
+        #contact {}
+
+        .contact-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 32px 0
+        }
+
+        .contact-info-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            transition: border-color .2s;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .contact-info-card:hover {
+            border-color: var(--border-em)
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            color: var(--emerald-light);
+            flex-shrink: 0
+        }
+
+        .contact-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .contact-info-card h4 {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 3px;
+            font-weight: 400
+        }
+
+        .contact-info-card p {
+            font-size: 0.8rem;
+            color: var(--text-bright)
+        }
+
+        .contact-map {
+            height: 140px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .map-pin {
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 0 6px rgba(200, 168, 75, 0.15);
+            animation: mapPulse 2s infinite;
+        }
+
+        @keyframes mapPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 6px rgba(200, 168, 75, 0.15)
+            }
+
+            50% {
+                box-shadow: 0 0 0 14px rgba(200, 168, 75, 0.05)
+            }
+        }
+
+        .map-label {
+            position: absolute;
+            bottom: 14px;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-dim)
+        }
+
+        /* Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px
+        }
+
+        .form-group {
+            position: relative
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-bright);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 300;
+            transition: border-color .2s;
+            outline: none;
+            appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: rgba(30, 107, 85, 0.5)
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            resize: none
+        }
+
+        .form-group select option {
+            background: var(--bg-dark)
+        }
+
+        .form-label {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            pointer-events: none;
+            transition: top .2s, font-size .2s, color .2s;
+        }
+
+        .form-group input:not(:placeholder-shown)~.form-label,
+        .form-group input:focus~.form-label,
+        .form-group textarea:not(:placeholder-shown)~.form-label,
+        .form-group textarea:focus~.form-label {
+            top: 6px;
+            font-size: 0.6rem;
+            color: var(--emerald-light);
+        }
+
+        .form-submit {
+            padding: 16px;
+            background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+            border: none;
+            color: var(--text-bright);
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .form-submit:hover {
+            background: linear-gradient(135deg, var(--gold), var(--soft-gold));
+            color: #05080F
+        }
+
+        /* ═══════════════════════════════════════════
+   LIGHTBOX
+═══════════════════════════════════════════ */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(8, 12, 11, 0.97);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s;
+        }
+
+        #lightbox.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 28px;
+            right: 32px;
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--gold)
+        }
+
+        .lightbox-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            max-width: 700px;
+            border: 1px solid var(--border)
+        }
+
+        /* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+        footer {
+            padding: 80px 6% 32px;
+            border-top: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 56px;
+            margin-bottom: 56px;
+        }
+
+        .footer-brand p {
+            font-size: 0.78rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            margin-top: 18px;
+            max-width: 280px
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .social-icon:hover {
+            border-color: var(--gold);
+            color: var(--gold)
+        }
+
+        .social-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 22px
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 11px
+        }
+
+        .footer-col li a {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            transition: .2s;
+            letter-spacing: 0.04em
+        }
+
+        .footer-col li a:hover {
+            color: var(--text-bright)
+        }
+
+        .footer-newsletter p {
+            font-size: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-dim);
+            margin-bottom: 18px
+        }
+
+        .newsletter-input {
+            display: flex
+        }
+
+        .newsletter-input input {
+            flex: 1;
+            padding: 11px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-bright);
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            outline: none;
+        }
+
+        .newsletter-input button {
+            padding: 11px 16px;
+            background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .newsletter-input button svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            letter-spacing: 0.06em
+        }
+
+        .footer-bottom a {
+            color: var(--text-dim);
+            transition: .2s
+        }
+
+        .footer-bottom a:hover {
+            color: var(--gold)
+        }
+
+        /* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE
+═══════════════════════════════════════════ */
+        @media(max-width:1024px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .directors-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .directors-grid .director-card:last-child {
+                grid-column: 1/-1;
+                max-width: 480px;
+                margin: 0 auto
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 36px
+            }
+
+            .gallery-masonry {
+                columns: 3
+            }
+
+            .inv-grid {
+                grid-template-columns: 1fr
+            }
+
+            .pshow-layout {
+                grid-template-columns: 280px 1fr
+            }
+        }
+
+        @media(max-width:768px) {
+
+            /* Nav */
+            #cursor,
+            #cursor-ring {
+                display: none
+            }
+
+            body {
+                cursor: auto
+            }
+
+            .nav-links {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+
+            #navbar {
+                padding: 18px 5%
+            }
+
+            #navbar.scrolled {
+                padding: 12px 5%
+            }
+
+            /* main */
+            section {
+                padding: 80px 5%
+            }
+
+            #main {
+                padding: 0 5%;
+                min-height: 100vh
+            }
+
+            .main-content {
+                padding-top: 100px;
+                padding-bottom: 100px
+            }
+
+            .main-title {
+                font-size: clamp(2.2rem, 8vw, 3.5rem)
+            }
+
+            .main-stats {
+                gap: 24px 0
+            }
+
+            .main-stat {
+                min-width: 45%;
+                padding-right: 0;
+                margin-right: 0;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+            }
+
+            .main-stat:last-child {
+                border-bottom: none;
+                margin-bottom: 0
+            }
+
+            .main-illustration {
+                display: none
+            }
+
+            .main-scroll {
+                display: none
+            }
+
+            /* About */
+            #about .about-inner {
+                grid-template-columns: 1fr;
+                gap: 48px
+            }
+
+            .about-image-collage {
+                height: 320px
+            }
+
+            /* Why */
+            .why-grid {
+                grid-template-columns: 1fr
+            }
+
+            /* Projects — mobile stacked */
+            .pshow-layout {
+                grid-template-columns: 1fr
+            }
+
+            .pshow-tabs {
+                flex-direction: row;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch
+            }
+
+            .pshow-tab {
+                flex-direction: column;
+                align-items: flex-start;
+                min-width: 200px;
+                border-bottom: none;
+                border-right: 1px solid var(--border);
+                gap: 8px;
+                padding: 18px 20px
+            }
+
+            .pshow-tab::before {
+                width: 100%;
+                height: 2px;
+                top: auto;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transform: scaleX(0)
+            }
+
+            .pshow-tab.active::before {
+                transform: scaleX(1)
+            }
+
+            .pshow-tab-arrow {
+                display: none
+            }
+
+            .pshow-display {
+                min-height: 420px
+            }
+
+            .pshow-scene-content {
+                padding: 0 20px 24px
+            }
+
+            .pshow-scene-name {
+                font-size: 1.4rem
+            }
+
+            .pshow-scene-meta {
+                gap: 14px
+            }
+
+            .pshow-scene-ghost {
+                display: none
+            }
+
+            /* Director */
+            .directors-grid {
+                grid-template-columns: 1fr
+            }
+
+            .directors-grid .director-card:last-child {
+                grid-column: auto;
+                max-width: 100%;
+                margin: 0
+            }
+
+            .director-card {
+                padding: 36px 24px
+            }
+
+            /* Testimonials */
+            .test-card {
+                min-width: calc(100% - 2px)
+            }
+
+            /* Gallery */
+            .gallery-masonry {
+                columns: 2
+            }
+
+            /* Investment */
+            .inv-grid {
+                grid-template-columns: 1fr
+            }
+
+            .inv-stats-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            /* Contact */
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 48px
+            }
+
+            .form-row {
+                grid-template-columns: 1fr
+            }
+
+            /* Footer */
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 32px
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px
+            }
+        }
+
+        @media(max-width:480px) {
+            .main-title {
+                font-size: clamp(2rem, 9vw, 2.8rem)
+            }
+
+            .gallery-masonry {
+                columns: 1
+            }
+
+            .inv-stats-grid {
+                grid-template-columns: 1fr
+            }
+
+            .main-actions {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .btn-primary,
+            .btn-outline {
+                width: 100%;
+                justify-content: center
+            }
+
+            .main-stat {
+                min-width: 100%
+            }
+
+            .collage-main,
+            .collage-secondary,
+            .about-image-collage {
+                display: none
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -38,7 +2515,8 @@
 
     <!-- NAV -->
     <nav id="navbar">
-        <div class="nav-logo"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo" width="40" height="auto"/></div>
+        <div class="nav-logo"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo" width="40"
+                height="auto" /></div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#why">Why Us</a></li>
@@ -131,7 +2609,7 @@
             </div>
             <div class="main-stats" id="mainStats">
                 <div class="main-stat">
-                    <div class="stat-num">10+</div>
+                    <div class="stat-num">5+</div>
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="main-stat">
@@ -141,10 +2619,6 @@
                 <div class="main-stat">
                     <div class="stat-num">50+</div>
                     <div class="stat-label">Premium Projects</div>
-                </div>
-                <div class="main-stat">
-                    <div class="stat-num">₹500Cr+</div>
-                    <div class="stat-label">Assets Developed</div>
                 </div>
             </div>
         </div>
@@ -315,256 +2789,291 @@
     </section>
     <div class="sep"></div>
 
-    <!-- ═══ PROJECTS ═══ -->
+    <!-- ═══ PROJECTS — Clean tabbed showcase ═══ -->
     <section id="projects">
-        <div class="projects-sticky">
-            <!-- LEFT PANEL -->
-            <div class="proj-left">
-                <p class="proj-left-eyebrow">Our Portfolio</p>
-                <h2 class="proj-left-title">Signature <span class="gold">Projects</span></h2>
-                <p class="proj-left-desc">Curated masterpieces across NCR's most coveted addresses — each a landmark
-                    investment opportunity.</p>
-                <div class="proj-counter-wrap">
-                    <span class="proj-counter-current" id="projNum">01</span>
-                    <span class="proj-counter-sep">/</span>
-                    <span class="proj-counter-total">05</span>
-                </div>
-                <div class="proj-progress-track">
-                    <div class="proj-progress-fill" id="projFill"></div>
-                </div>
-                <div class="proj-nav">
-                    <div class="proj-nav-btn" id="projPrev"><svg viewBox="0 0 24 24">
-                            <path d="M15 18l-6-6 6-6" />
-                        </svg></div>
-                    <div class="proj-nav-btn" id="projNext"><svg viewBox="0 0 24 24">
-                            <path d="M9 18l6-6-6-6" />
-                        </svg></div>
-                    <span class="proj-nav-label" style="margin-left:8px">Navigate</span>
-                </div>
+        <div class="pshow-inner">
+            <div class="pshow-header" data-reveal="up">
+                <p class="section-eyebrow">Our Portfolio</p>
+                <h2 class="section-title">Signature <span class="gold">Projects</span></h2>
+                <p class="section-subtitle">Curated masterpieces across NCR's most coveted addresses — each a
+                    landmark investment opportunity.</p>
             </div>
-            <!-- RIGHT PANEL -->
-            <div class="proj-right">
-                <div class="proj-cards-container" id="projContainer">
 
-                    <!-- Panel 1 -->
-                    <div class="proj-panel active">
-                        <div class="proj-panel-bg">
+            <div class="pshow-layout" data-reveal="up">
+                <!-- TABS -->
+                <div class="pshow-tabs" id="pshowTabs">
+                    <div class="pshow-tab active" data-index="0">
+                        <span class="pshow-tab-num">01</span>
+                        <div class="pshow-tab-info">
+                            <div class="pshow-tab-name">SMD Golden Residency</div>
+                            <div class="pshow-tab-tag">Farmhouse Villas</div>
+                        </div>
+                        <span class="pshow-tab-arrow"><svg viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg></span>
+                    </div>
+                    <div class="pshow-tab" data-index="1">
+                        <span class="pshow-tab-num">02</span>
+                        <div class="pshow-tab-info">
+                            <div class="pshow-tab-name">SMD Royal Greens</div>
+                            <div class="pshow-tab-tag">Premium Land</div>
+                        </div>
+                        <span class="pshow-tab-arrow"><svg viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg></span>
+                    </div>
+                    <div class="pshow-tab" data-index="2">
+                        <span class="pshow-tab-num">03</span>
+                        <div class="pshow-tab-info">
+                            <div class="pshow-tab-name">SMD Elite Farms</div>
+                            <div class="pshow-tab-tag">Luxury Farmhouse</div>
+                        </div>
+                        <span class="pshow-tab-arrow"><svg viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg></span>
+                    </div>
+                    <div class="pshow-tab" data-index="3">
+                        <span class="pshow-tab-num">04</span>
+                        <div class="pshow-tab-info">
+                            <div class="pshow-tab-name">SMD Green Valley</div>
+                            <div class="pshow-tab-tag">Residential Plots</div>
+                        </div>
+                        <span class="pshow-tab-arrow"><svg viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg></span>
+                    </div>
+                    <div class="pshow-tab" data-index="4">
+                        <span class="pshow-tab-num">05</span>
+                        <div class="pshow-tab-info">
+                            <div class="pshow-tab-name">SMD Imperial Township</div>
+                            <div class="pshow-tab-tag">Township Villas</div>
+                        </div>
+                        <span class="pshow-tab-arrow"><svg viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg></span>
+                    </div>
+                    <div class="pshow-progress">
+                        <div class="pshow-progress-fill" id="pshowProgressFill"></div>
+                    </div>
+                </div>
+
+                <!-- DISPLAY -->
+                <div class="pshow-display" id="pshowDisplay">
+
+                    <div class="pshow-scene active" data-index="0">
+                        <div class="pshow-scene-bg">
                             <div class="arch-scene arch-1">
                                 <div class="arch-h"><span></span><span></span><span></span></div>
                                 <div class="arch-balcony"></div>
                             </div>
-                            <div class="proj-panel-overlay"></div>
-                            <div class="proj-panel-gradient"></div>
+                            <div class="pshow-scene-overlay"></div>
+                            <div class="pshow-scene-gradient"></div>
                         </div>
-                        <div class="proj-panel-ghost-num">01</div>
-                        <div class="proj-panel-corner tl"></div>
-                        <div class="proj-panel-corner tr"></div>
-                        <div class="proj-panel-corner bl"></div>
-                        <div class="proj-panel-content">
-                            <p class="proj-panel-tag">Farmhouse Villas</p>
-                            <h3 class="proj-panel-name">SMD Golden Residency</h3>
-                            <p class="proj-panel-loc"><svg viewBox="0 0 24 24" width="12" height="12"
-                                    stroke="currentColor" fill="none" stroke-width="2">
+                        <div class="pshow-scene-ghost">01</div>
+                        <div class="pshow-corner tl"></div>
+                        <div class="pshow-corner tr"></div>
+                        <div class="pshow-corner bl"></div>
+                        <div class="pshow-scene-content">
+                            <p class="pshow-scene-tag">Farmhouse Villas</p>
+                            <h3 class="pshow-scene-name">SMD Golden Residency</h3>
+                            <p class="pshow-scene-loc"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+                                    stroke-width="2">
                                     <path
                                         d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 </svg>Sector 150, Noida Expressway</p>
-                            <div class="proj-panel-divider"></div>
-                            <div class="proj-panel-meta">
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Starting Price</div>
-                                    <div class="proj-meta-price">₹45 Lakh</div>
+                            <div class="pshow-scene-divider"></div>
+                            <div class="pshow-scene-meta">
+                                <div>
+                                    <div class="pshow-meta-label">Starting Price</div>
+                                    <div class="pshow-meta-price">₹45 Lakh</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">ROI</div>
-                                    <div class="proj-meta-value">40–55%</div>
+                                <div>
+                                    <div class="pshow-meta-label">ROI</div>
+                                    <div class="pshow-meta-value">40–55%</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Status</div>
-                                    <div class="proj-meta-value">RERA Ready</div>
+                                <div>
+                                    <div class="pshow-meta-label">Status</div>
+                                    <div class="pshow-meta-value">RERA Ready</div>
                                 </div>
                             </div>
-                            <a href="#contact" class="proj-panel-cta">Schedule Visit <svg viewBox="0 0 24 24">
+                            <a href="#contact" class="pshow-scene-cta">Schedule Visit <svg viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg></a>
                         </div>
                     </div>
 
-                    <!-- Panel 2 -->
-                    <div class="proj-panel">
-                        <div class="proj-panel-bg">
+                    <div class="pshow-scene" data-index="1">
+                        <div class="pshow-scene-bg">
                             <div class="arch-scene arch-2">
                                 <div class="arch-h"><span></span><span></span><span></span><span></span></div>
                                 <div class="arch-balcony"></div>
                             </div>
-                            <div class="proj-panel-overlay"></div>
-                            <div class="proj-panel-gradient"></div>
+                            <div class="pshow-scene-overlay"></div>
+                            <div class="pshow-scene-gradient"></div>
                         </div>
-                        <div class="proj-panel-ghost-num">02</div>
-                        <div class="proj-panel-corner tl"></div>
-                        <div class="proj-panel-corner tr"></div>
-                        <div class="proj-panel-corner bl"></div>
-                        <div class="proj-panel-content">
-                            <p class="proj-panel-tag">Premium Land</p>
-                            <h3 class="proj-panel-name">SMD Royal Greens</h3>
-                            <p class="proj-panel-loc"><svg viewBox="0 0 24 24" width="12" height="12"
-                                    stroke="currentColor" fill="none" stroke-width="2">
+                        <div class="pshow-scene-ghost">02</div>
+                        <div class="pshow-corner tl"></div>
+                        <div class="pshow-corner tr"></div>
+                        <div class="pshow-corner bl"></div>
+                        <div class="pshow-scene-content">
+                            <p class="pshow-scene-tag">Premium Land</p>
+                            <h3 class="pshow-scene-name">SMD Royal Greens</h3>
+                            <p class="pshow-scene-loc"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+                                    stroke-width="2">
                                     <path
                                         d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 </svg>Yamuna Expressway, Greater Noida</p>
-                            <div class="proj-panel-divider"></div>
-                            <div class="proj-panel-meta">
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Starting Price</div>
-                                    <div class="proj-meta-price">₹25 Lakh</div>
+                            <div class="pshow-scene-divider"></div>
+                            <div class="pshow-scene-meta">
+                                <div>
+                                    <div class="pshow-meta-label">Starting Price</div>
+                                    <div class="pshow-meta-price">₹25 Lakh</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">ROI</div>
-                                    <div class="proj-meta-value">35–50%</div>
+                                <div>
+                                    <div class="pshow-meta-label">ROI</div>
+                                    <div class="pshow-meta-value">35–50%</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Status</div>
-                                    <div class="proj-meta-value">RERA Ready</div>
+                                <div>
+                                    <div class="pshow-meta-label">Status</div>
+                                    <div class="pshow-meta-value">RERA Ready</div>
                                 </div>
                             </div>
-                            <a href="#contact" class="proj-panel-cta">Schedule Visit <svg viewBox="0 0 24 24">
+                            <a href="#contact" class="pshow-scene-cta">Schedule Visit <svg viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg></a>
                         </div>
                     </div>
 
-                    <!-- Panel 3 -->
-                    <div class="proj-panel">
-                        <div class="proj-panel-bg">
+                    <div class="pshow-scene" data-index="2">
+                        <div class="pshow-scene-bg">
                             <div class="arch-scene arch-3">
                                 <div class="arch-h"><span></span><span></span></div>
                                 <div class="arch-balcony"></div>
                             </div>
-                            <div class="proj-panel-overlay"></div>
-                            <div class="proj-panel-gradient"></div>
+                            <div class="pshow-scene-overlay"></div>
+                            <div class="pshow-scene-gradient"></div>
                         </div>
-                        <div class="proj-panel-ghost-num">03</div>
-                        <div class="proj-panel-corner tl"></div>
-                        <div class="proj-panel-corner tr"></div>
-                        <div class="proj-panel-corner bl"></div>
-                        <div class="proj-panel-content">
-                            <p class="proj-panel-tag">Luxury Farmhouse</p>
-                            <h3 class="proj-panel-name">SMD Elite Farms</h3>
-                            <p class="proj-panel-loc"><svg viewBox="0 0 24 24" width="12" height="12"
-                                    stroke="currentColor" fill="none" stroke-width="2">
+                        <div class="pshow-scene-ghost">03</div>
+                        <div class="pshow-corner tl"></div>
+                        <div class="pshow-corner tr"></div>
+                        <div class="pshow-corner bl"></div>
+                        <div class="pshow-scene-content">
+                            <p class="pshow-scene-tag">Luxury Farmhouse</p>
+                            <h3 class="pshow-scene-name">SMD Elite Farms</h3>
+                            <p class="pshow-scene-loc"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+                                    stroke-width="2">
                                     <path
                                         d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 </svg>NH-58, Ghaziabad</p>
-                            <div class="proj-panel-divider"></div>
-                            <div class="proj-panel-meta">
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Starting Price</div>
-                                    <div class="proj-meta-price">₹60 Lakh</div>
+                            <div class="pshow-scene-divider"></div>
+                            <div class="pshow-scene-meta">
+                                <div>
+                                    <div class="pshow-meta-label">Starting Price</div>
+                                    <div class="pshow-meta-price">₹60 Lakh</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">ROI</div>
-                                    <div class="proj-meta-value">45–60%</div>
+                                <div>
+                                    <div class="pshow-meta-label">ROI</div>
+                                    <div class="pshow-meta-value">45–60%</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Status</div>
-                                    <div class="proj-meta-value">Ready to Move</div>
+                                <div>
+                                    <div class="pshow-meta-label">Status</div>
+                                    <div class="pshow-meta-value">Ready to Move</div>
                                 </div>
                             </div>
-                            <a href="#contact" class="proj-panel-cta">Schedule Visit <svg viewBox="0 0 24 24">
+                            <a href="#contact" class="pshow-scene-cta">Schedule Visit <svg viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg></a>
                         </div>
                     </div>
 
-                    <!-- Panel 4 -->
-                    <div class="proj-panel">
-                        <div class="proj-panel-bg">
+                    <div class="pshow-scene" data-index="3">
+                        <div class="pshow-scene-bg">
                             <div class="arch-scene arch-4">
                                 <div class="arch-h"><span></span><span></span><span></span><span></span><span></span>
                                 </div>
                                 <div class="arch-balcony"></div>
                             </div>
-                            <div class="proj-panel-overlay"></div>
-                            <div class="proj-panel-gradient"></div>
+                            <div class="pshow-scene-overlay"></div>
+                            <div class="pshow-scene-gradient"></div>
                         </div>
-                        <div class="proj-panel-ghost-num">04</div>
-                        <div class="proj-panel-corner tl"></div>
-                        <div class="proj-panel-corner tr"></div>
-                        <div class="proj-panel-corner bl"></div>
-                        <div class="proj-panel-content">
-                            <p class="proj-panel-tag">Residential Plots</p>
-                            <h3 class="proj-panel-name">SMD Green Valley</h3>
-                            <p class="proj-panel-loc"><svg viewBox="0 0 24 24" width="12" height="12"
-                                    stroke="currentColor" fill="none" stroke-width="2">
+                        <div class="pshow-scene-ghost">04</div>
+                        <div class="pshow-corner tl"></div>
+                        <div class="pshow-corner tr"></div>
+                        <div class="pshow-corner bl"></div>
+                        <div class="pshow-scene-content">
+                            <p class="pshow-scene-tag">Residential Plots</p>
+                            <h3 class="pshow-scene-name">SMD Green Valley</h3>
+                            <p class="pshow-scene-loc"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+                                    stroke-width="2">
                                     <path
                                         d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 </svg>Greater Faridabad, Haryana</p>
-                            <div class="proj-panel-divider"></div>
-                            <div class="proj-panel-meta">
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Starting Price</div>
-                                    <div class="proj-meta-price">₹18 Lakh</div>
+                            <div class="pshow-scene-divider"></div>
+                            <div class="pshow-scene-meta">
+                                <div>
+                                    <div class="pshow-meta-label">Starting Price</div>
+                                    <div class="pshow-meta-price">₹18 Lakh</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">ROI</div>
-                                    <div class="proj-meta-value">30–45%</div>
+                                <div>
+                                    <div class="pshow-meta-label">ROI</div>
+                                    <div class="pshow-meta-value">30–45%</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Status</div>
-                                    <div class="proj-meta-value">EMI Available</div>
+                                <div>
+                                    <div class="pshow-meta-label">Status</div>
+                                    <div class="pshow-meta-value">EMI Available</div>
                                 </div>
                             </div>
-                            <a href="#contact" class="proj-panel-cta">Schedule Visit <svg viewBox="0 0 24 24">
+                            <a href="#contact" class="pshow-scene-cta">Schedule Visit <svg viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg></a>
                         </div>
                     </div>
 
-                    <!-- Panel 5 -->
-                    <div class="proj-panel">
-                        <div class="proj-panel-bg">
+                    <div class="pshow-scene" data-index="4">
+                        <div class="pshow-scene-bg">
                             <div class="arch-scene arch-5">
                                 <div class="arch-h"><span></span><span></span><span></span></div>
                                 <div class="arch-balcony"></div>
                             </div>
-                            <div class="proj-panel-overlay"></div>
-                            <div class="proj-panel-gradient"></div>
+                            <div class="pshow-scene-overlay"></div>
+                            <div class="pshow-scene-gradient"></div>
                         </div>
-                        <div class="proj-panel-ghost-num">05</div>
-                        <div class="proj-panel-corner tl"></div>
-                        <div class="proj-panel-corner tr"></div>
-                        <div class="proj-panel-corner bl"></div>
-                        <div class="proj-panel-content">
-                            <p class="proj-panel-tag">Township Villas</p>
-                            <h3 class="proj-panel-name">SMD Imperial Township</h3>
-                            <p class="proj-panel-loc"><svg viewBox="0 0 24 24" width="12" height="12"
-                                    stroke="currentColor" fill="none" stroke-width="2">
+                        <div class="pshow-scene-ghost">05</div>
+                        <div class="pshow-corner tl"></div>
+                        <div class="pshow-corner tr"></div>
+                        <div class="pshow-corner bl"></div>
+                        <div class="pshow-scene-content">
+                            <p class="pshow-scene-tag">Township Villas</p>
+                            <h3 class="pshow-scene-name">SMD Imperial Township</h3>
+                            <p class="pshow-scene-loc"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+                                    stroke-width="2">
                                     <path
                                         d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 </svg>Bulandshahr Road, UP</p>
-                            <div class="proj-panel-divider"></div>
-                            <div class="proj-panel-meta">
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Starting Price</div>
-                                    <div class="proj-meta-price">₹32 Lakh</div>
+                            <div class="pshow-scene-divider"></div>
+                            <div class="pshow-scene-meta">
+                                <div>
+                                    <div class="pshow-meta-label">Starting Price</div>
+                                    <div class="pshow-meta-price">₹32 Lakh</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">ROI</div>
-                                    <div class="proj-meta-value">35–55%</div>
+                                <div>
+                                    <div class="pshow-meta-label">ROI</div>
+                                    <div class="pshow-meta-value">35–55%</div>
                                 </div>
-                                <div class="proj-meta-item">
-                                    <div class="proj-meta-label">Status</div>
-                                    <div class="proj-meta-value">Early Pricing</div>
+                                <div>
+                                    <div class="pshow-meta-label">Status</div>
+                                    <div class="pshow-meta-value">Early Pricing</div>
                                 </div>
                             </div>
-                            <a href="#contact" class="proj-panel-cta">Schedule Visit <svg viewBox="0 0 24 24">
+                            <a href="#contact" class="pshow-scene-cta">Schedule Visit <svg viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg></a>
                         </div>
                     </div>
 
-                </div><!-- /proj-cards-container -->
-            </div><!-- /proj-right -->
-        </div><!-- /projects-sticky -->
+                </div><!-- /pshow-display -->
+            </div><!-- /pshow-layout -->
+        </div><!-- /pshow-inner -->
     </section>
     <div class="sep"></div>
     <!-- ═══ DIRECTOR — 3 Directors ═══ -->
@@ -1276,8 +3785,8 @@
         }
         animCursor();
         document.querySelectorAll(
-            'a,button,.why-card,.test-card,.gallery-item,.project-card,.social-icon,.test-arrow,.proj-arrow,.director-card'
-            ).forEach(el => {
+            'a,button,.why-card,.test-card,.gallery-item,.project-card,.social-icon,.test-arrow,.pshow-tab,.director-card'
+        ).forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cur.style.width = '18px';
                 cur.style.height = '18px';
@@ -1505,8 +4014,6 @@
                 });
             });
 
-            /* Project panels — handled inside sticky scroll IIFE */
-
             /* Gallery */
             gsap.utils.toArray('.gallery-item').forEach((el, i) => {
                 gsap.fromTo(el, {
@@ -1575,159 +4082,67 @@
             });
         }
 
-        /* ── PROJECTS STICKY SCROLL ── */
+        /* ── PROJECTS SHOWCASE (click-tab, autoplay, no scroll-jacking) ── */
         (function() {
             const TOTAL = 5;
+            const AUTOPLAY_MS = 5500;
             let current = 0;
-            let isAnimating = false;
-            const container = document.getElementById('projContainer');
-            const numEl = document.getElementById('projNum');
-            const fillEl = document.getElementById('projFill');
-            const panels = document.querySelectorAll('.proj-panel');
-            const section = document.getElementById('projects');
+            let autoTimer = null;
+            let progressStart = 0;
+            let progressRAF = null;
 
-            function isMobile() {
-                return window.innerWidth <= 768;
+            const tabs = document.querySelectorAll('.pshow-tab');
+            const scenes = document.querySelectorAll('.pshow-scene');
+            const progressFill = document.getElementById('pshowProgressFill');
+
+            function renderProgress(elapsed) {
+                const pct = Math.min(100, (elapsed / AUTOPLAY_MS) * 100);
+                progressFill.style.width = pct + '%';
+                if (pct < 100) {
+                    progressRAF = requestAnimationFrame(() => renderProgress(performance.now() - progressStart));
+                }
             }
 
-            function goTo(idx) {
-                if (isAnimating) return;
-                if (idx < 0 || idx >= TOTAL) return;
-                isAnimating = true;
-                panels[current].classList.remove('active');
+            function startProgress() {
+                cancelAnimationFrame(progressRAF);
+                progressFill.style.width = '0%';
+                progressStart = performance.now();
+                progressRAF = requestAnimationFrame(() => renderProgress(0));
+            }
+
+            function goTo(idx, userInitiated) {
+                idx = (idx + TOTAL) % TOTAL;
+                if (idx === current && !userInitiated) return;
                 current = idx;
-                panels[current].classList.add('active');
-                /* Use px so it works on both desktop (static %) and mobile (static layout) */
-                const panelW = container.parentElement.offsetWidth;
-                container.style.transform = `translateX(-${current * panelW}px)`;
-                numEl.textContent = String(current + 1).padStart(2, '0');
-                fillEl.style.width = ((current + 1) / TOTAL * 100) + '%';
-                setTimeout(() => {
-                    isAnimating = false;
-                }, 820);
+                tabs.forEach(t => t.classList.toggle('active', parseInt(t.dataset.index) === current));
+                scenes.forEach(s => s.classList.toggle('active', parseInt(s.dataset.index) === current));
+                if (userInitiated) resetAutoplay();
+                startProgress();
             }
 
-            /* Recalculate on resize */
-            window.addEventListener('resize', () => {
-                const panelW = container.parentElement.offsetWidth;
-                container.style.transition = 'none';
-                container.style.transform = `translateX(-${current * panelW}px)`;
-                setTimeout(() => {
-                    container.style.transition = '';
-                }, 50);
-            });
-
-            /* Buttons */
-            document.getElementById('projNext').addEventListener('click', () => goTo(current + 1));
-            document.getElementById('projPrev').addEventListener('click', () => goTo(current - 1));
-
-            /* ── DESKTOP: scroll-driven + exit trap fix ── */
-            let scrollAcc = 0;
-            let lastScrollY = window.scrollY;
-            const SCROLL_THRESHOLD = 80;
-            let exitLock = false;
-
-            function exitSection(direction) {
-                if (exitLock) return;
-                exitLock = true;
-                const sRect = section.getBoundingClientRect();
-                const target = direction === 'down' ?
-                    window.scrollY + sRect.bottom + 2 :
-                    window.scrollY + sRect.top - 2;
-                window.scrollTo({
-                    top: target,
-                    behavior: 'smooth'
-                });
-                setTimeout(() => {
-                    exitLock = false;
-                    scrollAcc = 0;
-                }, 900);
+            function resetAutoplay() {
+                clearInterval(autoTimer);
+                autoTimer = setInterval(() => goTo(current + 1, false), AUTOPLAY_MS);
             }
 
-            window.addEventListener('scroll', () => {
-                if (isMobile()) return; // mobile handles its own touch
-                const rect = section.getBoundingClientRect();
-                const inView = rect.top <= 0 && rect.bottom >= window.innerHeight;
-                if (!inView) {
-                    lastScrollY = window.scrollY;
-                    scrollAcc = 0;
-                    return;
-                }
-
-                const delta = window.scrollY - lastScrollY;
-                lastScrollY = window.scrollY;
-                scrollAcc += delta;
-
-                if (scrollAcc > SCROLL_THRESHOLD) {
-                    scrollAcc = 0;
-                    if (current < TOTAL - 1) {
-                        goTo(current + 1);
-                    } else {
-                        exitSection('down');
-                    }
-                } else if (scrollAcc < -SCROLL_THRESHOLD) {
-                    scrollAcc = 0;
-                    if (current > 0) {
-                        goTo(current - 1);
-                    } else {
-                        exitSection('up');
-                    }
-                }
-            }, {
-                passive: true
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => goTo(parseInt(tab.dataset.index), true));
             });
 
-            /* Keyboard */
-            document.addEventListener('keydown', e => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top > 100 || rect.bottom < 0) return;
-                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
-                if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goTo(current - 1);
-            });
+            /* init */
+            resetAutoplay();
+            startProgress();
 
-            /* ── MOBILE: swipe up/down to change slides (section stays in normal flow) ── */
-            let tStartY = 0;
-            section.addEventListener('touchstart', e => {
-                tStartY = e.touches[0].clientY;
-            }, {
-                passive: true
-            });
-            section.addEventListener('touchend', e => {
-                const dy = tStartY - e.changedTouches[0].clientY;
-                if (Math.abs(dy) < 40) return; // ignore tiny taps
-                dy > 0 ? goTo(current + 1) : goTo(current - 1);
-            }, {
-                passive: true
-            });
-
-            /* GSAP reveal */
-            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-                gsap.fromTo('.proj-left', {
-                    opacity: 0,
-                    x: -40
-                }, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: '#projects',
-                        start: 'top 80%'
-                    }
+            /* pause on hover for readability */
+            const layout = document.querySelector('.pshow-layout');
+            if (layout) {
+                layout.addEventListener('mouseenter', () => {
+                    clearInterval(autoTimer);
+                    cancelAnimationFrame(progressRAF);
                 });
-                gsap.fromTo('.proj-right', {
-                    opacity: 0,
-                    x: 40
-                }, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 1,
-                    delay: 0.15,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: '#projects',
-                        start: 'top 80%'
-                    }
+                layout.addEventListener('mouseleave', () => {
+                    resetAutoplay();
+                    startProgress();
                 });
             }
         })();
