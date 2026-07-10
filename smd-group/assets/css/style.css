@@ -786,3 +786,29 @@ footer{
   .collage-main,.collage-secondary,.about-image-collage{display:none}
 }
 
+.wa-chat-container { 
+position: fixed; bottom: 20px; right: 20px; z-index: 1000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.wa-float-button {
+background-color: #00b859!important; color: #FFFFFF!important; width: 60px; height: 60px; border-radius: 50%; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s ease, box-shadow 0.2s ease;padding:0!important;
+}
+.wa-float-button:hover {
+transform: scale(1.1); box-shadow: 0 6px 16px rgba(0,0,0,0.3); 
+}
+.wa-float-button svg { width: 32px; height: 32px; }
+.wa-chat-widget { 
+background:#fff; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); width: 340px; max-width: 90vw; position: absolute; bottom: calc(100% + 15px); right: 0; display: flex; flex-direction: column; overflow: hidden; opacity: 0; transform: translateY(10px) scale(0.95); visibility: hidden; transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; transform-origin: bottom right;/*min-height:320px;*/
+}
+.wa-chat-widget.active { opacity: 1; transform: translateY(0) scale(1); visibility: visible; }
+.wa-widget-header {
+background-color: #00b859; color: #FFFFFF; padding: 16px; display: flex; align-items: center; gap: 12px;
+}
+.wa-widget-header img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.wa-brand-name { font-size: 1.1rem; font-weight: 700; color: #FFFFFF; }
+.wa-widget-close { margin-left: auto; background: none!important; border: none!important; color: #FFFFFF!important; font-size: 24px!important; line-height: 1; cursor: pointer; opacity: 0.8; transition: opacity 0.2s, transform 0.2s;box-shadow: none;padding:0!important; }
+.wa-widget-close:hover { opacity: 1; transform: rotate(90deg); }
+.wa-widget-body { background: url('https://www.joomdev.com/images/whatsapp-bg.png'); padding: 16px;min-height:120px; }
+.wa-widget-body-message {color:#000; background-color: #fff; border-radius: 8px; padding: 12px; font-size: 14.5px; line-height: 1.5; margin: 0; display: inline-block; box-shadow: 0 1px 1px rgba(0,0,0,0.05); }
+.wa-widget-footer { padding: 16px; /* background-color: #fff; border-top: 1px solid #f0f0f0;*/ }
+.wa-widget-footer a { background-color: #00b859; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; font-weight: 600; display: block; text-align: center; transition: opacity 0.2s; }
+.wa-widget-footer a:hover { opacity: 0.9; }
