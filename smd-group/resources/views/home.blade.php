@@ -1,1376 +1,1342 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="SMD Group — Building Wealth Through Luxury Living. Premium farmhouse projects, trusted land development, and high-ROI investments." />
-    <title>SMD Group – Building the Future. Creating Landmarks.</title>
-    @include('template/head')
-    <link rel="stylesheet" href="./assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMD Group | Luxury Farmhouses & Premium Land Developments — Building the Future, Creating Landmarks</title>
+<meta name="description" content="SMD Group is a trusted real estate developer offering premium residential & farmhouse plots across Uttar Pradesh and Uttarakhand. RERA-approved, transparent, and built on a decade of trust.">
+<meta name="keywords" content="SMD Group, luxury farmhouse, premium plots, Garhmukteshwar, Dehradun, real estate Uttarakhand, RERA approved plots">
+<link rel="canonical" href="https://summermultidevelopers.com/">
 
+<!-- Open Graph -->
+<meta property="og:title" content="SMD Group — Building the Future. Creating Landmarks.">
+<meta property="og:description" content="Premium residential & farmhouse plots across Uttar Pradesh & Uttarakhand. Trust, transparency and long-term value since day one.">
+<meta property="og:type" content="website">
+
+<!-- Preconnects for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+<!-- Custom -->
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=50 cy=50 r=46 fill=%22%230F2352%22/><text x=50 y=63 font-size=42 text-anchor=middle fill=%22%23C9A227%22 font-family=serif>S</text></svg>">
+<style>
+  /* ============================================================
+   SMD GROUP — Royal Luxury Real Estate
+   Design tokens: Navy/Royal Blue + Antique Gold + Ivory
+   ============================================================ */
+
+:root{
+  --navy-deep:#081633;
+  --navy:#0F2352;
+  --royal:#1B3A82;
+  --royal-light:#2C50A8;
+  --gold:#C9A227;
+  --gold-light:#E9CE7E;
+  --gold-soft:#F3E3B3;
+  --ivory:#FAF7EF;
+  --cream:#F1EBDC;
+  --charcoal:#171A21;
+  --muted:#6B7080;
+  --line:rgba(201,162,39,.35);
+
+  --font-display:'Cormorant Garamond', serif;
+  --font-body:'Manrope', sans-serif;
+
+  --radius-lg:26px;
+  --radius-md:16px;
+  --radius-sm:10px;
+
+  --shadow-soft:0 20px 60px -20px rgba(8,22,51,.35);
+  --shadow-gold:0 10px 30px -8px rgba(201,162,39,.45);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  color:var(--charcoal);
+  background:var(--ivory);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.font-display{
+  font-family:var(--font-display);
+  font-weight:600;
+  letter-spacing:.01em;
+}
+p{color:var(--muted);}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+::selection{background:var(--gold-soft);color:var(--navy-deep);}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:9px;}
+::-webkit-scrollbar-track{background:var(--ivory);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold),var(--royal));border-radius:10px;}
+
+/* ============ UTILITIES ============ */
+.section-pad{padding:120px 0;}
+@media(max-width:767px){.section-pad{padding:80px 0;}}
+
+.bg-navy{background:var(--navy-deep);color:#EDEFF6;}
+.bg-navy p{color:#B8BFD6;}
+.bg-navy h1,.bg-navy h2,.bg-navy h3{color:#fff;}
+.bg-cream{background:var(--cream);}
+.bg-ivory{background:var(--ivory);}
+
+.container-xl{max-width:1320px;margin:0 auto;padding:0 24px;}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--font-body);
+  font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--gold);font-weight:700;margin-bottom:18px;
+}
+.eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--gold);}
+.eyebrow.center{justify-content:center;}
+
+.section-title{
+  font-size:clamp(2.2rem,4vw,3.4rem);
+  line-height:1.12;margin-bottom:20px;
+}
+.section-title em{font-style:italic;color:var(--gold);}
+.section-sub{max-width:620px;font-size:1.05rem;line-height:1.8;}
+.mx-auto-text{margin-left:auto;margin-right:auto;text-align:center;}
+
+.btn-royal{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 34px;border-radius:100px;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:var(--navy-deep)!important;font-weight:700;font-size:.92rem;
+  letter-spacing:.03em;border:none;
+  box-shadow:var(--shadow-gold);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;
+}
+.btn-royal:hover{transform:translateY(-4px);box-shadow:0 18px 40px -10px rgba(201,162,39,.6);color:var(--navy-deep);}
+.btn-royal svg{transition:transform .35s;}
+.btn-royal:hover svg{transform:translateX(5px);}
+
+.btn-outline-royal{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 32px;border-radius:100px;
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;font-weight:600;font-size:.92rem;letter-spacing:.03em;
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(6px);
+  transition:all .4s;
+}
+.btn-outline-royal:hover{background:#fff;color:var(--navy-deep);border-color:#fff;}
+
+.divider-gold{
+  width:80px;height:3px;margin:0 auto 26px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  border-radius:4px;
+}
+
+/* Glassmorphism card */
+.glass{
+  background:rgba(255,255,255,.62);
+  border:1px solid rgba(255,255,255,.5);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:var(--shadow-soft);
+}
+.glass-dark{
+  background:rgba(15,35,82,.45);
+  border:1px solid rgba(201,162,39,.25);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+/* ============ PRELOADER ============ */
+#preloader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--navy-deep);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .7s ease, visibility .7s ease;
+}
+#preloader.hide{opacity:0;visibility:hidden;}
+.preload-crest{
+  width:74px;height:74px;border:1px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);color:var(--gold);font-size:1.6rem;
+  animation:crestSpin 1.8s linear infinite;
+  position:relative;
+}
+@keyframes crestSpin{
+  0%{transform:rotate(0deg) scale(1);}
+  50%{transform:rotate(180deg) scale(1.06);}
+  100%{transform:rotate(360deg) scale(1);}
+}
+
+/* ============ NAVBAR ============ */
+.navbar-royal{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:22px 0;
+  transition:all .5s cubic-bezier(.2,.8,.2,1);
+  background:transparent;
+}
+.navbar-royal.scrolled{
+  padding:12px 0;
+  background:rgba(8,22,51,.92);
+  backdrop-filter:blur(14px);
+  box-shadow:0 10px 30px -12px rgba(0,0,0,.4);
+}
+.navbar-royal .nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;}
+.brand-mark{
+  width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-weight:700;color:var(--gold);font-size:1.1rem;
+  background:radial-gradient(circle at 30% 30%,rgba(201,162,39,.18),transparent 70%);
+}
+.brand-text{line-height:1.05;}
+.brand-text b{font-family:var(--font-display);font-size:1.28rem;letter-spacing:.03em;display:block;color:#fff;}
+.brand-text span{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);}
+
+.nav-links{display:flex;align-items:center;gap:34px;}
+.nav-links a{
+  color:#EDEFF6;font-size:.86rem;font-weight:600;letter-spacing:.02em;
+  position:relative;padding:6px 0;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
+  background:var(--gold);transition:width .35s;
+}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.navbar-royal .btn-royal{padding:12px 26px;font-size:.82rem;}
+
+.nav-toggle{display:none;background:none;border:1px solid var(--gold);border-radius:8px;padding:9px 12px;}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--gold);margin:4px 0;}
+
+@media(max-width:991px){
+  .nav-links{
+    position:fixed;top:0;right:-100%;width:78%;max-width:340px;height:100vh;
+    background:var(--navy-deep);flex-direction:column;justify-content:center;
+    gap:26px;transition:right .5s cubic-bezier(.2,.8,.2,1);
+    box-shadow:-20px 0 60px rgba(0,0,0,.4);padding:40px;
+  }
+  .nav-links.open{right:0;}
+  .nav-toggle{display:block;}
+  .navbar-royal .btn-royal{display:none;}
+}
+
+/* ============ HERO ============ */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;color:#fff;}
+.hero .swiper{height:100%;}
+.hero-slide{
+  position:relative;height:100%;width:100%;
+  background-size:cover;background-position:center;
+}
+.hero-slide::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,16,40,.55) 0%,rgba(8,16,40,.55) 40%,rgba(6,13,33,.92) 100%);
+}
+.hero-content{
+  position:absolute;inset:0;z-index:3;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:0 20px;
+}
+.hero-crest{
+  width:96px;height:96px;border:1px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin-bottom:26px;
+  position:relative;
+}
+.hero-crest::before{
+  content:"";position:absolute;inset:-10px;border:1px solid rgba(201,162,39,.35);border-radius:50%;
+}
+.hero-crest span{font-family:var(--font-display);color:var(--gold-light);font-size:1.7rem;letter-spacing:.05em;}
+
+.hero h1{
+  font-size:clamp(2.6rem,6vw,5.2rem);line-height:1.08;color:#fff;
+  max-width:1000px;text-shadow:0 8px 40px rgba(0,0,0,.35);
+}
+.hero h1 em{font-style:italic;color:var(--gold-light);}
+.hero-sub{max-width:640px;font-size:1.12rem;color:#DCE1F0;margin:22px auto 36px;line-height:1.8;}
+.hero-cta{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;}
+
+.hero-scroll{
+  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:4;
+  display:flex;flex-direction:column;align-items:center;gap:10px;color:#DCE1F0;font-size:.72rem;
+  letter-spacing:.28em;text-transform:uppercase;
+}
+.hero-scroll .line{width:1px;height:46px;background:linear-gradient(#fff,transparent);position:relative;overflow:hidden;}
+.hero-scroll .line::after{
+  content:"";position:absolute;top:-46px;left:0;width:100%;height:46px;background:var(--gold);
+  animation:scrollLine 2.2s infinite ease-in-out;
+}
+@keyframes scrollLine{0%{top:-46px;}100%{top:46px;}}
+
+.hero .swiper-pagination{bottom:110px!important;z-index:5;}
+.hero .swiper-pagination-bullet{background:#fff;opacity:.5;width:9px;height:9px;}
+.hero .swiper-pagination-bullet-active{background:var(--gold);opacity:1;width:26px;border-radius:6px;}
+
+/* ============ ABOUT ============ */
+.about-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);}
+.about-media img{height:100%;object-fit:cover;transition:transform 1.2s ease;}
+.about-media:hover img{transform:scale(1.06);}
+.about-badge{
+  position:absolute;bottom:-28px;right:-20px;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:var(--navy-deep);border-radius:50%;width:150px;height:150px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;box-shadow:var(--shadow-gold);
+}
+.about-badge b{font-family:var(--font-display);font-size:2.1rem;line-height:1;}
+.about-badge span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-top:6px;}
+@media(max-width:767px){.about-badge{width:110px;height:110px;right:6px;bottom:-20px;}.about-badge b{font-size:1.5rem;}}
+
+.about-quote{
+  border-left:2px solid var(--gold);padding:6px 0 6px 22px;margin:26px 0;
+  font-family:var(--font-display);font-size:1.3rem;font-style:italic;color:var(--navy);
+}
+
+.stat-row{display:flex;flex-wrap:wrap;gap:0;margin-top:36px;border-top:1px solid rgba(0,0,0,.08);padding-top:30px;}
+.stat-item{flex:1 1 25%;min-width:130px;text-align:left;padding-right:14px;}
+.stat-item b{
+  font-family:var(--font-display);font-size:2.4rem;color:var(--navy);display:block;line-height:1;
+}
+.stat-item b span{color:var(--gold);}
+.stat-item small{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+
+/* ============ PROPERTY CARDS (Featured) ============ */
+.prop-card{
+  position:relative;border-radius:var(--radius-md);overflow:hidden;
+  height:460px;box-shadow:var(--shadow-soft);
+}
+.prop-card img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform 1.1s cubic-bezier(.2,.8,.2,1);
+}
+.prop-card:hover img{transform:scale(1.12);}
+.prop-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,16,40,0) 30%,rgba(8,16,40,.94) 100%);
+  z-index:1;
+}
+.prop-tag{
+  position:absolute;top:20px;left:20px;z-index:2;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:var(--navy-deep);font-size:.7rem;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;padding:7px 16px;border-radius:100px;
+}
+.prop-body{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px;color:#fff;
+  transform:translateY(58px);transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.prop-card:hover .prop-body{transform:translateY(0);}
+.prop-body h4{font-size:1.4rem;color:#fff;margin-bottom:4px;}
+.prop-body .loc{font-size:.8rem;color:var(--gold-light);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.prop-desc{
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height .5s ease,opacity .4s ease;
+}
+.prop-card:hover .prop-desc{max-height:100px;opacity:1;margin-bottom:12px;}
+.prop-desc p{color:#C9D0E4;font-size:.86rem;line-height:1.6;margin:0;}
+.prop-link{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;color:var(--gold-light);}
+.prop-link svg{transition:transform .35s;}
+.prop-card:hover .prop-link svg{transform:translateX(5px);}
+
+/* ============ SIGNATURE PROJECTS SLIDER ============ */
+.sig-slider{padding-bottom:70px!important;}
+.sig-card{
+  position:relative;border-radius:var(--radius-md);overflow:hidden;height:520px;
+  box-shadow:0 30px 70px -20px rgba(0,0,0,.55);
+}
+.sig-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s ease;}
+.sig-card:hover img{transform:scale(1.08);}
+.sig-card::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(8,16,40,.05) 20%,rgba(8,16,40,.96) 100%);
+}
+.sig-num{
+  position:absolute;top:22px;right:22px;z-index:2;
+  font-family:var(--font-display);font-size:1rem;color:var(--gold-light);
+  border:1px solid var(--gold);border-radius:50%;width:46px;height:46px;
+  display:flex;align-items:center;justify-content:center;
+}
+.sig-info{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:30px;color:#fff;}
+.sig-info .eyebrow{margin-bottom:10px;font-size:.66rem;}
+.sig-info h3{font-size:1.7rem;color:#fff;margin-bottom:8px;}
+.sig-info p{color:#C9D0E4;font-size:.88rem;margin-bottom:16px;
+  max-height:0;overflow:hidden;opacity:0;transition:.5s;
+}
+.sig-card:hover .sig-info p{max-height:120px;opacity:1;}
+.sig-cta{
+  display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;
+  color:var(--navy-deep);background:var(--gold-light);padding:10px 20px;border-radius:100px;
+  transition:.35s;
+}
+.sig-cta:hover{background:#fff;}
+
+.swiper-button-next.sig-next,.swiper-button-prev.sig-prev{
+  width:52px;height:52px;border:1px solid rgba(255,255,255,.35);border-radius:50%;
+  color:var(--gold-light);top:auto;bottom:0;
+}
+.swiper-button-next.sig-next::after,.swiper-button-prev.sig-prev::after{font-size:1rem;}
+.swiper-button-prev.sig-prev{left:calc(50% - 62px);}
+.swiper-button-next.sig-next{right:calc(50% - 62px);}
+.sig-slider .swiper-pagination{bottom:8px!important;}
+.bg-navy .swiper-pagination-bullet{background:#fff;opacity:.4;}
+.bg-navy .swiper-pagination-bullet-active{background:var(--gold);opacity:1;}
+
+/* ============ DIRECTORS ============ */
+.dir-card{
+  border-radius:var(--radius-md);overflow:hidden;background:#fff;
+  box-shadow:var(--shadow-soft);transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  height:100%;
+}
+.dir-card:hover{transform:translateY(-10px);}
+.dir-media{position:relative;height:340px;overflow:hidden;}
+.dir-media img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease,filter .6s;filter:grayscale(35%);}
+.dir-card:hover .dir-media img{transform:scale(1.07);filter:grayscale(0%);}
+.dir-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(8,16,40,.75) 100%);}
+.dir-social{
+  position:absolute;bottom:16px;left:16px;z-index:2;display:flex;gap:10px;
+}
+.dir-social a{
+  width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:.8rem;backdrop-filter:blur(6px);transition:.3s;
+}
+.dir-social a:hover{background:var(--gold);color:var(--navy-deep);border-color:var(--gold);}
+.dir-info{padding:28px 26px 30px;text-align:center;}
+.dir-info h4{font-size:1.4rem;color:var(--navy);margin-bottom:4px;}
+.dir-role{
+  display:inline-block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);font-weight:700;margin-bottom:14px;
+}
+.dir-info p{font-size:.9rem;line-height:1.75;}
+
+/* ============ TESTIMONIALS ============ */
+.testi-slider{padding:10px 4px 60px;}
+.testi-card{
+  border-radius:var(--radius-md);padding:44px 36px;height:100%;
+}
+.testi-quote-icon{font-family:var(--font-display);font-size:4.2rem;color:var(--gold);line-height:.4;margin-bottom:18px;display:block;}
+.testi-stars{color:var(--gold);letter-spacing:3px;margin-bottom:16px;font-size:.9rem;}
+.testi-card p.testi-text{color:#EDEFF6;font-size:1.02rem;line-height:1.85;margin-bottom:26px;font-family:var(--font-display);font-size:1.2rem;font-style:italic;}
+.testi-person{display:flex;align-items:center;gap:14px;}
+.testi-person img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+.testi-person b{color:#fff;display:block;font-size:.95rem;}
+.testi-person span{color:var(--gold-light);font-size:.76rem;letter-spacing:.03em;}
+.testi-slider .swiper-pagination-bullet{background:#fff;opacity:.35;}
+.testi-slider .swiper-pagination-bullet-active{background:var(--gold);opacity:1;}
+
+/* ============ GALLERY ============ */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:14px;}
+.gallery-item{position:relative;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;}
+.gallery-item:hover img{transform:scale(1.15);}
+.gallery-item::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,16,40,0),rgba(8,16,40,.65));
+  opacity:0;transition:opacity .4s;
+}
+.gallery-item:hover::after{opacity:1;}
+.gallery-item .g-icon{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.4rem;opacity:0;transition:opacity .4s,transform .4s;transform:scale(.7);z-index:2;
+}
+.gallery-item:hover .g-icon{opacity:1;transform:scale(1);}
+.gallery-item.big{grid-column:span 2;grid-row:span 2;}
+.gallery-item .g-label{position:absolute;bottom:12px;left:14px;z-index:2;color:#fff;font-size:.78rem;font-weight:700;opacity:0;transition:.4s;letter-spacing:.03em;}
+.gallery-item:hover .g-label{opacity:1;}
+@media(max-width:767px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
+  .gallery-item.big{grid-column:span 2;grid-row:span 1;}
+}
+
+/* ============ WHY CHOOSE US ============ */
+.why-card{
+  padding:38px 30px;border-radius:var(--radius-md);height:100%;
+  background:rgba(255,255,255,.05);border:1px solid rgba(201,162,39,.2);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),background .45s;
+}
+.why-card:hover{transform:translateY(-8px);background:rgba(201,162,39,.08);}
+.why-icon{
+  width:58px;height:58px;border-radius:14px;margin-bottom:22px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy-deep);font-size:1.4rem;
+}
+.why-card h4{color:#fff;font-size:1.18rem;margin-bottom:10px;}
+.why-card p{font-size:.88rem;color:#B8BFD6;line-height:1.75;margin:0;}
+
+.counters-strip{
+  margin-top:70px;border-top:1px solid rgba(201,162,39,.25);padding-top:44px;
+  display:flex;flex-wrap:wrap;text-align:center;
+}
+.counter-item{flex:1 1 25%;min-width:140px;}
+.counter-item b{font-family:var(--font-display);font-size:3rem;color:var(--gold-light);display:block;line-height:1;}
+.counter-item small{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#B8BFD6;font-weight:700;}
+
+/* ============ CONTACT ============ */
+.contact-form-card{border-radius:var(--radius-lg);padding:48px;box-shadow:var(--shadow-soft);}
+.form-control-royal{
+  width:100%;padding:15px 18px;border-radius:var(--radius-sm);border:1px solid rgba(0,0,0,.12);
+  background:#fff;font-family:var(--font-body);font-size:.92rem;margin-bottom:18px;transition:.3s;
+}
+.form-control-royal:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,39,.15);}
+textarea.form-control-royal{resize:none;min-height:130px;}
+
+.contact-info-item{display:flex;gap:18px;align-items:flex-start;margin-bottom:30px;}
+.contact-info-icon{
+  width:52px;height:52px;flex:none;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:var(--navy-deep);font-size:1.15rem;
+}
+.contact-info-item h5{color:#fff;font-size:1.02rem;margin-bottom:4px;}
+.contact-info-item p{color:#B8BFD6;font-size:.9rem;margin:0;}
+.map-frame{border-radius:var(--radius-md);overflow:hidden;border:1px solid rgba(201,162,39,.25);height:260px;margin-top:10px;}
+.map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(30%) contrast(1.05);}
+
+/* ============ FOOTER ============ */
+footer.footer-royal{background:var(--navy-deep);color:#B8BFD6;padding-top:90px;}
+.footer-brand p{color:#8891AC;font-size:.9rem;line-height:1.8;margin:18px 0 22px;}
+.footer-col h6{color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px;font-weight:800;}
+.footer-col ul{list-style:none;padding:0;margin:0;}
+.footer-col ul li{margin-bottom:12px;}
+.footer-col ul li a{font-size:.9rem;color:#B8BFD6;transition:.3s;}
+.footer-col ul li a:hover{color:var(--gold-light);padding-left:4px;}
+.footer-social{display:flex;gap:12px;margin-top:8px;}
+.footer-social a{
+  width:38px;height:38px;border-radius:50%;border:1px solid rgba(201,162,39,.35);
+  display:flex;align-items:center;justify-content:center;color:var(--gold-light);transition:.3s;
+}
+.footer-social a:hover{background:var(--gold);color:var(--navy-deep);}
+.footer-bottom{border-top:1px solid rgba(201,162,39,.18);margin-top:60px;padding:26px 0;text-align:center;font-size:.8rem;color:#75809E;}
+.footer-bottom a{color:var(--gold-light);}
+
+/* ============ MISC ============ */
+.back-to-top{
+  position:fixed;bottom:28px;right:28px;z-index:900;width:50px;height:50px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy-deep);
+  display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-gold);
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:.4s;
+}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+
+.whatsapp-float{
+  position:fixed;bottom:28px;left:28px;z-index:900;width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+  box-shadow:0 12px 30px -8px rgba(37,211,102,.6);animation:pulseWA 2.4s infinite;
+}
+@keyframes pulseWA{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+[data-aos]{transition-timing-function:cubic-bezier(.2,.8,.2,1)!important;}
+
+/* Lightbox modal */
+.lightbox-modal .modal-content{background:transparent;border:none;}
+.lightbox-modal img{border-radius:var(--radius-md);width:100%;}
+.lightbox-modal .btn-close{filter:invert(1);position:absolute;top:-40px;right:0;}
+
+@media(max-width:575px){
+  .contact-form-card{padding:28px;}
+  .stat-item{flex:1 1 50%;margin-bottom:20px;}
+  .counter-item{flex:1 1 50%;margin-bottom:24px;}
+}
+
+</style>
 </head>
-
 <body>
 
-    @include('template/header')
+<!-- ============ PRELOADER ============ -->
+<div id="preloader"><div class="preload-crest"><span style="animation:none;font-size:1.1rem;">S</span></div></div>
 
-
-    <!-- ═══ main ═══ -->
-    <section id="main">
-        <div class="main-bg"></div>
-        <div class="main-grid"></div>
-        <div class="main-vertical-line"></div>
-
-        <!-- Hero image (replace src with your actual photo) -->
-        <div class="main-illustration" aria-hidden="true">
-            <img src="./assets/img/hero/hero-main.jpg" alt="SMD Group luxury farmhouse" loading="eager">
-        </div>
-
-        <div class="main-content">
-            <p class="main-eyebrow" id="mainEyebrow">Premium Real Estate &nbsp;|&nbsp; Est. 2014</p>
-            <h1 class="main-title" id="mainTitle">
-                <span class="line">Building Wealth</span>
-                <span class="line">Through <span class="gold">Luxury</span></span>
-                <span class="line">Living</span>
-            </h1>
-            <p class="main-subtitle" id="mainSubtitle">Where Visionary Architecture Meets Timeless Investment</p>
-            <div class="main-actions" id="mainActions">
-                <a href="#projects" class="btn-primary"><span>Explore Projects</span></a>
-                <a href="#contact" class="btn-outline">Schedule a Visit</a>
-            </div>
-            <div class="main-stats" id="mainStats">
-                <div class="main-stat">
-                    <div class="stat-num">5+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="main-stat">
-                    <div class="stat-num">1000+</div>
-                    <div class="stat-label">Happy Investors</div>
-                </div>
-                <div class="main-stat">
-                    <div class="stat-num">50+</div>
-                    <div class="stat-label">Premium Projects</div>
-                </div>
-            </div>
-        </div>
-        {{-- <div class="main-scroll" id="mainScroll">
-            <div class="main-scroll-line"></div>Scroll to Explore
-        </div> --}}
-    </section>
-    <div class="sep"></div>
-
-    <!-- ═══ ABOUT ═══ -->
-    <section id="about">
-        <div class="about-inner">
-            <div class="about-image-collage" data-reveal="left">
-                <div class="collage-main">
-                    <div class="collage-img-placeholder">
-                        <img src="./assets/img/gallery/gallery-1.webp" alt="SMD Group luxury farmhouse project"
-                            loading="lazy">
-                    </div>
-                </div>
-                <div class="collage-secondary">
-                    <div class="collage-img-placeholder">
-                        <img src="./assets/img/gallery/gallery-1.webp" alt="SMD Group villa exterior" loading="lazy">
-                    </div>
-                </div>
-                <div class="collage-accent">
-                    <div class="collage-accent-inner">10<sup>+</sup><span>Years of<br />Excellence</span></div>
-                </div>
-            </div>
-            <div class="about-content" data-reveal="right">
-                <p class="section-eyebrow">Our Legacy</p>
-                <h2 class="section-title">Crafting <span class="gold">Landmark</span><br />Addresses</h2>
-                <span class="gold-divider"></span>
-                <p class="about-text">SMD Group — Summer Multi Developers — stands as one of India's most trusted
-                    luxury real estate brands, transforming prime land into extraordinary living experiences. With over
-                    a decade of excellence, we have established ourselves as pioneers in premium farmhouse development
-                    and curated land investment.</p>
-                <p class="about-text">Our philosophy merges architectural mastery with nature's serenity, creating
-                    properties that are not merely homes, but generational wealth-building assets in prime locations.
-                </p>
-                <div class="about-timeline">
-                    <div class="timeline-item">
-                        <span class="timeline-year">2014</span>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-info">
-                            <h4>Foundation of SMD Group</h4>
-                            <p>Established with a vision to redefine luxury real estate in India</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-year">2016</span>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-info">
-                            <h4>First Premium Farmhouse Project</h4>
-                            <p>Launched our flagship farmhouse community, setting new standards</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-year">2019</span>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-info">
-                            <h4>500+ Investors Milestone</h4>
-                            <p>Crossed the landmark of 500 satisfied investors across all projects</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-year">2024</span>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-info">
-                            <h4>1000+ Happy Investors</h4>
-                            <p>Celebrating a decade of trust, growth, and luxury living delivered</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="sep"></div>
-
-    <!-- ═══ WHY CHOOSE US ═══ -->
-    <section id="why">
-        <div class="why-inner">
-            <div class="why-header" data-reveal="up">
-                <p class="section-eyebrow">Our Distinction</p>
-                <h2 class="section-title">Why <span class="gold">Investors</span> Trust SMD</h2>
-                <p
-                    style="font-family:var(--font-italic);font-size:1.1rem;font-style:italic;color:var(--text-dim);max-width:480px;margin:0 auto;font-weight:300;">
-                    Six pillars that define our commitment to excellence and investor satisfaction</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon"><i class="fa-regular fa-circle-check"></i></div>
-                    <h3>Verified Properties</h3>
-                    <p>Every project is legally verified with clear titles, RERA compliance, and complete documentation.
-                        Invest with zero title risk and absolute confidence.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><i class="fa-solid fa-location-dot"></i></div>
-                    <h3>Prime Locations</h3>
-                    <p>Strategically selected plots in NCR's most coveted growth corridors — ensuring maximum
-                        appreciation and premium lifestyle access.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><i class="fa-regular fa-clipboard"></i></div>
-                    <h3>Transparent Deals</h3>
-                    <p>No hidden charges, no surprises. Our transparent pricing model and open-book policy ensure every
-                        transaction is crystal clear from start to finish.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><i class="fa-solid fa-scale-unbalanced-flip"></i></div>
-                    <h3>Legal Assistance</h3>
-                    <p>Dedicated legal team for seamless documentation, registry support, and end-to-end handholding
-                        through every step of your investment journey.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                    <h3>High ROI Investment</h3>
-                    <p>Consistent 30–60% appreciation in our project portfolios. Our prime land investments consistently
-                        outperform market benchmarks year after year.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><i class="fa-regular fa-house"></i></div>
-                    <h3>Luxury Farmhouse Living</h3>
-                    <p>Bespoke farmhouse experiences blending contemporary luxury with natural serenity — an exclusive
-                        lifestyle that defines modern premium living in India.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="sep"></div>
-
-    <!-- ═══ PROJECTS — Featured Properties ═══ -->
-    <section id="projects">
-        <div class="pgrid-inner">
-            <div class="pgrid-header" data-reveal="up">
-                <p class="section-eyebrow">Our Portfolio</p>
-                <h2 class="section-title">Signature <span class="gold">Projects</span></h2>
-                <p class="section-subtitle">Curated masterpieces across NCR's most coveted addresses — each a
-                    landmark investment opportunity.</p>
-            </div>
-
-            <div class="fprop-list">
-
-                <div class="fprop-row" data-reveal="up" style="z-index:1"
-                    data-pdf="https://summermultidevelopers.com/wp-content/uploads/2025/10/Anandvan-Brochure.pdf"
-                    role="button" tabindex="0" aria-label="View brochure PDF">
-                    <div class="fprop-media">
-                        <img src="{{ url('./assets/img/pro/pro1.jpg') }}" alt="SMD Golden Residency" loading="lazy">
-                        <span class="fprop-media-corner tl"></span>
-                        <span class="fprop-media-corner br"></span>
-                    </div>
-                    <div class="fprop-body">
-                        <p class="fprop-num">NO. 01</p>
-                        <h3 class="fprop-name">SMD Golden Residency</h3>
-                        <div class="fprop-fields">
-                            <div class="fprop-field"><span class="fprop-field-label">Type</span><span
-                                    class="fprop-field-value">Farmhouse Villas</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Location</span><span
-                                    class="fprop-field-value">Sector 150, Noida Expressway</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Starting Price</span><span
-                                    class="fprop-field-value gold">₹45 Lakh</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">ROI</span><span
-                                    class="fprop-field-value">40–55%</span></div>
-                        </div>
-                        <p class="fprop-desc">An address of quiet luxury on Noida Expressway — spacious farmhouse
-                            villas designed for weekend retreats and generational wealth alike, backed by clear titles
-                            and RERA-ready documentation.</p>
-                        <div class="fprop-actions">
-                            <span class="fprop-pdf-badge"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                    <path d="M14 2v6h6" />
-                                </svg>View Brochure PDF</span>
-                            <a href="#contact" class="fprop-cta" onclick="event.stopPropagation()">Schedule Visit
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="fprop-row" data-reveal="up" style="z-index:2;transition-delay:0.06s"
-                    data-pdf="https://summermultidevelopers.com/wp-content/uploads/2025/10/BROUCHER.FINAL01-1.pdf"
-                    role="button" tabindex="0" aria-label="View brochure PDF">
-                    <div class="fprop-media">
-                        <img src="{{ url('./assets/img/pro/pro1.jpg') }}" alt="SMD Royal Greens" loading="lazy">
-                        <span class="fprop-media-corner tl"></span>
-                        <span class="fprop-media-corner br"></span>
-                    </div>
-                    <div class="fprop-body">
-                        <p class="fprop-num">NO. 02</p>
-                        <h3 class="fprop-name">SMD Royal Greens</h3>
-                        <div class="fprop-fields">
-                            <div class="fprop-field"><span class="fprop-field-label">Type</span><span
-                                    class="fprop-field-value">Premium Land</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Location</span><span
-                                    class="fprop-field-value">Yamuna Expressway, Greater Noida</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Starting Price</span><span
-                                    class="fprop-field-value gold">₹25 Lakh</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">ROI</span><span
-                                    class="fprop-field-value">35–50%</span></div>
-                        </div>
-                        <p class="fprop-desc">Strategically positioned along the Yamuna Expressway growth corridor,
-                            these plots offer an accessible entry point into premium land ownership with strong
-                            long-term appreciation potential.</p>
-                        <div class="fprop-actions">
-                            <span class="fprop-pdf-badge"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                    <path d="M14 2v6h6" />
-                                </svg>View Brochure PDF</span>
-                            <a href="#contact" class="fprop-cta" onclick="event.stopPropagation()">Schedule Visit
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="fprop-row" data-reveal="up" style="z-index:3;transition-delay:0.12s"
-                    data-pdf="https://summermultidevelopers.com/wp-content/uploads/2025/10/Alaknanda-Farms-Brochue.pdf"
-                    role="button" tabindex="0" aria-label="View brochure PDF">
-                    <div class="fprop-media">
-                        <img src="{{ url('./assets/img/pro/pro1.jpg') }}" alt="SMD Elite Farms" loading="lazy">
-                        <span class="fprop-media-corner tl"></span>
-                        <span class="fprop-media-corner br"></span>
-                    </div>
-                    <div class="fprop-body">
-                        <p class="fprop-num">NO. 03</p>
-                        <h3 class="fprop-name">SMD Elite Farms</h3>
-                        <div class="fprop-fields">
-                            <div class="fprop-field"><span class="fprop-field-label">Type</span><span
-                                    class="fprop-field-value">Luxury Farmhouse</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Location</span><span
-                                    class="fprop-field-value">NH-58, Ghaziabad</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Starting Price</span><span
-                                    class="fprop-field-value gold">₹60 Lakh</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">ROI</span><span
-                                    class="fprop-field-value">45–60%</span></div>
-                        </div>
-                        <p class="fprop-desc">Ready-to-move luxury farmhouses along NH-58, built for those who want
-                            their investment and their weekend escape in one address — complete with premium finishes
-                            and expansive private grounds.</p>
-                        <div class="fprop-actions">
-                            <span class="fprop-pdf-badge"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                    <path d="M14 2v6h6" />
-                                </svg>View Brochure PDF</span>
-                            <a href="#contact" class="fprop-cta" onclick="event.stopPropagation()">Schedule Visit
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="fprop-row" data-reveal="up" style="z-index:4;transition-delay:0.18s"
-                    data-pdf="https://summermultidevelopers.com/wp-content/uploads/2025/11/Maple-Yards-Booklet.pdf"
-                    role="button" tabindex="0" aria-label="View brochure PDF">
-                    <div class="fprop-media">
-                        <img src="{{ url('./assets/img/pro/pro2.jpg') }}" alt="SMD Green Valley" loading="lazy">
-                        <span class="fprop-media-corner tl"></span>
-                        <span class="fprop-media-corner br"></span>
-                    </div>
-                    <div class="fprop-body">
-                        <p class="fprop-num">NO. 04</p>
-                        <h3 class="fprop-name">SMD Green Valley</h3>
-                        <div class="fprop-fields">
-                            <div class="fprop-field"><span class="fprop-field-label">Type</span><span
-                                    class="fprop-field-value">Residential Plots</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Location</span><span
-                                    class="fprop-field-value">Greater Faridabad, Haryana</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Starting Price</span><span
-                                    class="fprop-field-value gold">₹18 Lakh</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">ROI</span><span
-                                    class="fprop-field-value">30–45%</span></div>
-                        </div>
-                        <p class="fprop-desc">An accessible, EMI-friendly residential plot community in Greater
-                            Faridabad's emerging corridor — ideal for first-time investors looking to build equity in a
-                            rapidly developing region.</p>
-                        <div class="fprop-actions">
-                            <span class="fprop-pdf-badge"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                    <path d="M14 2v6h6" />
-                                </svg>View Brochure PDF</span>
-                            <a href="#contact" class="fprop-cta" onclick="event.stopPropagation()">Schedule Visit
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="fprop-row" data-reveal="up" style="z-index:5;transition-delay:0.24s"
-                    data-pdf="https://summermultidevelopers.com/wp-content/uploads/2025/12/Shri-Krishna-Enclave-Brochure_2025-1.pdf"
-                    role="button" tabindex="0" aria-label="View brochure PDF">
-                    <div class="fprop-media">
-                        <img src="{{ url('./assets/img/pro/pro3.jpg') }}" alt="SMD Imperial Township" loading="lazy">
-                        <span class="fprop-media-corner tl"></span>
-                        <span class="fprop-media-corner br"></span>
-                    </div>
-                    <div class="fprop-body">
-                        <p class="fprop-num">NO. 05</p>
-                        <h3 class="fprop-name">SMD Imperial Township</h3>
-                        <div class="fprop-fields">
-                            <div class="fprop-field"><span class="fprop-field-label">Type</span><span
-                                    class="fprop-field-value">Township Villas</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Location</span><span
-                                    class="fprop-field-value">Bulandshahr Road, UP</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">Starting Price</span><span
-                                    class="fprop-field-value gold">₹32 Lakh</span></div>
-                            <div class="fprop-field"><span class="fprop-field-label">ROI</span><span
-                                    class="fprop-field-value">35–55%</span></div>
-                        </div>
-                        <p class="fprop-desc">An upcoming township on Bulandshahr Road offering early-pricing advantage
-                            — planned with wide boulevards, community amenities, and villas designed for the next
-                            generation of NCR living.</p>
-                        <div class="fprop-actions">
-                            <span class="fprop-pdf-badge"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                    <path d="M14 2v6h6" />
-                                </svg>View Brochure PDF</span>
-                            <a href="#contact" class="fprop-cta" onclick="event.stopPropagation()">Schedule Visit
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- /fprop-list -->
-
-            <div class="pgrid-footer" data-reveal="up">
-                <p style="font-size:0.82rem;color:var(--text-dim);margin-bottom:20px">More premium addresses launching
-                    soon across NCR.</p>
-                <a href="#contact" class="btn-outline">Register Early Interest</a>
-            </div>
-        </div><!-- /pgrid-inner -->
-    </section>
-    <div class="sep"></div>
-    <!-- ═══ DIRECTOR — 3 Directors ═══ -->
-    <section id="director">
-        <div class="director-inner">
-            <div class="director-header" data-reveal="up">
-                <p class="section-eyebrow">Leadership</p>
-                <h2 class="section-title">Our <span class="gold">Visionary</span> Directors</h2>
-                <p
-                    style="font-family:var(--font-italic);font-size:1.1rem;font-style:italic;color:var(--text-dim);max-width:480px;margin:0 auto;font-weight:300;">
-                    The minds behind SMD's decade of excellence and growth</p>
-            </div>
-            <div class="directors-grid">
-
-                <!-- Director 1 -->
-                <div class="director-card" data-reveal="up">
-                    <div class="dir-portrait">
-                        <div class="dir-corner-ring"></div>
-                        <div class="dir-initials">SS</div>
-                    </div>
-                    <div class="dir-name">Mr. Sagar Sharma</div>
-                    <div class="dir-role">Founder & Managing Director</div>
-                    <div class="dir-divider"></div>
-                    <div class="dir-quote">"Real estate is not just about land — it is about legacy. Every project
-                        carries our promise of quality, transparency, and a wealthier tomorrow."</div>
-                    <p class="dir-bio">With over a decade of transformative leadership, Mr. Sagar founded SMD on a
-                        singular conviction — that every investor deserves access to premium, legally verified, high-ROI
-                        properties across NCR's most prime corridors.</p>
-                    <div class="dir-signature">Sagar Sharma</div>
-                    <div class="dir-creds">
-                        <span class="dir-cred">10+ Years</span>
-                        <span class="dir-cred">Founder</span>
-                        <span class="dir-cred">NCR Pioneer</span>
-                    </div>
-                </div>
-
-                <!-- Director 2 -->
-                <div class="director-card" data-reveal="up" style="transition-delay:0.1s">
-                    <div class="dir-portrait">
-                        <div class="dir-corner-ring"></div>
-                        <div class="dir-initials">RS</div>
-                    </div>
-                    <div class="dir-name">Mr. Rahul Sharma</div>
-                    <div class="dir-role">Director – Operations</div>
-                    <div class="dir-divider"></div>
-                    <div class="dir-quote">"Operational excellence is the backbone of trust. We deliver not just
-                        properties, but promises fulfilled on time, every time."</div>
-                    <p class="dir-bio">Mr. Rahul oversees end-to-end project delivery, legal compliance, and investor
-                        relations. His meticulous approach ensures every SMD project meets the highest standards of
-                        execution and transparency.</p>
-                    <div class="dir-signature">Rahul Sharma</div>
-                    <div class="dir-creds">
-                        <span class="dir-cred">Operations</span>
-                        <span class="dir-cred">Legal Head</span>
-                        <span class="dir-cred">RERA Expert</span>
-                    </div>
-                </div>
-
-                <!-- Director 3 -->
-                <div class="director-card" data-reveal="up" style="transition-delay:0.2s">
-                    <div class="dir-portrait">
-                        <div class="dir-corner-ring"></div>
-                        <div class="dir-initials">AV</div>
-                    </div>
-                    <div class="dir-name">Mr. Amit Verma</div>
-                    <div class="dir-role">Director – Strategy & Growth</div>
-                    <div class="dir-divider"></div>
-                    <div class="dir-quote">"The right land at the right time is the most powerful wealth instrument in
-                        India. Our mission is to put that power in the hands of every investor."</div>
-                    <p class="dir-bio">Mr. Amit drives SMD's strategic expansion into new growth corridors, identifying
-                        high-potential land parcels and crafting investment frameworks that deliver consistent,
-                        market-beating returns.</p>
-                    <div class="dir-signature">Amit Verma</div>
-                    <div class="dir-creds">
-                        <span class="dir-cred">Strategy</span>
-                        <span class="dir-cred">Investment</span>
-                        <span class="dir-cred">Growth</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <div class="sep"></div>
-
-    <!-- ═══ TESTIMONIALS ═══ -->
-    <section id="testimonials">
-        <div class="test-inner">
-            <div class="test-header" data-reveal="up">
-                <p class="section-eyebrow">Client Voices</p>
-                <h2 class="section-title">What Our <span class="gold">Investors</span> Say</h2>
-                <p
-                    style="font-family:var(--font-italic);font-size:1.1rem;font-style:italic;color:var(--text-dim);max-width:460px;margin:0 auto;font-weight:300;">
-                    Trusted by over 1000 investors across NCR — their success is our greatest achievement</p>
-            </div>
-            <div class="test-carousel">
-                <div class="test-track" id="testTrack">
-                    <div class="test-card">
-                        <span class="test-badge">Verified Investor</span>
-                        <div class="test-quote-icon">"</div>
-                        <div class="test-stars"><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg></div>
-                        <p class="test-text">My investment in SMD Golden Residency has appreciated by over 45% in 3
-                            years. The team was incredibly transparent throughout. Truly a premium experience.</p>
-                        <div class="test-author">
-                            <div class="test-avatar"><img src="{{ url('./assets/img/pro/pro1.jpg') }}"
-                                    alt="Rajesh Kumar" loading="lazy"></div>
-                            <div>
-                                <div class="test-name">Rajesh Kumar</div>
-                                <div class="test-role">Senior Investor, Delhi NCR</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="test-card">
-                        <span class="test-badge">Verified Investor</span>
-                        <div class="test-quote-icon">"</div>
-                        <div class="test-stars"><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg></div>
-                        <p class="test-text">SMD Group made my dream of owning a luxury farmhouse a reality. The legal
-                            process was seamless, documentation was perfect, and the team's support was exceptional.</p>
-                        <div class="test-author">
-                            <div class="test-avatar"><img src="./assets/img/testimonials/investor-2.jpg"
-                                    alt="Priya Sharma" loading="lazy"></div>
-                            <div>
-                                <div class="test-name">Priya Sharma</div>
-                                <div class="test-role">Business Owner, Noida</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="test-card">
-                        <span class="test-badge">Verified Investor</span>
-                        <div class="test-quote-icon">"</div>
-                        <div class="test-stars"><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg></div>
-                        <p class="test-text">The ROI on my SMD Green Valley investment exceeded all expectations.
-                            Transparent dealings, prime location, and a team that genuinely cares about investor
-                            outcomes. 10/10.</p>
-                        <div class="test-author">
-                            <div class="test-avatar"><img src="./assets/img/testimonials/investor-3.jpg"
-                                    alt="Anil Mehta" loading="lazy"></div>
-                            <div>
-                                <div class="test-name">Anil Mehta</div>
-                                <div class="test-role">Retired Govt. Officer, Ghaziabad</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="test-card">
-                        <span class="test-badge">Verified Investor</span>
-                        <div class="test-quote-icon">"</div>
-                        <div class="test-stars"><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg></div>
-                        <p class="test-text">As a first-time investor in farmhouse properties, SMD Group held my hand
-                            through every step. Clear documentation, honest communication, and a truly premium property.
-                        </p>
-                        <div class="test-author">
-                            <div class="test-avatar"><img src="./assets/img/testimonials/investor-4.jpg"
-                                    alt="Sunita Gupta" loading="lazy"></div>
-                            <div>
-                                <div class="test-name">Sunita Gupta</div>
-                                <div class="test-role">IT Professional, Gurugram</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="test-card">
-                        <span class="test-badge">Verified Investor</span>
-                        <div class="test-quote-icon">"</div>
-                        <div class="test-stars"><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg></div>
-                        <p class="test-text">Invested in two SMD projects — both delivered exceptional returns. The
-                            team's commitment to timelines and transparency is unmatched in this industry.</p>
-                        <div class="test-author">
-                            <div class="test-avatar"><img src="./assets/img/testimonials/investor-5.jpg"
-                                    alt="Vivek Bhatia" loading="lazy"></div>
-                            <div>
-                                <div class="test-name">Vivek Bhatia</div>
-                                <div class="test-role">Entrepreneur, Greater Noida</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="test-controls">
-                <div class="test-dot active" data-i="0"></div>
-                <div class="test-dot" data-i="1"></div>
-                <div class="test-dot" data-i="2"></div>
-                <div class="test-arrows">
-                    <div class="test-arrow" id="testPrev"><svg viewBox="0 0 24 24">
-                            <path d="M15 18l-6-6 6-6" />
-                        </svg></div>
-                    <div class="test-arrow" id="testNext"><svg viewBox="0 0 24 24">
-                            <path d="M9 18l6-6-6-6" />
-                        </svg></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="sep"></div>
-
-    <!-- ═══ INVESTMENT ═══ -->
-    <section id="investment">
-        <div class="inv-inner">
-            <div class="inv-grid">
-                <div class="inv-stats-grid" data-reveal="left">
-                    <div class="inv-stat-card">
-                        <div class="inv-big-num"><span class="counter" data-target="45">0</span><span
-                                class="inv-big-suffix">%</span></div>
-                        <p class="inv-stat-label">Average Appreciation</p>
-                        <div class="inv-bar">
-                            <div class="inv-bar-fill" data-width="75"></div>
-                        </div>
-                    </div>
-                    <div class="inv-stat-card">
-                        <div class="inv-big-num"><span class="counter" data-target="1000">0</span><span
-                                class="inv-big-suffix">+</span></div>
-                        <p class="inv-stat-label">Happy Investors</p>
-                        <div class="inv-bar">
-                            <div class="inv-bar-fill" data-width="90"></div>
-                        </div>
-                    </div>
-                    <div class="inv-stat-card">
-                        <div class="inv-big-num"><span class="counter" data-target="50">0</span><span
-                                class="inv-big-suffix">+</span></div>
-                        <p class="inv-stat-label">Completed Projects</p>
-                        <div class="inv-bar">
-                            <div class="inv-bar-fill" data-width="65"></div>
-                        </div>
-                    </div>
-                    <div class="inv-stat-card">
-                        <div class="inv-big-num"><span class="counter" data-target="10">0</span><span
-                                class="inv-big-suffix">+</span></div>
-                        <p class="inv-stat-label">Years of Excellence</p>
-                        <div class="inv-bar">
-                            <div class="inv-bar-fill" data-width="100"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="inv-content" data-reveal="right">
-                    <p class="section-eyebrow">Investment Returns</p>
-                    <h2 class="section-title">Why Land is <span class="gold">India's Safest</span> Investment</h2>
-                    <span class="gold-divider"></span>
-                    <p
-                        style="font-size:0.88rem;color:var(--text-dim);line-height:1.9;margin-bottom:36px;font-weight:300;">
-                        Land in India's growth corridors has consistently outperformed equity markets, mutual funds, and
-                        fixed deposits over any 5-year window. SMD's prime locations amplify these returns with premium
-                        positioning.</p>
-                    <div class="inv-features">
-                        <div class="inv-feature">
-                            <div class="inv-feature-icon"><svg viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg></div>
-                            <div class="inv-feature-text">
-                                <h4>Zero Depreciation Asset</h4>
-                                <p>Land never depreciates. Your principal is always protected.</p>
-                            </div>
-                        </div>
-                        <div class="inv-feature">
-                            <div class="inv-feature-icon"><svg viewBox="0 0 24 24">
-                                    <path
-                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                </svg></div>
-                            <div class="inv-feature-text">
-                                <h4>Consistent High ROI</h4>
-                                <p>35–60% appreciation across our portfolio over 3–5 years.</p>
-                            </div>
-                        </div>
-                        <div class="inv-feature">
-                            <div class="inv-feature-icon"><svg viewBox="0 0 24 24">
-                                    <path
-                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg></div>
-                            <div class="inv-feature-text">
-                                <h4>RERA Compliant</h4>
-                                <p>All projects legally registered, verified, and RERA compliant.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="sep"></div>
-
-    <!-- ═══ GALLERY ═══ -->
-    <section id="gallery">
-        <div class="gallery-inner">
-            <div class="gallery-header" data-reveal="up">
-                <p class="section-eyebrow">Visual Journey</p>
-                <h2 class="section-title">Project <span class="gold">Gallery</span></h2>
-                <p class="section-subtitle">A glimpse into the world of SMD luxury living</p>
-            </div>
-            <div class="gallery-masonry">
-                <div class="gallery-item" onclick="openLightbox('{{ url('./assets/img/pro/pro1.jpg') }}')">
-                    <div class="g-block" style="height:280px"><img src="{{ url('./assets/img/pro/pro1.jpg') }}"
-                            alt="SMD Group gallery photo 1" loading="lazy"
-                            style="width:100%;height:100%;object-fit:cover;display:block"></div>
-                    <div class="gallery-item-overlay"><svg viewBox="0 0 24 24">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('{{ url('./assets/img/pro/pro2.jpg') }}')">
-                    <div class="g-block" style="height:200px"><img src="{{ url('./assets/img/pro/pro2.jpg') }}"
-                            alt="SMD Group gallery photo 2" loading="lazy"
-                            style="width:100%;height:100%;object-fit:cover;display:block"></div>
-                    <div class="gallery-item-overlay"><svg viewBox="0 0 24 24">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('{{ url('./assets/img/pro/pro3.jpg') }}')">
-                    <div class="g-block" style="height:340px"><img src="{{ url('./assets/img/pro/pro3.jpg') }}"
-                            alt="SMD Group gallery photo 3" loading="lazy"
-                            style="width:100%;height:100%;object-fit:cover;display:block"></div>
-                    <div class="gallery-item-overlay"><svg viewBox="0 0 24 24">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('{{ url('./assets/img/pro/pro4.jpg') }}')">
-                    <div class="g-block" style="height:240px"><img src="{{ url('./assets/img/pro/pro4.jpg') }}"
-                            alt="SMD Group gallery photo 4" loading="lazy"
-                            style="width:100%;height:100%;object-fit:cover;display:block"></div>
-                    <div class="gallery-item-overlay"><svg viewBox="0 0 24 24">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('{{ url('./assets/img/pro/pro1.jpg') }}')">
-                    <div class="g-block" style="height:300px"><img src="{{ url('./assets/img/pro/pro1.jpg') }}"
-                            alt="SMD Group gallery photo 5" loading="lazy"
-                            style="width:100%;height:100%;object-fit:cover;display:block"></div>
-                    <div class="gallery-item-overlay"><svg viewBox="0 0 24 24">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('{{ url('./assets/img/pro/pro2.jpg') }}')">
-                    <div class="g-block" style="height:210px"><img src="{{ url('./assets/img/pro/pro2.jpg') }}"
-                            alt="SMD Group gallery photo 6" loading="lazy"
-                            style="width:100%;height:100%;object-fit:cover;display:block"></div>
-                    <div class="gallery-item-overlay"><svg viewBox="0 0 24 24">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('{{ url('./assets/img/pro/pro3.jpg') }}')">
-                    <div class="g-block" style="height:260px"><img src="{{ url('./assets/img/pro/pro3.jpg') }}"
-                            alt="SMD Group gallery photo 7" loading="lazy"
-                            style="width:100%;height:100%;object-fit:cover;display:block"></div>
-                    <div class="gallery-item-overlay"><svg viewBox="0 0 24 24">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('{{ url('./assets/img/pro/pro4.jpg') }}')">
-                    <div class="g-block" style="height:190px"><img src="{{ url('./assets/img/pro/pro4.jpg') }}"
-                            alt="SMD Group gallery photo 8" loading="lazy"
-                            style="width:100%;height:100%;object-fit:cover;display:block"></div>
-                    <div class="gallery-item-overlay"><svg viewBox="0 0 24 24">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg></div>
-                </div>
-            </div>
-            <div style="text-align:center;margin-top:56px">
-                <a href="#contact" class="btn-outline" style="display:inline-flex;align-items:center;gap:10px">View
-                    All Projects</a>
-            </div>
-        </div>
-    </section>
-    <div class="sep"></div>
-
-    <!-- ═══ CONTACT ═══ -->
-    <section id="contact">
-        <div class="contact-inner">
-            <div class="contact-left" data-reveal="left">
-                <p class="section-eyebrow">Get In Touch</p>
-                <h2 class="section-title">Begin Your <span class="gold">Investment</span> Journey</h2>
-                <span class="gold-divider"></span>
-                <p style="font-size:0.88rem;color:var(--text-dim);line-height:1.9;font-weight:300;margin-bottom:8px;">
-                    Our investment advisors are ready to craft a personalised real estate strategy for you. Reach out
-                    today and take the first step toward premium property ownership.</p>
-                <div class="contact-info-cards">
-                    <div class="contact-info-card">
-                        <div class="contact-icon"><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg></div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 98XXX XXXXX</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-card">
-                        <div class="contact-icon"><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg></div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@summermultidevelopers.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-card">
-                        <div class="contact-icon"><svg viewBox="0 0 24 24">
-                                <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg></div>
-                        <div>
-                            <h4>Office</h4>
-                            <p>Delhi NCR, India</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-map">
-                   <iframe width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBVizdQeh3udy11xDc5Ao2YStR2gLc-rfc&amp;q=A-324%2C%20Pacific%20Business%20Park%2C%20Sahibabad%2C%20Ghaziabad%2C%20Uttar%20Pradesh-201010&amp;maptype=roadmap&amp;zoom=14"><a href="https://www.maps.ie/create-google-map/">Embed Google Streetview</a></iframe>
-                </div>
-            </div>
-            <div data-reveal="right">
-                <p class="section-eyebrow" style="margin-bottom:16px">Send Enquiry</p>
-                <h3 class="section-title" style="font-size:1.8rem;margin-bottom:32px">Request a <span
-                        class="gold">Callback</span></h3>
-                <form class="contact-form" onsubmit="handleFormSubmit(event)">
-                    <div class="form-row">
-                        <div class="form-group"><input type="text" placeholder=" " id="fname" /><label
-                                class="form-label" for="fname">First Name</label></div>
-                        <div class="form-group"><input type="text" placeholder=" " id="lname" /><label
-                                class="form-label" for="lname">Last Name</label></div>
-                    </div>
-                    <div class="form-group"><input type="tel" placeholder=" " id="phone" /><label
-                            class="form-label" for="phone">Phone Number</label></div>
-                    <div class="form-group"><input type="email" placeholder=" " id="email" /><label
-                            class="form-label" for="email">Email Address</label></div>
-                    <div class="form-group">
-                        <select id="project">
-                            <option value="" disabled selected>Select Project of Interest</option>
-                            <option>SMD Golden Residency</option>
-                            <option>SMD Royal Greens</option>
-                            <option>SMD Elite Farms</option>
-                            <option>SMD Green Valley</option>
-                            <option>SMD Imperial Township</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder=" " id="message"></textarea><label class="form-label" for="message">Your Message</label>
-                    </div>
-                    <button type="submit" class="form-submit">Schedule Consultation</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- LIGHTBOX -->
-    <div id="lightbox">
-        <div class="lightbox-close" onclick="closeLightbox()">✕</div>
-        <div class="lightbox-content">
-            <img id="lightboxImg" src="" alt="SMD Group project"
-                style="width:100%;height:100%;object-fit:contain;display:block">
-        </div>
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar-royal" id="mainNav">
+  <div class="container-xl nav-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark">S</span>
+      <span class="brand-text"><b>SMD Group</b><span>Building the Future</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#properties">Properties</a>
+      <a href="#signature">Signature Projects</a>
+      <a href="#directors">Directors</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </div>
-    @include('template/footer')
+    <div class="d-flex align-items-center gap-3">
+      <a href="#contact" class="btn-royal d-none d-lg-inline-flex">Book a Site Visit <i class="bi bi-arrow-right"></i></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
 
-    <script>
-        /* ── CURSOR ── */
-        const cur = document.getElementById('cursor');
-        const curRing = document.getElementById('cursor-ring');
-        let mx = 0,
-            my = 0,
-            rx = 0,
-            ry = 0;
-        document.addEventListener('mousemove', e => {
-            mx = e.clientX;
-            my = e.clientY;
-            cur.style.left = mx + 'px';
-            cur.style.top = my + 'px'
-        });
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <div class="swiper heroSwiper">
+    <div class="swiper-wrapper">
 
-        function animCursor() {
-            rx += (mx - rx) * 0.12;
-            ry += (my - ry) * 0.12;
-            curRing.style.left = rx + 'px';
-            curRing.style.top = ry + 'px';
-            requestAnimationFrame(animCursor)
+      <div class="swiper-slide">
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80')"></div>
+      </div>
+      <div class="swiper-slide">
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80')"></div>
+      </div>
+      <div class="swiper-slide">
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1920&q=80')"></div>
+      </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-crest" data-aos="zoom-in"><span>S</span></div>
+    <div class="eyebrow center" data-aos="fade-up">SMD Group · Est. Trust, Built to Last</div>
+    <h1 data-aos="fade-up" data-aos-delay="100">Your Gateway to <em>Luxury</em> Farmhouse &amp; Landmark Living</h1>
+    <p class="hero-sub" data-aos="fade-up" data-aos-delay="200">Premium residential and farmhouse plots across the scenic landscapes of Uttar Pradesh &amp; Uttarakhand — where every parcel of land is a promise of security, growth and legacy.</p>
+    <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+      <a href="#properties" class="btn-royal">Explore Properties <i class="bi bi-arrow-right"></i></a>
+      <a href="#contact" class="btn-outline-royal">Book a Site Visit <i class="bi bi-calendar-check"></i></a>
+    </div>
+  </div>
+
+  <div class="hero-scroll"><span>Scroll</span><span class="line"></span></div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section class="section-pad bg-ivory" id="about">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="about-media" style="height:480px;">
+          <img class="parallax-img" src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80" alt="SMD Group luxury farmhouse property" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/smdabout/1200/900'">
+          <div class="about-badge">
+            <b>10<span>+</span></b>
+            <span>Years of Trust</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="eyebrow">About SMD Group</div>
+        <h2 class="section-title">Building the Future.<br><em>Creating Landmarks.</em></h2>
+        <p class="section-sub">SMD Group is a trusted name in the real estate and land development sector. With over a decade of expertise, we specialise in premium residential and farmhouse plots across the scenic landscapes of Uttar Pradesh &amp; Uttarakhand — helping every investor and family own land that offers security, growth and satisfaction.</p>
+        <div class="about-quote">"Every SMD project is built on the foundation of trust, transparency and long-term value."</div>
+        <p class="section-sub">Our vision is simple — to make land ownership secure, simple and profitable for everyone who dreams of a peaceful lifestyle or a rewarding investment.</p>
+
+        <div class="stat-row">
+          <div class="stat-item"><b><span data-count="10" data-suffix="+">0</span></b><small>Years Experience</small></div>
+          <div class="stat-item"><b><span data-count="5" data-suffix="">0</span></b><small>Signature Projects</small></div>
+          <div class="stat-item"><b><span data-count="2" data-suffix="">0</span></b><small>States Presence</small></div>
+          <div class="stat-item"><b><span data-count="500" data-suffix="+">0</span></b><small>Happy Families</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROPERTIES ============ -->
+<section class="section-pad bg-cream" id="properties">
+  <div class="container-xl">
+    <div class="text-center mx-auto-text mb-5" style="max-width:680px;" data-aos="fade-up">
+      <div class="eyebrow center">Featured Properties</div>
+      <h2 class="section-title">Handpicked Land &amp; <em>Farmhouse</em> Listings</h2>
+      <div class="divider-gold"></div>
+      <p class="section-sub mx-auto">A curated selection of our most sought-after developments — each verified, RERA-compliant and designed for long-term value.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="prop-card">
+          <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=900&q=80" alt="Anandvan Resorts plots" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/anandvan/800/900'">
+          <span class="prop-tag">Resort Plots</span>
+          <div class="prop-body">
+            <h4>Anandvan Resorts</h4>
+            <div class="loc"><i class="bi bi-geo-alt-fill"></i> Garhmukteshwar, Uttar Pradesh</div>
+            <div class="prop-desc"><p>A serene riverside retreat offering resort-style farmhouse plots surrounded by lush greenery.</p></div>
+            <a href="#contact" class="prop-link">View Details <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="prop-card">
+          <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80" alt="The Royal Orchid Farms" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/royalorchid/800/900'">
+          <span class="prop-tag">Premium Farms</span>
+          <div class="prop-body">
+            <h4>The Royal Orchid Farms</h4>
+            <div class="loc"><i class="bi bi-geo-alt-fill"></i> Garhmukteshwar, Uttar Pradesh</div>
+            <div class="prop-desc"><p>Boutique farmhouse parcels with orchard landscaping, designed for weekend luxury living.</p></div>
+            <a href="#contact" class="prop-link">View Details <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="prop-card">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Shri Krishna Enclave" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/krishnaenclave/800/900'">
+          <span class="prop-tag">Residential Plots</span>
+          <div class="prop-body">
+            <h4>Shri Krishna Enclave</h4>
+            <div class="loc"><i class="bi bi-geo-alt-fill"></i> Uttar Pradesh</div>
+            <div class="prop-desc"><p>Thoughtfully planned residential enclave with wide roads, greenbelts and modern infrastructure.</p></div>
+            <a href="#contact" class="prop-link">View Details <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIGNATURE PROJECTS ============ -->
+<section class="section-pad bg-navy" id="signature" style="overflow:hidden;">
+  <div class="container-xl">
+    <div class="text-center mx-auto-text mb-5" style="max-width:680px;" data-aos="fade-up">
+      <div class="eyebrow center">Signature Projects</div>
+      <h2 class="section-title">Landmarks That Define <em>SMD Group</em></h2>
+      <div class="divider-gold"></div>
+      <p class="section-sub mx-auto">Five flagship developments across Uttar Pradesh &amp; Uttarakhand — swipe through the collection that shapes our legacy.</p>
+    </div>
+  </div>
+
+  <div class="swiper sigSwiper sig-slider">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="sig-card">
+          <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=900&q=80" alt="Anandvan Resorts" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/sig1/800/1000'">
+          <div class="sig-num">01</div>
+          <div class="sig-info">
+            <div class="eyebrow" style="margin-bottom:8px;">Resort Living</div>
+            <h3>Anandvan Resorts</h3>
+            <p>Riverside resort plots blending nature and leisure, crafted for peaceful getaways.</p>
+            <a href="#contact" class="sig-cta">Enquire Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="sig-card">
+          <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80" alt="The Royal Orchid Farms" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/sig2/800/1000'">
+          <div class="sig-num">02</div>
+          <div class="sig-info">
+            <div class="eyebrow" style="margin-bottom:8px;">Premium Farms</div>
+            <h3>The Royal Orchid Farms</h3>
+            <p>Orchard-inspired boutique farmhouse plots for an elevated countryside lifestyle.</p>
+            <a href="#contact" class="sig-cta">Enquire Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="sig-card">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" alt="Alaknanda Farms" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/sig3/800/1000'">
+          <div class="sig-num">03</div>
+          <div class="sig-info">
+            <div class="eyebrow" style="margin-bottom:8px;">Nature Retreat</div>
+            <h3>Alaknanda Farms</h3>
+            <p>Set against the Himalayan foothills — plots designed for tranquillity and long-term growth.</p>
+            <a href="#contact" class="sig-cta">Enquire Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="sig-card">
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=900&q=80" alt="OAK Hill Gardens" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/sig4/800/1000'">
+          <div class="sig-num">04</div>
+          <div class="sig-info">
+            <div class="eyebrow" style="margin-bottom:8px;">Garden Community</div>
+            <h3>OAK Hill Gardens</h3>
+            <p>A landscaped gated community with manicured gardens and premium amenities.</p>
+            <a href="#contact" class="sig-cta">Enquire Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="sig-card">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Shri Krishna Enclave" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/sig5/800/1000'">
+          <div class="sig-num">05</div>
+          <div class="sig-info">
+            <div class="eyebrow" style="margin-bottom:8px;">Residential Enclave</div>
+            <h3>Shri Krishna Enclave</h3>
+            <p>Modern residential plots with wide avenues, greenbelts and full infrastructure.</p>
+            <a href="#contact" class="sig-cta">Enquire Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-button-prev sig-prev"></div>
+    <div class="swiper-button-next sig-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- ============ DIRECTORS ============ -->
+<section class="section-pad bg-ivory" id="directors">
+  <div class="container-xl">
+    <div class="text-center mx-auto-text mb-5" style="max-width:680px;" data-aos="fade-up">
+      <div class="eyebrow center">Leadership</div>
+      <h2 class="section-title">The Vision Behind <em>SMD Group</em></h2>
+      <div class="divider-gold"></div>
+      <p class="section-sub mx-auto">Meet the directors steering SMD Group's promise of trust, transparency and enduring value.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="dir-card">
+          <div class="dir-media">
+            <img src="./assets/img/pro.jpg" alt="Managing Director, SMD Group" loading="lazy">
+            <div class="dir-social">
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+          <div class="dir-info">
+            <h4>Mr. Sagar Sharma</h4>
+            <div class="dir-role">Managing Director</div>
+            <p>Leads SMD Group's overall vision with over 15 years in land development, driving every project from concept to legacy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="dir-card">
+          <div class="dir-media">
+            <img src="./assets/img/pro.jpg" alt="Director of Operations, SMD Group" loading="lazy">
+            <div class="dir-social">
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+          <div class="dir-info">
+            <h4>Mr. Rahul Sharma</h4>
+            <div class="dir-role">Director — Operations</div>
+            <p>Oversees documentation, compliance and site execution, ensuring every plot is delivered transparently and on time.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="dir-card">
+          <div class="dir-media">
+            <img src="./assets/img/pro.jpg" alt="Director of Sales & Marketing, SMD Group" loading="lazy">
+            <div class="dir-social">
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+          <div class="dir-info">
+            <h4>Mr. Amit Verma</h4>
+            <div class="dir-role">Director — Sales &amp; Marketing</div>
+            <p>Builds lasting relationships with investors and families, guiding them through a smooth, informed buying journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section-pad bg-navy" id="reviews">
+  <div class="container-xl">
+    <div class="text-center mx-auto-text mb-4" style="max-width:680px;" data-aos="fade-up">
+      <div class="eyebrow center">Customer Reviews</div>
+      <h2 class="section-title">Trusted by <em>Hundreds</em> of Families</h2>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="swiper testiSwiper testi-slider">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testi-card glass-dark">
+            <span class="testi-quote-icon">"</span>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">SMD Group made our farmhouse investment completely stress-free. Transparent paperwork, RERA-verified titles and a team that answered every question.</p>
+            <div class="testi-person">
+              <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Client photo" loading="lazy">
+              <div><b>Amit Khanna</b><span>Anandvan Resorts Owner</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testi-card glass-dark">
+            <span class="testi-quote-icon">"</span>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">The site visit alone convinced us — the location, the greenery and the honesty of the SMD team. We closed within two weeks.</p>
+            <div class="testi-person">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client photo" loading="lazy">
+              <div><b>Priya Nair</b><span>The Royal Orchid Farms</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testi-card glass-dark">
+            <span class="testi-quote-icon">"</span>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Ten years from now, this will be one of the best decisions we've made. SMD's end-to-end assistance made everything effortless.</p>
+            <div class="testi-person">
+              <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Client photo" loading="lazy">
+              <div><b>Suresh Rawat</b><span>Alaknanda Farms</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testi-card glass-dark">
+            <span class="testi-quote-icon">"</span>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Zero hidden charges, exactly as promised. The Shri Krishna Enclave plot has already appreciated beautifully.</p>
+            <div class="testi-person">
+              <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Client photo" loading="lazy">
+              <div><b>Neha Gupta</b><span>Shri Krishna Enclave</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section-pad bg-ivory" id="gallery">
+  <div class="container-xl">
+    <div class="text-center mx-auto-text mb-5" style="max-width:680px;" data-aos="fade-up">
+      <div class="eyebrow center">Gallery</div>
+      <h2 class="section-title">A Glimpse Into Our <em>Landmarks</em></h2>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="gallery-grid" data-aos="fade-up">
+      <div class="gallery-item big" data-full="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=70" alt="Farmhouse exterior" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/gal1/700/700'">
+        <div class="g-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+        <div class="g-label">Anandvan Resorts</div>
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=500&q=70" alt="Interior lounge" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/gal2/500/400'">
+        <div class="g-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+        <div class="g-label">Interiors</div>
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=500&q=70" alt="Mountain landscape" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/gal3/500/400'">
+        <div class="g-icon"><i class="bi bi-play-fill"></i></div>
+        <div class="g-label">Site Tour</div>
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=500&q=70" alt="Nature surroundings" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/gal4/500/400'">
+        <div class="g-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+        <div class="g-label">Alaknanda Farms</div>
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=500&q=70" alt="Orchid Farms view" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/gal5/500/400'">
+        <div class="g-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+        <div class="g-label">Royal Orchid Farms</div>
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=70" alt="Modern residence" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/gal6/500/400'">
+        <div class="g-icon"><i class="bi bi-play-fill"></i></div>
+        <div class="g-label">Drone Walkthrough</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox modal -->
+<div class="modal fade lightbox-modal" id="lightboxModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <img id="lightboxImg" src="" alt="Gallery preview">
+    </div>
+  </div>
+</div>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section-pad bg-navy">
+  <div class="container-xl">
+    <div class="text-center mx-auto-text mb-5" style="max-width:680px;" data-aos="fade-up">
+      <div class="eyebrow center">Why Choose Us</div>
+      <h2 class="section-title">The SMD <em>Promise</em></h2>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-patch-check-fill"></i></div>
+          <h4>RERA-Approved Properties</h4>
+          <p>Every plot is legally verified and RERA-compliant, so your investment is protected from day one.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <h4>Prime Locations</h4>
+          <p>Strategically chosen sites across Uttar Pradesh &amp; Uttarakhand — close to nature, yet well-connected.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-award-fill"></i></div>
+          <h4>10+ Years of Expertise</h4>
+          <p>A decade of experience in land development and farmhouse planning, built on measurable results.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-people-fill"></i></div>
+          <h4>End-to-End Assistance</h4>
+          <p>From documentation to possession, our team guides you through every step of ownership.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-shield-lock-fill"></i></div>
+          <h4>Zero Hidden Charges</h4>
+          <p>Complete transparency in every transaction — the price you're quoted is the price you pay.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-heart-fill"></i></div>
+          <h4>Trusted by Hundreds</h4>
+          <p>A growing community of satisfied investors and families who chose SMD for the long term.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="counters-strip" data-aos="fade-up">
+      <div class="counter-item"><b><span data-count="10" data-suffix="+">0</span></b><small>Years of Excellence</small></div>
+      <div class="counter-item"><b><span data-count="5" data-suffix="">0</span></b><small>Signature Projects</small></div>
+      <div class="counter-item"><b><span data-count="500" data-suffix="+">0</span></b><small>Happy Families</small></div>
+      <div class="counter-item"><b><span data-count="100" data-suffix="%">0</span></b><small>Transparent Dealings</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section-pad bg-cream" id="contact">
+  <div class="container-xl">
+    <div class="text-center mx-auto-text mb-5" style="max-width:680px;" data-aos="fade-up">
+      <div class="eyebrow center">Contact Us</div>
+      <h2 class="section-title">Let's Find Your <em>Perfect Plot</em></h2>
+      <div class="divider-gold"></div>
+      <p class="section-sub mx-auto">Book a site visit or speak with our team — we'll guide you through every step.</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-lg-7" data-aos="fade-right">
+        <div class="contact-form-card glass">
+          <form id="contactForm">
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" class="form-control-royal" placeholder="Full Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="tel" class="form-control-royal" placeholder="Phone Number" required>
+              </div>
+            </div>
+            <input type="email" class="form-control-royal" placeholder="Email Address" required>
+            <select class="form-control-royal">
+              <option>Interested Project — Anandvan Resorts</option>
+              <option>Interested Project — The Royal Orchid Farms</option>
+              <option>Interested Project — Alaknanda Farms</option>
+              <option>Interested Project — OAK Hill Gardens</option>
+              <option>Interested Project — Shri Krishna Enclave</option>
+            </select>
+            <textarea class="form-control-royal" placeholder="Tell us about your requirement..."></textarea>
+            <button type="submit" class="btn-royal w-100 justify-content-center">Send Enquiry <i class="bi bi-send"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+          <div><h5>Call Us</h5><p>+91 8307 050 700<br>+91 9548 051 243</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+          <div><h5>Email Us</h5><p>info@summermultidevelopers.com</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <div><h5>Head Office</h5><p>A-324, Pacific Business Park, Sahibabad, Ghaziabad, Uttar Pradesh – 201010</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="bi bi-building"></i></div>
+          <div><h5>Dehradun Office</h5><p>Gali No. 5, NTPC Colony, Pondha, Dehradun, Uttarakhand – 248007</p></div>
+        </div>
+
+        <div class="map-frame">
+          <iframe src="https://maps.google.com/maps?q=Pacific%20Business%20Park%20Sahibabad%20Ghaziabad&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" title="SMD Group Head Office Location"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer-royal">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-4 footer-brand">
+        <div class="brand">
+          <span class="brand-mark">S</span>
+          <span class="brand-text"><b style="color:#fff;">SMD Group</b><span>Building the Future</span></span>
+        </div>
+        <p>Premium plots &amp; luxury farmhouses across Delhi NCR, Uttar Pradesh and Uttarakhand. Invest in land that grows with time and builds your future.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/share/1Fvk9VGm1x/" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/smdgr_oup" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://wa.me/918307050700" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://youtube.com/@smd_group-smd" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4 footer-col">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#properties">Properties</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-4 footer-col">
+        <h6>Our Projects</h6>
+        <ul>
+          <li><a href="#signature">Anandvan Resorts</a></li>
+          <li><a href="#signature">The Royal Orchid Farms</a></li>
+          <li><a href="#signature">Alaknanda Farms</a></li>
+          <li><a href="#signature">OAK Hill Gardens</a></li>
+          <li><a href="#signature">Shri Krishna Enclave</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-4 footer-col">
+        <h6>Contact Info</h6>
+        <ul>
+          <li><a href="tel:+918307050700"><i class="bi bi-telephone-fill me-1"></i> +91 8307 050 700</a></li>
+          <li><a href="mailto:info@summermultidevelopers.com"><i class="bi bi-envelope-fill me-1"></i> info@summermultidevelopers.com</a></li>
+          <li><span><i class="bi bi-geo-alt-fill me-1"></i> Ghaziabad, Uttar Pradesh</span></li>
+          <li><span><i class="bi bi-geo-alt-fill me-1"></i> Dehradun, Uttarakhand</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Copyright © 2026 <a href="#home">SMD Group</a>. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Floating buttons -->
+<a href="https://wa.me/918307050700" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  /* ============================================================
+   SMD GROUP — Interactions & Animations
+   ============================================================ */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* Preloader */
+  window.addEventListener("load", function () {
+    var pre = document.getElementById("preloader");
+    setTimeout(function () { pre.classList.add("hide"); }, 400);
+  });
+
+  /* AOS init */
+  if (window.AOS) {
+    AOS.init({ duration: 900, once: true, offset: 80, easing: "ease-out-cubic" });
+  }
+
+  /* Navbar scroll state */
+  var nav = document.getElementById("mainNav");
+  function onScroll() {
+    if (window.scrollY > 60) nav.classList.add("scrolled");
+    else nav.classList.remove("scrolled");
+
+    var btt = document.getElementById("backToTop");
+    if (window.scrollY > 500) btt.classList.add("show");
+    else btt.classList.remove("show");
+  }
+  window.addEventListener("scroll", onScroll);
+  onScroll();
+
+  /* Mobile nav toggle */
+  var toggle = document.getElementById("navToggle");
+  var links = document.getElementById("navLinks");
+  toggle.addEventListener("click", function () { links.classList.toggle("open"); });
+  links.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () { links.classList.remove("open"); });
+  });
+
+  /* Active link highlight */
+  var sections = document.querySelectorAll("section[id]");
+  var navAnchors = document.querySelectorAll(".nav-links a[href^='#']");
+  window.addEventListener("scroll", function () {
+    var pos = window.scrollY + 140;
+    sections.forEach(function (sec) {
+      if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
+        navAnchors.forEach(function (a) { a.classList.remove("active"); });
+        var match = document.querySelector(".nav-links a[href='#" + sec.id + "']");
+        if (match) match.classList.add("active");
+      }
+    });
+  });
+
+  /* Back to top */
+  document.getElementById("backToTop").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  /* Hero Swiper */
+  new Swiper(".heroSwiper", {
+    loop: true,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    speed: 1400,
+    autoplay: { delay: 5500, disableOnInteraction: false },
+    pagination: { el: ".hero .swiper-pagination", clickable: true }
+  });
+
+  /* Signature Projects Swiper */
+  new Swiper(".sigSwiper", {
+    slidesPerView: 1.08,
+    spaceBetween: 24,
+    centeredSlides: false,
+    loop: true,
+    autoplay: { delay: 4200, disableOnInteraction: true },
+    navigation: { nextEl: ".sig-next", prevEl: ".sig-prev" },
+    pagination: { el: ".sig-slider .swiper-pagination", clickable: true },
+    breakpoints: {
+      576: { slidesPerView: 1.4, spaceBetween: 24 },
+      768: { slidesPerView: 2.2, spaceBetween: 26 },
+      1200: { slidesPerView: 3.1, spaceBetween: 30 }
+    }
+  });
+
+  /* Testimonials Swiper */
+  new Swiper(".testiSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 26,
+    loop: true,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: ".testi-slider .swiper-pagination", clickable: true },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1200: { slidesPerView: 3 }
+    }
+  });
+
+  /* GSAP counters (About stats + Why choose us) */
+  function animateCounter(el) {
+    var target = parseFloat(el.getAttribute("data-count"));
+    var obj = { val: 0 };
+    if (window.gsap) {
+      gsap.to(obj, {
+        val: target,
+        duration: 2.2,
+        ease: "power2.out",
+        onUpdate: function () {
+          el.textContent = Math.floor(obj.val) + (el.getAttribute("data-suffix") || "");
         }
-        animCursor();
-        document.querySelectorAll(
-            'a,button,.why-card,.test-card,.gallery-item,.fprop-row,.social-icon,.test-arrow,.director-card'
-        ).forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cur.style.width = '18px';
-                cur.style.height = '18px';
-                curRing.style.width = '54px';
-                curRing.style.height = '54px'
-            });
-            el.addEventListener('mouseleave', () => {
-                cur.style.width = '10px';
-                cur.style.height = '10px';
-                curRing.style.width = '32px';
-                curRing.style.height = '32px'
-            });
-        });
+      });
+    } else {
+      el.textContent = target + (el.getAttribute("data-suffix") || "");
+    }
+  }
 
-        /* ── LOADER ── */
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                gsap.to('#loader', {
-                    opacity: 0,
-                    duration: 0.8,
-                    delay: 0.3,
-                    ease: 'power2.inOut',
-                    onComplete: () => {
-                        document.getElementById('loader').style.display = 'none';
-                        initAnimations();
-                    }
-                });
-            }, 2200);
-        });
+  var counted = new WeakSet();
+  var counterEls = document.querySelectorAll("[data-count]");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && !counted.has(entry.target)) {
+        counted.add(entry.target);
+        animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  counterEls.forEach(function (el) { io.observe(el); });
 
-        /* ── PARTICLES ── */
-        const canvas = document.getElementById('particles');
-        const ctx = canvas.getContext('2d');
-        let W, H, particles = [];
+  /* GSAP scroll reveal for section eyebrows / gold dividers (subtle) */
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".divider-gold").forEach(function (el) {
+      gsap.fromTo(el, { width: 0 }, {
+        width: 80, duration: 1.1, ease: "power2.out",
+        scrollTrigger: { trigger: el, start: "top 90%" }
+      });
+    });
 
-        function resizeCanvas() {
-            W = canvas.width = window.innerWidth;
-            H = canvas.height = window.innerHeight
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+    /* Parallax on about media + why-choose bg */
+    gsap.utils.toArray(".parallax-img").forEach(function (img) {
+      gsap.to(img, {
+        yPercent: 12,
+        ease: "none",
+        scrollTrigger: { trigger: img, start: "top bottom", end: "bottom top", scrub: true }
+      });
+    });
+  }
 
-        function createParticle() {
-            return {
-                x: Math.random() * W,
-                y: Math.random() * H,
-                size: Math.random() * 1.2 + 0.3,
-                speedX: (Math.random() - 0.5) * 0.25,
-                speedY: -Math.random() * 0.4 - 0.1,
-                alpha: Math.random() * 0.35 + 0.08,
-                decay: Math.random() * 0.0015 + 0.0008,
-                isEmerald: Math.random() > 0.6
-            }
-        }
-        for (let i = 0; i < 70; i++) particles.push(createParticle());
+  /* Lightbox for gallery */
+  var lightboxImg = document.getElementById("lightboxImg");
+  document.querySelectorAll(".gallery-item[data-full]").forEach(function (item) {
+    item.addEventListener("click", function () {
+      lightboxImg.src = item.getAttribute("data-full");
+      var modal = new bootstrap.Modal(document.getElementById("lightboxModal"));
+      modal.show();
+    });
+  });
 
-        function animParticles() {
-            ctx.clearRect(0, 0, W, H);
-            particles.forEach((p, i) => {
-                p.x += p.speedX;
-                p.y += p.speedY;
-                p.alpha -= p.decay;
-                if (p.alpha <= 0 || p.y < -10) {
-                    particles[i] = createParticle();
-                    particles[i].y = H + 10
-                }
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fillStyle = p.isEmerald ? `rgba(39,86,168,${p.alpha})` : `rgba(212,175,106,${p.alpha})`;
-                ctx.fill();
-            });
-            requestAnimationFrame(animParticles);
-        }
-        animParticles();
+  /* Contact form (front-end only demo submit) */
+  var form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector("button[type=submit]");
+      var original = btn.innerHTML;
+      btn.innerHTML = "Sending...";
+      setTimeout(function () {
+        btn.innerHTML = "Message Sent ✓";
+        form.reset();
+        setTimeout(function () { btn.innerHTML = original; }, 2600);
+      }, 900);
+    });
+  }
 
-        /* ── NAV ── */
-        const nav = document.getElementById('navbar');
-        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 80));
+});
 
-        /* ── MOBILE MENU ── */
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const hamburger = document.getElementById('hamburger');
-            menu.classList.toggle('open');
-            hamburger.classList.toggle('active');
-        }
-
-        function closeMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const hamburger = document.getElementById('hamburger');
-            menu.classList.remove('open');
-            hamburger.classList.remove('active');
-        }
-
-        /* ── ANIMATIONS ── */
-        function initAnimations() {
-            gsap.registerPlugin(ScrollTrigger);
-
-            /* main */
-            const tl = gsap.timeline();
-            tl.to('#mainEyebrow', {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.9,
-                    ease: 'power3.out'
-                })
-                .to('#mainTitle', {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: 'power3.out'
-                }, '-=0.5')
-                .to('#mainSubtitle', {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    ease: 'power3.out'
-                }, '-=0.6')
-                .to('#mainActions', {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.7,
-                    ease: 'power3.out'
-                }, '-=0.5')
-                .to('#mainStats', {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.7,
-                    ease: 'power3.out'
-                }, '-=0.4')
-                .to('#mainScroll', {
-                    opacity: 1,
-                    duration: 0.5
-                }, '-=0.2');
-
-            /* Reveal */
-            gsap.utils.toArray('[data-reveal="up"]').forEach(el => {
-                gsap.fromTo(el, {
-                    opacity: 0,
-                    y: 50
-                }, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: el,
-                        start: 'top 85%'
-                    }
-                });
-            });
-            gsap.utils.toArray('[data-reveal="left"]').forEach(el => {
-                gsap.fromTo(el, {
-                    opacity: 0,
-                    x: -60
-                }, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 1.1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: el,
-                        start: 'top 80%'
-                    }
-                });
-            });
-            gsap.utils.toArray('[data-reveal="right"]').forEach(el => {
-                gsap.fromTo(el, {
-                    opacity: 0,
-                    x: 60
-                }, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 1.1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: el,
-                        start: 'top 80%'
-                    }
-                });
-            });
-
-            /* Timeline */
-            document.querySelectorAll('.timeline-item').forEach((el, i) => {
-                gsap.to(el, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.7,
-                    delay: i * 0.15,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: '#about',
-                        start: 'top 60%'
-                    }
-                });
-            });
-
-            /* Why cards */
-            gsap.utils.toArray('.why-card').forEach((el, i) => {
-                gsap.fromTo(el, {
-                    opacity: 0,
-                    y: 30
-                }, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.7,
-                    delay: i * 0.08,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: '#why',
-                        start: 'top 70%'
-                    }
-                });
-            });
-
-
-            /* Director cards */
-            gsap.utils.toArray('.director-card').forEach((el, i) => {
-                gsap.fromTo(el, {
-                    opacity: 0,
-                    y: 40
-                }, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    delay: i * 0.12,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: '#director',
-                        start: 'top 70%'
-                    }
-                });
-            });
-
-            /* Gallery */
-            gsap.utils.toArray('.gallery-item').forEach((el, i) => {
-                gsap.fromTo(el, {
-                    opacity: 0,
-                    scale: 0.95
-                }, {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.7,
-                    delay: i * 0.06,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: '#gallery',
-                        start: 'top 70%'
-                    }
-                });
-            });
-
-            /* Counters */
-            document.querySelectorAll('.counter').forEach(el => {
-                const target = parseInt(el.dataset.target);
-                ScrollTrigger.create({
-                    trigger: el,
-                    start: 'top 80%',
-                    onEnter: () => {
-                        gsap.to({
-                            val: 0
-                        }, {
-                            val: target,
-                            duration: 2,
-                            ease: 'power2.out',
-                            onUpdate: function() {
-                                el.textContent = Math.round(this.targets()[0].val)
-                                    .toLocaleString()
-                            }
-                        });
-                    }
-                });
-            });
-
-            /* Investment bars */
-            document.querySelectorAll('.inv-bar-fill').forEach(el => {
-                const w = el.dataset.width;
-                ScrollTrigger.create({
-                    trigger: el,
-                    start: 'top 80%',
-                    onEnter: () => {
-                        el.style.width = w + '%'
-                    }
-                });
-            });
-
-            /* Contact cards */
-            gsap.utils.toArray('.contact-info-card').forEach((el, i) => {
-                gsap.to(el, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.6,
-                    delay: i * 0.1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: '#contact',
-                        start: 'top 75%'
-                    }
-                });
-            });
-        }
-
-
-
-
-        /* ── TESTIMONIALS ── */
-        const testTrack = document.getElementById('testTrack');
-        let testIdx = 0;
-        const testTotal = 3;
-
-        function getCardW() {
-            const c = testTrack.querySelector('.test-card');
-            return c ? c.offsetWidth + 2 : 0
-        }
-
-        function goTest(i) {
-            testIdx = i;
-            testTrack.style.transform = `translateX(-${testIdx*getCardW()}px)`;
-            document.querySelectorAll('.test-dot').forEach((d, j) => d.classList.toggle('active', j === testIdx));
-        }
-        document.getElementById('testNext').addEventListener('click', () => goTest((testIdx + 1) % testTotal));
-        document.getElementById('testPrev').addEventListener('click', () => goTest((testIdx - 1 + testTotal) % testTotal));
-        document.querySelectorAll('.test-dot').forEach(d => d.addEventListener('click', () => goTest(parseInt(d.dataset
-            .i))));
-        setInterval(() => goTest((testIdx + 1) % testTotal), 5000);
-
-        /* ── PROJECT BROCHURE PDFs ── */
-        document.querySelectorAll('.fprop-row[data-pdf]').forEach(card => {
-            const pdfUrl = card.dataset.pdf;
-            card.addEventListener('click', () => window.open(pdfUrl, '_blank', 'noopener'));
-            card.addEventListener('keydown', e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    window.open(pdfUrl, '_blank', 'noopener');
-                }
-            });
-        });
-
-        /* ── LIGHTBOX ── */
-        function openLightbox(src) {
-            if (src) document.getElementById('lightboxImg').src = src;
-            document.getElementById('lightbox').classList.add('open')
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('open')
-        }
-        document.getElementById('lightbox').addEventListener('click', e => {
-            if (e.target === e.currentTarget) closeLightbox()
-        });
-
-        /* ── FORM ── */
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('.form-submit');
-            btn.textContent = 'Sending...';
-            btn.style.opacity = '0.8';
-            setTimeout(() => {
-                btn.textContent = 'Message Sent ✓';
-                btn.style.background = 'linear-gradient(135deg,#1A3A6B,#2756A8)';
-                setTimeout(() => {
-                    btn.textContent = 'Schedule Consultation';
-                    btn.style.background = 'linear-gradient(135deg,var(--navy-mid),var(--navy-light))';
-                    btn.style.opacity = '1';
-                    e.target.reset()
-                }, 3000);
-            }, 1500);
-        }
-
-        /* ── TILT on why-cards ── */
-        document.querySelectorAll('.why-card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const r = card.getBoundingClientRect();
-                const x = (e.clientX - r.left) / r.width - 0.5;
-                const y = (e.clientY - r.top) / r.height - 0.5;
-                card.style.transform = `translateY(-4px) rotateX(${-y*5}deg) rotateY(${x*5}deg)`
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
-                card.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)'
-            });
-            card.addEventListener('mouseenter', () => {
-                card.style.transition = 'transform 0.1s'
-            });
-        });
-
-        /* ── SMOOTH SCROLL ── */
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const t = document.querySelector(a.getAttribute('href'));
-                if (t) {
-                    e.preventDefault();
-                    t.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    })
-                }
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const waContainer = document.querySelector('.wa-chat-container');
-            if (waContainer) {
-                const openButton = waContainer.querySelector('.wa-float-button');
-                const chatWidget = waContainer.querySelector('.wa-chat-widget');
-                const closeButton = waContainer.querySelector('.wa-widget-close');
-                if (!openButton || !chatWidget || !closeButton) return;
-
-                const toggleWidget = (e) => {
-                    e.stopPropagation();
-                    chatWidget.classList.toggle('active');
-                };
-                const closeWidget = () => chatWidget.classList.remove('active');
-
-                openButton.addEventListener('click', toggleWidget);
-                closeButton.addEventListener('click', closeWidget);
-
-                document.addEventListener('click', (e) => {
-                    if (!waContainer.contains(e.target) && chatWidget.classList.contains('active'))
-                        closeWidget();
-                });
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && chatWidget.classList.contains('active')) closeWidget();
-                });
-            }
-        });
-    </script>
+</script>
 </body>
-
 </html>
