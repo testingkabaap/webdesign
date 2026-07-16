@@ -239,7 +239,11 @@ section{position:relative;z-index:1;padding:110px 6%}
 .main-stats{
   display:flex;flex-wrap:wrap;gap:0;
   border-top:1px solid var(--border);padding-top:36px;
+<<<<<<< HEAD
   opacity:0;transform:translateY(20px);padding-bottom: 20px;
+=======
+  opacity:0;transform:translateY(20px);
+>>>>>>> e0eedb88cf99c1d2f973ade9bae1bace39ec8020
 }
 .main-stat{
   padding:0 48px 0 0;
