@@ -7,616 +7,13 @@
 <meta name="description" content="SMD Group is a trusted real estate developer offering premium residential & farmhouse plots across Uttar Pradesh and Uttarakhand. RERA-approved, transparent, and built on a decade of trust.">
 <meta name="keywords" content="SMD Group, luxury farmhouse, premium plots, Garhmukteshwar, Dehradun, real estate Uttarakhand, RERA approved plots">
 <link rel="canonical" href="https://summermultidevelopers.com/">
+@include('template/head')
 
-<!-- Open Graph -->
-<meta property="og:title" content="SMD Group — Building the Future. Creating Landmarks.">
-<meta property="og:description" content="Premium residential & farmhouse plots across Uttar Pradesh & Uttarakhand. Trust, transparency and long-term value since day one.">
-<meta property="og:type" content="website">
-
-<!-- Preconnects for performance -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Bootstrap 5 -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<!-- AOS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-
-<!-- Custom -->
-<link rel="stylesheet" href="css/style.css">
-
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=50 cy=50 r=46 fill=%22%230F2352%22/><text x=50 y=63 font-size=42 text-anchor=middle fill=%22%23C9A227%22 font-family=serif>S</text></svg>">
-<style>
-  /* ============================================================
-   SMD GROUP — Royal Luxury Real Estate
-   Design tokens: Navy/Royal Blue + Antique Gold + Ivory
-   ============================================================ */
-
-:root{
-  --navy-deep:#081633;
-  --navy:#0F2352;
-  --royal:#1B3A82;
-  --royal-light:#2C50A8;
-  --gold:#C9A227;
-  --gold-light:#E9CE7E;
-  --gold-soft:#F3E3B3;
-  --ivory:#FAF7EF;
-  --cream:#F1EBDC;
-  --charcoal:#171A21;
-  --muted:#6B7080;
-  --line:rgba(201,162,39,.35);
-
-  --font-display:'Cormorant Garamond', serif;
-  --font-body:'Manrope', sans-serif;
-
-  --radius-lg:26px;
-  --radius-md:16px;
-  --radius-sm:10px;
-
-  --shadow-soft:0 20px 60px -20px rgba(8,22,51,.35);
-  --shadow-gold:0 10px 30px -8px rgba(201,162,39,.45);
-}
-
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:var(--font-body);
-  color:var(--charcoal);
-  background:var(--ivory);
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-h1,h2,h3,h4,.font-display{
-  font-family:var(--font-display);
-  font-weight:600;
-  letter-spacing:.01em;
-}
-p{color:var(--muted);}
-a{text-decoration:none;color:inherit;}
-img{max-width:100%;display:block;}
-::selection{background:var(--gold-soft);color:var(--navy-deep);}
-
-/* Scrollbar */
-::-webkit-scrollbar{width:9px;}
-::-webkit-scrollbar-track{background:var(--ivory);}
-::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold),var(--royal));border-radius:10px;}
-
-/* ============ UTILITIES ============ */
-.section-pad{padding:120px 0;}
-@media(max-width:767px){.section-pad{padding:80px 0;}}
-
-.bg-navy{background:var(--navy-deep);color:#EDEFF6;}
-.bg-navy p{color:#B8BFD6;}
-.bg-navy h1,.bg-navy h2,.bg-navy h3{color:#fff;}
-.bg-cream{background:var(--cream);}
-.bg-ivory{background:var(--ivory);}
-
-.container-xl{max-width:1320px;margin:0 auto;padding:0 24px;}
-
-.eyebrow{
-  display:inline-flex;align-items:center;gap:12px;
-  font-family:var(--font-body);
-  font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;
-  color:var(--gold);font-weight:700;margin-bottom:18px;
-}
-.eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--gold);}
-.eyebrow.center{justify-content:center;}
-
-.section-title{
-  font-size:clamp(2.2rem,4vw,3.4rem);
-  line-height:1.12;margin-bottom:20px;
-}
-.section-title em{font-style:italic;color:var(--gold);}
-.section-sub{max-width:620px;font-size:1.05rem;line-height:1.8;}
-.mx-auto-text{margin-left:auto;margin-right:auto;text-align:center;}
-
-.btn-royal{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:16px 34px;border-radius:100px;
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  color:var(--navy-deep)!important;font-weight:700;font-size:.92rem;
-  letter-spacing:.03em;border:none;
-  box-shadow:var(--shadow-gold);
-  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;
-}
-.btn-royal:hover{transform:translateY(-4px);box-shadow:0 18px 40px -10px rgba(201,162,39,.6);color:var(--navy-deep);}
-.btn-royal svg{transition:transform .35s;}
-.btn-royal:hover svg{transform:translateX(5px);}
-
-.btn-outline-royal{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:15px 32px;border-radius:100px;
-  border:1px solid rgba(255,255,255,.35);
-  color:#fff;font-weight:600;font-size:.92rem;letter-spacing:.03em;
-  background:rgba(255,255,255,.04);
-  backdrop-filter:blur(6px);
-  transition:all .4s;
-}
-.btn-outline-royal:hover{background:#fff;color:var(--navy-deep);border-color:#fff;}
-
-.divider-gold{
-  width:80px;height:3px;margin:0 auto 26px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  border-radius:4px;
-}
-
-/* Glassmorphism card */
-.glass{
-  background:rgba(255,255,255,.62);
-  border:1px solid rgba(255,255,255,.5);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  box-shadow:var(--shadow-soft);
-}
-.glass-dark{
-  background:rgba(15,35,82,.45);
-  border:1px solid rgba(201,162,39,.25);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-}
-
-/* ============ PRELOADER ============ */
-#preloader{
-  position:fixed;inset:0;z-index:9999;
-  background:var(--navy-deep);
-  display:flex;align-items:center;justify-content:center;
-  transition:opacity .7s ease, visibility .7s ease;
-}
-#preloader.hide{opacity:0;visibility:hidden;}
-.preload-crest{
-  width:74px;height:74px;border:1px solid var(--gold);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-display);color:var(--gold);font-size:1.6rem;
-  animation:crestSpin 1.8s linear infinite;
-  position:relative;
-}
-@keyframes crestSpin{
-  0%{transform:rotate(0deg) scale(1);}
-  50%{transform:rotate(180deg) scale(1.06);}
-  100%{transform:rotate(360deg) scale(1);}
-}
-
-/* ============ NAVBAR ============ */
-.navbar-royal{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:22px 0;
-  transition:all .5s cubic-bezier(.2,.8,.2,1);
-  background:transparent;
-}
-.navbar-royal.scrolled{
-  padding:12px 0;
-  background:rgba(8,22,51,.92);
-  backdrop-filter:blur(14px);
-  box-shadow:0 10px 30px -12px rgba(0,0,0,.4);
-}
-.navbar-royal .nav-inner{
-  display:flex;align-items:center;justify-content:space-between;
-}
-.brand{display:flex;align-items:center;gap:12px;color:#fff;}
-.brand-mark{
-  width:46px;height:46px;border-radius:50%;
-  border:1px solid var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-display);font-weight:700;color:var(--gold);font-size:1.1rem;
-  background:radial-gradient(circle at 30% 30%,rgba(201,162,39,.18),transparent 70%);
-}
-.brand-text{line-height:1.05;}
-.brand-text b{font-family:var(--font-display);font-size:1.28rem;letter-spacing:.03em;display:block;color:#fff;}
-.brand-text span{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);}
-
-.nav-links{display:flex;align-items:center;gap:34px;}
-.nav-links a{
-  color:#EDEFF6;font-size:.86rem;font-weight:600;letter-spacing:.02em;
-  position:relative;padding:6px 0;
-}
-.nav-links a::after{
-  content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
-  background:var(--gold);transition:width .35s;
-}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
-.navbar-royal .btn-royal{padding:12px 26px;font-size:.82rem;}
-
-.nav-toggle{display:none;background:none;border:1px solid var(--gold);border-radius:8px;padding:9px 12px;}
-.nav-toggle span{display:block;width:22px;height:2px;background:var(--gold);margin:4px 0;}
-
-@media(max-width:991px){
-  .nav-links{
-    position:fixed;top:0;right:-100%;width:78%;max-width:340px;height:100vh;
-    background:var(--navy-deep);flex-direction:column;justify-content:center;
-    gap:26px;transition:right .5s cubic-bezier(.2,.8,.2,1);
-    box-shadow:-20px 0 60px rgba(0,0,0,.4);padding:40px;
-  }
-  .nav-links.open{right:0;}
-  .nav-toggle{display:block;}
-  .navbar-royal .btn-royal{display:none;}
-}
-
-/* ============ HERO ============ */
-.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;color:#fff;}
-.hero .swiper{height:100%;}
-.hero-slide{
-  position:relative;height:100%;width:100%;
-  background-size:cover;background-position:center;
-}
-.hero-slide::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(8,16,40,.55) 0%,rgba(8,16,40,.55) 40%,rgba(6,13,33,.92) 100%);
-}
-.hero-content{
-  position:absolute;inset:0;z-index:3;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:0 20px;
-}
-.hero-crest{
-  width:96px;height:96px;border:1px solid var(--gold);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;margin-bottom:26px;
-  position:relative;
-}
-.hero-crest::before{
-  content:"";position:absolute;inset:-10px;border:1px solid rgba(201,162,39,.35);border-radius:50%;
-}
-.hero-crest span{font-family:var(--font-display);color:var(--gold-light);font-size:1.7rem;letter-spacing:.05em;}
-
-.hero h1{
-  font-size:clamp(2.6rem,6vw,5.2rem);line-height:1.08;color:#fff;
-  max-width:1000px;text-shadow:0 8px 40px rgba(0,0,0,.35);
-}
-.hero h1 em{font-style:italic;color:var(--gold-light);}
-.hero-sub{max-width:640px;font-size:1.12rem;color:#DCE1F0;margin:22px auto 36px;line-height:1.8;}
-.hero-cta{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;}
-
-.hero-scroll{
-  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:4;
-  display:flex;flex-direction:column;align-items:center;gap:10px;color:#DCE1F0;font-size:.72rem;
-  letter-spacing:.28em;text-transform:uppercase;
-}
-.hero-scroll .line{width:1px;height:46px;background:linear-gradient(#fff,transparent);position:relative;overflow:hidden;}
-.hero-scroll .line::after{
-  content:"";position:absolute;top:-46px;left:0;width:100%;height:46px;background:var(--gold);
-  animation:scrollLine 2.2s infinite ease-in-out;
-}
-@keyframes scrollLine{0%{top:-46px;}100%{top:46px;}}
-
-.hero .swiper-pagination{bottom:110px!important;z-index:5;}
-.hero .swiper-pagination-bullet{background:#fff;opacity:.5;width:9px;height:9px;}
-.hero .swiper-pagination-bullet-active{background:var(--gold);opacity:1;width:26px;border-radius:6px;}
-
-/* ============ ABOUT ============ */
-.about-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);}
-.about-media img{height:100%;object-fit:cover;transition:transform 1.2s ease;}
-.about-media:hover img{transform:scale(1.06);}
-.about-badge{
-  position:absolute;bottom:-28px;right:-20px;
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  color:var(--navy-deep);border-radius:50%;width:150px;height:150px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;box-shadow:var(--shadow-gold);
-}
-.about-badge b{font-family:var(--font-display);font-size:2.1rem;line-height:1;}
-.about-badge span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-top:6px;}
-@media(max-width:767px){.about-badge{width:110px;height:110px;right:6px;bottom:-20px;}.about-badge b{font-size:1.5rem;}}
-
-.about-quote{
-  border-left:2px solid var(--gold);padding:6px 0 6px 22px;margin:26px 0;
-  font-family:var(--font-display);font-size:1.3rem;font-style:italic;color:var(--navy);
-}
-
-.stat-row{display:flex;flex-wrap:wrap;gap:0;margin-top:36px;border-top:1px solid rgba(0,0,0,.08);padding-top:30px;}
-.stat-item{flex:1 1 25%;min-width:130px;text-align:left;padding-right:14px;}
-.stat-item b{
-  font-family:var(--font-display);font-size:2.4rem;color:var(--navy);display:block;line-height:1;
-}
-.stat-item b span{color:var(--gold);}
-.stat-item small{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;}
-
-/* ============ PROPERTY CARDS (Featured) ============ */
-.prop-card{
-  position:relative;border-radius:var(--radius-md);overflow:hidden;
-  height:460px;box-shadow:var(--shadow-soft);
-}
-.prop-card img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  transition:transform 1.1s cubic-bezier(.2,.8,.2,1);
-}
-.prop-card:hover img{transform:scale(1.12);}
-.prop-card::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(8,16,40,0) 30%,rgba(8,16,40,.94) 100%);
-  z-index:1;
-}
-.prop-tag{
-  position:absolute;top:20px;left:20px;z-index:2;
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  color:var(--navy-deep);font-size:.7rem;font-weight:800;letter-spacing:.06em;
-  text-transform:uppercase;padding:7px 16px;border-radius:100px;
-}
-.prop-body{
-  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px;color:#fff;
-  transform:translateY(58px);transition:transform .5s cubic-bezier(.2,.8,.2,1);
-}
-.prop-card:hover .prop-body{transform:translateY(0);}
-.prop-body h4{font-size:1.4rem;color:#fff;margin-bottom:4px;}
-.prop-body .loc{font-size:.8rem;color:var(--gold-light);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
-.prop-desc{
-  max-height:0;overflow:hidden;opacity:0;
-  transition:max-height .5s ease,opacity .4s ease;
-}
-.prop-card:hover .prop-desc{max-height:100px;opacity:1;margin-bottom:12px;}
-.prop-desc p{color:#C9D0E4;font-size:.86rem;line-height:1.6;margin:0;}
-.prop-link{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;color:var(--gold-light);}
-.prop-link svg{transition:transform .35s;}
-.prop-card:hover .prop-link svg{transform:translateX(5px);}
-
-/* ============ SIGNATURE PROJECTS SLIDER ============ */
-.sig-slider{padding-bottom:70px!important;}
-.sig-card{
-  position:relative;border-radius:var(--radius-md);overflow:hidden;height:520px;
-  box-shadow:0 30px 70px -20px rgba(0,0,0,.55);
-}
-.sig-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s ease;}
-.sig-card:hover img{transform:scale(1.08);}
-.sig-card::before{
-  content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(8,16,40,.05) 20%,rgba(8,16,40,.96) 100%);
-}
-.sig-num{
-  position:absolute;top:22px;right:22px;z-index:2;
-  font-family:var(--font-display);font-size:1rem;color:var(--gold-light);
-  border:1px solid var(--gold);border-radius:50%;width:46px;height:46px;
-  display:flex;align-items:center;justify-content:center;
-}
-.sig-info{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:30px;color:#fff;}
-.sig-info .eyebrow{margin-bottom:10px;font-size:.66rem;}
-.sig-info h3{font-size:1.7rem;color:#fff;margin-bottom:8px;}
-.sig-info p{color:#C9D0E4;font-size:.88rem;margin-bottom:16px;
-  max-height:0;overflow:hidden;opacity:0;transition:.5s;
-}
-.sig-card:hover .sig-info p{max-height:120px;opacity:1;}
-.sig-cta{
-  display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;
-  color:var(--navy-deep);background:var(--gold-light);padding:10px 20px;border-radius:100px;
-  transition:.35s;
-}
-.sig-cta:hover{background:#fff;}
-
-.swiper-button-next.sig-next,.swiper-button-prev.sig-prev{
-  width:52px;height:52px;border:1px solid rgba(255,255,255,.35);border-radius:50%;
-  color:var(--gold-light);top:auto;bottom:0;
-}
-.swiper-button-next.sig-next::after,.swiper-button-prev.sig-prev::after{font-size:1rem;}
-.swiper-button-prev.sig-prev{left:calc(50% - 62px);}
-.swiper-button-next.sig-next{right:calc(50% - 62px);}
-.sig-slider .swiper-pagination{bottom:8px!important;}
-.bg-navy .swiper-pagination-bullet{background:#fff;opacity:.4;}
-.bg-navy .swiper-pagination-bullet-active{background:var(--gold);opacity:1;}
-
-/* ============ DIRECTORS ============ */
-.dir-card{
-  border-radius:var(--radius-md);overflow:hidden;background:#fff;
-  box-shadow:var(--shadow-soft);transition:transform .5s cubic-bezier(.2,.8,.2,1);
-  height:100%;
-}
-.dir-card:hover{transform:translateY(-10px);}
-.dir-media{position:relative;height:340px;overflow:hidden;}
-.dir-media img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease,filter .6s;filter:grayscale(35%);}
-.dir-card:hover .dir-media img{transform:scale(1.07);filter:grayscale(0%);}
-.dir-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(8,16,40,.75) 100%);}
-.dir-social{
-  position:absolute;bottom:16px;left:16px;z-index:2;display:flex;gap:10px;
-}
-.dir-social a{
-  width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.14);
-  border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:.8rem;backdrop-filter:blur(6px);transition:.3s;
-}
-.dir-social a:hover{background:var(--gold);color:var(--navy-deep);border-color:var(--gold);}
-.dir-info{padding:28px 26px 30px;text-align:center;}
-.dir-info h4{font-size:1.4rem;color:var(--navy);margin-bottom:4px;}
-.dir-role{
-  display:inline-block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--gold);font-weight:700;margin-bottom:14px;
-}
-.dir-info p{font-size:.9rem;line-height:1.75;}
-
-/* ============ TESTIMONIALS ============ */
-.testi-slider{padding:10px 4px 60px;}
-.testi-card{
-  border-radius:var(--radius-md);padding:44px 36px;height:100%;
-}
-.testi-quote-icon{font-family:var(--font-display);font-size:4.2rem;color:var(--gold);line-height:.4;margin-bottom:18px;display:block;}
-.testi-stars{color:var(--gold);letter-spacing:3px;margin-bottom:16px;font-size:.9rem;}
-.testi-card p.testi-text{color:#EDEFF6;font-size:1.02rem;line-height:1.85;margin-bottom:26px;font-family:var(--font-display);font-size:1.2rem;font-style:italic;}
-.testi-person{display:flex;align-items:center;gap:14px;}
-.testi-person img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
-.testi-person b{color:#fff;display:block;font-size:.95rem;}
-.testi-person span{color:var(--gold-light);font-size:.76rem;letter-spacing:.03em;}
-.testi-slider .swiper-pagination-bullet{background:#fff;opacity:.35;}
-.testi-slider .swiper-pagination-bullet-active{background:var(--gold);opacity:1;}
-
-/* ============ GALLERY ============ */
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:14px;}
-.gallery-item{position:relative;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;}
-.gallery-item:hover img{transform:scale(1.15);}
-.gallery-item::after{
-  content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,16,40,0),rgba(8,16,40,.65));
-  opacity:0;transition:opacity .4s;
-}
-.gallery-item:hover::after{opacity:1;}
-.gallery-item .g-icon{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:1.4rem;opacity:0;transition:opacity .4s,transform .4s;transform:scale(.7);z-index:2;
-}
-.gallery-item:hover .g-icon{opacity:1;transform:scale(1);}
-.gallery-item.big{grid-column:span 2;grid-row:span 2;}
-.gallery-item .g-label{position:absolute;bottom:12px;left:14px;z-index:2;color:#fff;font-size:.78rem;font-weight:700;opacity:0;transition:.4s;letter-spacing:.03em;}
-.gallery-item:hover .g-label{opacity:1;}
-@media(max-width:767px){
-  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
-  .gallery-item.big{grid-column:span 2;grid-row:span 1;}
-}
-
-/* ============ WHY CHOOSE US ============ */
-.why-card{
-  padding:38px 30px;border-radius:var(--radius-md);height:100%;
-  background:rgba(255,255,255,.05);border:1px solid rgba(201,162,39,.2);
-  transition:transform .45s cubic-bezier(.2,.8,.2,1),background .45s;
-}
-.why-card:hover{transform:translateY(-8px);background:rgba(201,162,39,.08);}
-.why-icon{
-  width:58px;height:58px;border-radius:14px;margin-bottom:22px;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy-deep);font-size:1.4rem;
-}
-.why-card h4{color:#fff;font-size:1.18rem;margin-bottom:10px;}
-.why-card p{font-size:.88rem;color:#B8BFD6;line-height:1.75;margin:0;}
-
-.counters-strip{
-  margin-top:70px;border-top:1px solid rgba(201,162,39,.25);padding-top:44px;
-  display:flex;flex-wrap:wrap;text-align:center;
-}
-.counter-item{flex:1 1 25%;min-width:140px;}
-.counter-item b{font-family:var(--font-display);font-size:3rem;color:var(--gold-light);display:block;line-height:1;}
-.counter-item small{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#B8BFD6;font-weight:700;}
-
-/* ============ CONTACT ============ */
-.contact-form-card{border-radius:var(--radius-lg);padding:48px;box-shadow:var(--shadow-soft);}
-.form-control-royal{
-  width:100%;padding:15px 18px;border-radius:var(--radius-sm);border:1px solid rgba(0,0,0,.12);
-  background:#fff;font-family:var(--font-body);font-size:.92rem;margin-bottom:18px;transition:.3s;
-}
-.form-control-royal:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,39,.15);}
-textarea.form-control-royal{resize:none;min-height:130px;}
-
-.contact-info-item{display:flex;gap:18px;align-items:flex-start;margin-bottom:30px;}
-.contact-info-icon{
-  width:52px;height:52px;flex:none;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  display:flex;align-items:center;justify-content:center;color:var(--navy-deep);font-size:1.15rem;
-}
-.contact-info-item h5{color:#fff;font-size:1.02rem;margin-bottom:4px;}
-.contact-info-item p{color:#B8BFD6;font-size:.9rem;margin:0;}
-.map-frame{border-radius:var(--radius-md);overflow:hidden;border:1px solid rgba(201,162,39,.25);height:260px;margin-top:10px;}
-.map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(30%) contrast(1.05);}
-
-/* ============ FOOTER ============ */
-footer.footer-royal{background:var(--navy-deep);color:#B8BFD6;padding-top:90px;}
-.footer-brand p{color:#8891AC;font-size:.9rem;line-height:1.8;margin:18px 0 22px;}
-.footer-col h6{color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px;font-weight:800;}
-.footer-col ul{list-style:none;padding:0;margin:0;}
-.footer-col ul li{margin-bottom:12px;}
-.footer-col ul li a{font-size:.9rem;color:#B8BFD6;transition:.3s;}
-.footer-col ul li a:hover{color:var(--gold-light);padding-left:4px;}
-.footer-social{display:flex;gap:12px;margin-top:8px;}
-.footer-social a{
-  width:38px;height:38px;border-radius:50%;border:1px solid rgba(201,162,39,.35);
-  display:flex;align-items:center;justify-content:center;color:var(--gold-light);transition:.3s;
-}
-.footer-social a:hover{background:var(--gold);color:var(--navy-deep);}
-.footer-bottom{border-top:1px solid rgba(201,162,39,.18);margin-top:60px;padding:26px 0;text-align:center;font-size:.8rem;color:#75809E;}
-.footer-bottom a{color:var(--gold-light);}
-
-/* ============ MISC ============ */
-.back-to-top{
-  position:fixed;bottom:28px;right:28px;z-index:900;width:50px;height:50px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy-deep);
-  display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-gold);
-  opacity:0;visibility:hidden;transform:translateY(12px);transition:.4s;
-}
-.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
-
-.whatsapp-float{
-  position:fixed;bottom:28px;left:28px;z-index:900;width:56px;height:56px;border-radius:50%;
-  background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;
-  box-shadow:0 12px 30px -8px rgba(37,211,102,.6);animation:pulseWA 2.4s infinite;
-}
-@keyframes pulseWA{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
-
-[data-aos]{transition-timing-function:cubic-bezier(.2,.8,.2,1)!important;}
-
-/* Lightbox modal */
-.lightbox-modal .modal-content{background:transparent;border:none;}
-.lightbox-modal img{border-radius:var(--radius-md);width:100%;}
-.lightbox-modal .btn-close{filter:invert(1);position:absolute;top:-40px;right:0;}
-
-@media(max-width:575px){
-  .contact-form-card{padding:28px;}
-  .stat-item{flex:1 1 50%;margin-bottom:20px;}
-  .counter-item{flex:1 1 50%;margin-bottom:24px;}
-}
-
-</style>
+<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 
-<!-- ============ PRELOADER ============ -->
-<div id="preloader"><div class="preload-crest"><span style="animation:none;font-size:1.1rem;">S</span></div></div>
-
-<!-- ============ NAVBAR ============ -->
-<nav class="navbar-royal" id="mainNav">
-  <div class="container-xl nav-inner">
-    <a href="#home" class="brand">
-      <span class="brand-mark">S</span>
-      <span class="brand-text"><b>SMD Group</b><span>Building the Future</span></span>
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#properties">Properties</a>
-      <a href="#signature">Signature Projects</a>
-      <a href="#directors">Directors</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="d-flex align-items-center gap-3">
-      <a href="#contact" class="btn-royal d-none d-lg-inline-flex">Book a Site Visit <i class="bi bi-arrow-right"></i></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</nav>
-
-<!-- ============ HERO ============ -->
-<header class="hero" id="home">
-  <div class="swiper heroSwiper">
-    <div class="swiper-wrapper">
-
-      <div class="swiper-slide">
-        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80')"></div>
-      </div>
-      <div class="swiper-slide">
-        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80')"></div>
-      </div>
-      <div class="swiper-slide">
-        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1920&q=80')"></div>
-      </div>
-
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-
-  <div class="hero-content">
-    <div class="hero-crest" data-aos="zoom-in"><span>S</span></div>
-    <div class="eyebrow center" data-aos="fade-up">SMD Group · Est. Trust, Built to Last</div>
-    <h1 data-aos="fade-up" data-aos-delay="100">Your Gateway to <em>Luxury</em> Farmhouse &amp; Landmark Living</h1>
-    <p class="hero-sub" data-aos="fade-up" data-aos-delay="200">Premium residential and farmhouse plots across the scenic landscapes of Uttar Pradesh &amp; Uttarakhand — where every parcel of land is a promise of security, growth and legacy.</p>
-    <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
-      <a href="#properties" class="btn-royal">Explore Properties <i class="bi bi-arrow-right"></i></a>
-      <a href="#contact" class="btn-outline-royal">Book a Site Visit <i class="bi bi-calendar-check"></i></a>
-    </div>
-  </div>
-
-  <div class="hero-scroll"><span>Scroll</span><span class="line"></span></div>
-</header>
+@include('template/header')
 
 <!-- ============ ABOUT ============ -->
 <section class="section-pad bg-ivory" id="about">
@@ -1094,6 +491,7 @@ footer.footer-royal{background:var(--navy-deep);color:#B8BFD6;padding-top:90px;}
   </div>
 </section>
 
+
 <!-- ============ FOOTER ============ -->
 <footer class="footer-royal">
   <div class="container-xl">
@@ -1152,7 +550,26 @@ footer.footer-royal{background:var(--navy-deep);color:#B8BFD6;padding-top:90px;}
 </footer>
 
 <!-- Floating buttons -->
-<a href="https://wa.me/918307050700" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+<div class="wa-chat-container">
+<div class="wa-chat-widget">
+<div class="wa-widget-header">
+    <img decoding="async" src="https://web.astrologydivine.com/smd-group/assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=SMD%20Group&background=random&color=fff&font-size=0.5';">
+    <span class="wa-brand-name">SMD Group</span>
+    <button class="wa-widget-close" aria-label="Close Chat">&times;</button>
+</div>
+<div class="wa-widget-body">
+    <p class="wa-widget-body-message">Hello! How can we assist you today?</p>
+</div>
+<div class="wa-widget-footer">
+    <a href="https://wa.me/8800124158?text=Hello%2C%20I%20have%20a%20question%20about..." target="_blank" rel="noopener noreferrer">Chat with us</a>
+</div>
+</div>
+<button class="wa-float-button" aria-label="Open WhatsApp Chat">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewbox="0 0 50 50">
+    <path fill="currentColor" d="M 25 2 C 12.318 2 2 12.318 2 25 C 2 28.96 3.0228906 32.853062 4.9628906 36.289062 L 2.0371094 46.730469 C 1.9411094 47.073469 2.03325 47.440312 2.28125 47.695312 C 2.47225 47.892313 2.733 48 3 48 C 3.08 48 3.1612344 47.989703 3.2402344 47.970703 L 14.136719 45.271484 C 17.463719 47.057484 21.21 48 25 48 C 37.682 48 48 37.682 48 25 C 48 12.318 37.682 2 25 2 z M 16.642578 14 C 17.036578 14 17.428437 14.005484 17.773438 14.021484 C 18.136437 14.039484 18.624516 13.883484 19.103516 15.021484 C 19.595516 16.189484 20.775875 19.058563 20.921875 19.351562 C 21.069875 19.643563 21.168656 19.984047 20.972656 20.373047 C 20.776656 20.762047 20.678813 21.006656 20.382812 21.347656 C 20.086813 21.688656 19.762094 22.107141 19.496094 22.369141 C 19.200094 22.660141 18.892328 22.974594 19.236328 23.558594 C 19.580328 24.142594 20.765484 26.051656 22.521484 27.597656 C 24.776484 29.583656 26.679531 30.200188 27.269531 30.492188 C 27.859531 30.784188 28.204828 30.734703 28.548828 30.345703 C 28.892828 29.955703 30.024969 28.643547 30.417969 28.060547 C 30.810969 27.477547 31.204094 27.572578 31.746094 27.767578 C 32.288094 27.961578 35.19125 29.372062 35.78125 29.664062 C 36.37125 29.956063 36.766062 30.102703 36.914062 30.345703 C 37.062062 30.587703 37.062312 31.754234 36.570312 33.115234 C 36.078313 34.477234 33.717984 35.721672 32.583984 35.888672 C 31.565984 36.037672 30.277281 36.10025 28.863281 35.65625 C 28.006281 35.38625 26.907047 35.028734 25.498047 34.427734 C 19.575047 31.901734 15.706156 26.012047 15.410156 25.623047 C 15.115156 25.234047 13 22.46275 13 19.59375 C 13 16.72475 14.524406 15.314469 15.066406 14.730469 C 15.608406 14.146469 16.248578 14 16.642578 14 z"></path>
+    </svg>
+</button>
+</div>
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
 <!-- Scripts -->
@@ -1337,6 +754,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const waContainer = document.querySelector('.wa-chat-container');
+if (waContainer) {
+    const openButton = waContainer.querySelector('.wa-float-button');
+    const chatWidget = waContainer.querySelector('.wa-chat-widget');
+    const closeButton = waContainer.querySelector('.wa-widget-close');
+    if (!openButton || !chatWidget || !closeButton) return;
+
+    const toggleWidget = (e) => { e.stopPropagation(); chatWidget.classList.toggle('active'); };
+    const closeWidget = () => chatWidget.classList.remove('active');
+
+    openButton.addEventListener('click', toggleWidget);
+    closeButton.addEventListener('click', closeWidget);
+    
+    document.addEventListener('click', (e) => { if (!waContainer.contains(e.target) && chatWidget.classList.contains('active')) closeWidget(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && chatWidget.classList.contains('active')) closeWidget(); });
+}
+});
 </script>
 </body>
 </html>
