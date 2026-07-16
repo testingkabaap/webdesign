@@ -28,6 +28,16 @@
 
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="nav-logo">
+                <img src="" alt="SMD Group Logo" width="40" height="auto" />
+            </div>
+            <button class="mobile-menu-close" onclick="closeMobileMenu()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
         <a href="#about" onclick="closeMobileMenu()">About</a>
         <a href="#why" onclick="closeMobileMenu()">Why Us</a>
         <a href="#projects" onclick="closeMobileMenu()">Projects</a>
@@ -1148,11 +1158,17 @@
 
         /* ── MOBILE MENU ── */
         function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('open')
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.getElementById('hamburger');
+            menu.classList.toggle('open');
+            hamburger.classList.toggle('active');
         }
 
         function closeMobileMenu() {
-            document.getElementById('mobileMenu').classList.remove('open')
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.getElementById('hamburger');
+            menu.classList.remove('open');
+            hamburger.classList.remove('active');
         }
 
         /* ── ANIMATIONS ── */
