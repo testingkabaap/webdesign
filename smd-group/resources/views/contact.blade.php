@@ -9,8 +9,6 @@
     <title>SMD Group – Building the Future. Creating Landmarks.</title>
     @include('template/head')
     <link rel="stylesheet" href="./assets/css/style.css">
-
-
 <style>
     
 /* ═══════════════════════════════════════════
@@ -974,6 +972,23 @@ footer{
   .value-grid{grid-template-columns:1fr}
 }
 
+
+/* ═══════════════════════════════════════════
+   CONTACT PAGE — extra sections
+═══════════════════════════════════════════ */
+.trust-badges{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:1200px;margin:0 auto;background:var(--border);border:1px solid var(--border)}
+.trust-badge{background:var(--bg-card);padding:32px 30px;display:flex;align-items:center;gap:20px}
+.trust-badge-icon{width:44px;height:44px;flex-shrink:0;color:var(--gold)}
+.trust-badge-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.trust-badge h4{font-family:var(--font-title);font-size:1rem;font-weight:600;margin-bottom:4px}
+.trust-badge p{font-size:0.76rem;color:var(--text-dim);line-height:1.6}
+
+.char-counter{position:absolute;right:14px;bottom:10px;font-size:0.62rem;color:var(--text-dim);letter-spacing:0.04em;pointer-events:none}
+
+@media(max-width:768px){
+  .trust-badges{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 
@@ -993,12 +1008,15 @@ footer{
     </div>
 
     <!-- MOBILE MENU -->
-<!-- MOBILE MENU -->
+    <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-top">
-            <div class="nav-logo"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo" width="36" height="auto"/></div>
+            <div class="nav-logo"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo"
+                    width="36" height="auto" /></div>
             <div class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">
-                <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
             </div>
         </div>
         <ul class="mobile-menu-links">
@@ -1009,288 +1027,344 @@ footer{
             <li><a href="index.html#testimonials"><span class="mm-num">05</span>Reviews</a></li>
             <li><a href="index.html#gallery"><span class="mm-num">06</span>Gallery</a></li>
         </ul>
-        <a href="index.html#contact" class="mobile-menu-cta">Contact Us</a>
+        <a href="contact-us.html" class="mobile-menu-cta" style="background:var(--gold);color:#080C0B">Contact Us</a>
         <div class="mobile-menu-footer">
             <div class="mobile-menu-footer-row">
-                <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
                 +91 8307 050 700
             </div>
             <div class="mobile-menu-footer-row">
-                <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
                 info@summermultidevelopers.com
             </div>
             <div class="mobile-menu-socials">
-                <a href="https://www.facebook.com/share/1Fvk9VGm1x/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                <a href="https://www.instagram.com/smdgr_oup" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                <a href="https://wa.me/918307050700" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.836.494 3.578 1.435 5.098L2 22l5.048-1.415A9.945 9.945 0 0012.001 22C17.523 22 22 17.522 22 12S17.523 2 12.001 2zm0 18.083c-1.605 0-3.15-.425-4.5-1.23l-.323-.19-3.14.88.86-3.121-.21-.334A8.062 8.062 0 013.94 12c0-4.442 3.617-8.058 8.062-8.058S20.06 7.558 20.06 12s-3.617 8.083-8.06 8.083z"/></svg></a>
+                <a href="https://www.facebook.com/share/1Fvk9VGm1x/" target="_blank" rel="noopener"
+                    aria-label="Facebook"><svg viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                    </svg></a>
+                <a href="https://www.instagram.com/smdgr_oup" target="_blank" rel="noopener" aria-label="Instagram"><svg
+                        viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg></a>
+                <a href="https://wa.me/918307050700" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        <path
+                            d="M12.001 2C6.478 2 2 6.478 2 12c0 1.836.494 3.578 1.435 5.098L2 22l5.048-1.415A9.945 9.945 0 0012.001 22C17.523 22 22 17.522 22 12S17.523 2 12.001 2zm0 18.083c-1.605 0-3.15-.425-4.5-1.23l-.323-.19-3.14.88.86-3.121-.21-.334A8.062 8.062 0 013.94 12c0-4.442 3.617-8.058 8.062-8.058S20.06 7.558 20.06 12s-3.617 8.083-8.06 8.083z" />
+                    </svg></a>
             </div>
         </div>
     </div>
 
     <!-- NAV -->
     <nav id="navbar">
-        <a href="index.html" class="nav-logo"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo" width="40" height="auto"/></a>
+        <a href="index.html" class="nav-logo"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo"
+                width="40" height="auto" /></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html" style="color:var(--gold)">About Us</a></li>
+            <li><a href="about-us.html">About Us</a></li>
             <li><a href="index.html#projects">Projects</a></li>
             <li><a href="index.html#director">Directors</a></li>
             <li><a href="index.html#testimonials">Reviews</a></li>
             <li><a href="index.html#gallery">Gallery</a></li>
-            <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+            <li><a href="contact-us.html" class="nav-cta"
+                    style="border-color:var(--gold);background:var(--gold);color:#080C0B">Contact Us</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">
             <span></span><span></span><span></span>
         </div>
     </nav>
 
-    <!-- ═══ ABOUT HERO ═══ -->
-    <section id="about-hero" class="about-hero-mini">
+    <!-- ═══ CONTACT HERO ═══ -->
+    <section id="contact-hero" class="about-hero-mini">
         <div style="max-width:1200px;margin:0 auto">
-            <p class="about-breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>About Us</p>
-            <p class="section-eyebrow">Our Story</p>
-            <h1 class="section-title">Building Trust, <span class="gold">One Plot</span> at a Time</h1>
+            <p class="about-breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Contact Us</p>
+            <p class="section-eyebrow">Get In Touch</p>
+            <h1 class="section-title">Let's Turn Your Land <span class="gold">Investment Dream</span> into Reality
+            </h1>
             <span class="gold-divider"></span>
-            <p class="section-subtitle">A decade of transparency, integrity, and premium land development across
-                Uttar Pradesh &amp; Uttarakhand.</p>
+            <p class="section-subtitle">Whether you want to book a site visit, explore our latest projects, or
+                get more details — our team is here to assist you every step of the way.</p>
         </div>
     </section>
 
-    <!-- ═══ INTRO STORY ═══ -->
-    <section id="about-intro">
+    <!-- ═══ INTRO ═══ -->
+    <section id="contact-intro" style="padding-top:0">
         <div class="about-inner">
             <div class="about-image-collage" data-reveal="left">
                 <div class="collage-main">
                     <div class="collage-img-placeholder">
-                        <img src="./assets/img/about-page/story-main.jpg" alt="SMD Group land development" loading="lazy">
+                        <img src="./assets/img/contact-page/contact-main.jpg" alt="SMD Group team" loading="lazy">
                     </div>
-                </div>
-                <div class="collage-secondary">
-                    <div class="collage-img-placeholder">
-                        <img src="./assets/img/about-page/story-secondary.jpg" alt="SMD Group premium plots" loading="lazy">
-                    </div>
-                </div>
-                <div class="collage-accent">
-                    <div class="collage-accent-inner">10<sup>+</sup><span>Years of<br />Trust</span></div>
                 </div>
             </div>
             <div class="about-content" data-reveal="right">
-                <p class="section-eyebrow">Welcome to SMD Group</p>
-                <h2 class="section-title">Transparency, <span class="gold">Trust</span> &amp; Timeless Value</h2>
+                <p class="section-eyebrow">Let's Talk</p>
+                <h2 class="section-title">Let's Build Your <span class="gold">Dream</span> Together</h2>
                 <span class="gold-divider"></span>
-                <p class="about-text">SMD Group has spent over a decade earning its place as a leading developer
-                    and planner for premium land and farmhouse projects across Uttar Pradesh &amp; Uttarakhand —
-                    built on a simple foundation: transparency, trust, and timeless value.</p>
-                <p class="about-text">We understand that buying land isn't just an investment — it's a dream, a
-                    step toward a secure and peaceful future. That's why every property we deliver is legally
-                    verified, well-planned, and future-ready, matched carefully to our clients' lifestyle and
-                    investment goals.</p>
-                <p class="about-text">Every SMD Group project reflects our commitment to quality development,
-                    ethical business practices, and genuine customer satisfaction — values that have shaped every
-                    plot we've planned and every promise we've kept.</p>
+                <p class="about-text">At SMD Group, we believe great relationships start with clear
+                    communication. Our property experts are always available to help you with project
+                    information, pricing, legal details, and investment guidance.</p>
+                <p class="about-text">Reach out to us today and take your first step toward owning your dream
+                    land or farmhouse plot in Uttar Pradesh &amp; Uttarakhand.</p>
             </div>
         </div>
     </section>
     <div class="sep"></div>
 
-    <!-- ═══ WHY CHOOSE SMD GROUP ═══ -->
-    <section id="about-why">
-        <div class="why-inner">
-            <div class="why-header" data-reveal="up">
-                <p class="section-eyebrow">Our Distinction</p>
-                <h2 class="section-title">Why Choose <span class="gold">SMD Group</span></h2>
-                <p
-                    style="font-family:var(--font-italic);font-size:1.1rem;font-style:italic;color:var(--text-dim);max-width:520px;margin:0 auto;font-weight:300;">
-                    A decade-long track record built on legal integrity, prime locations, and consistent growth</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon"><svg viewBox="0 0 24 24">
-                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg></div>
-                    <h3>A Decade of Trust</h3>
-                    <p>10+ years of trusted presence in land &amp; farmhouse development — a track record built
-                        project by project, client by client.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><svg viewBox="0 0 24 24">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg></div>
-                    <h3>100% Legally Verified</h3>
-                    <p>Every property is fully verified and approved, so you invest with complete legal
-                        confidence — zero title risk, zero surprises.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><svg viewBox="0 0 24 24">
-                            <path
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg></div>
-                    <h3>Prime Locations</h3>
-                    <p>Strategically selected land across Uttar Pradesh &amp; Uttarakhand with excellent
-                        connectivity to major growth corridors.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><svg viewBox="0 0 24 24">
-                            <path
-                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                        </svg></div>
-                    <h3>Transparent Process</h3>
-                    <p>Complete, end-to-end guidance from selection to registry — a transparent process with
-                        nothing left unexplained.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><svg viewBox="0 0 24 24">
-                            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg></div>
-                    <h3>Long-Term Growth</h3>
-                    <p>Land selected for genuine long-term investment potential, backed by assured, steady
-                        growth in every project we plan.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon"><svg viewBox="0 0 24 24">
-                            <path
-                                d="M12 22c4.97-4.97 8-9.03 8-13a8 8 0 10-16 0c0 3.97 3.03 8.03 8 13z" />
-                            <path d="M12 12a3 3 0 100-6 3 3 0 000 6z" />
-                        </svg></div>
-                    <h3>Thoughtfully Planned</h3>
-                    <p>Environmentally conscious, thoughtfully planned layouts — development that respects the
-                        land it grows on.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="sep"></div>
-
-    <!-- ═══ CORE VALUES ═══ -->
-    <section id="about-values">
-        <div class="why-inner">
-            <div class="why-header" data-reveal="up">
-                <p class="section-eyebrow">What Drives Us</p>
-                <h2 class="section-title">Our Core <span class="gold">Values</span></h2>
-                <p
-                    style="font-family:var(--font-italic);font-size:1.1rem;font-style:italic;color:var(--text-dim);max-width:520px;margin:0 auto;font-weight:300;">
-                    The principles that guide every decision, every document, and every handshake</p>
-            </div>
-            <div class="value-grid" data-reveal="up">
-                <div class="value-card">
-                    <div class="value-icon"><svg viewBox="0 0 24 24">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg></div>
-                    <h4>Integrity</h4>
-                    <p>Honest and fair practices in every single transaction, without exception.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><svg viewBox="0 0 24 24">
-                            <path
-                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                        </svg></div>
-                    <h4>Transparency</h4>
-                    <p>Every project is backed by clear documentation and full legal approvals.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><svg viewBox="0 0 24 24">
-                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg></div>
-                    <h4>Commitment</h4>
-                    <p>We stand by our promises and deliver every project on time.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><svg viewBox="0 0 24 24">
-                            <path
-                                d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 10-4-4" />
-                        </svg></div>
-                    <h4>Customer Focus</h4>
-                    <p>Your satisfaction and trust remain our top priority, always.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><svg viewBox="0 0 24 24">
-                            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg></div>
-                    <h4>Quality Development</h4>
-                    <p>Every plot is part of a well-planned, growth-ready project.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="sep"></div>
-
-    <!-- ═══ OUR JOURNEY ═══ -->
-    <section id="about-journey">
-        <div class="journey-inner">
-            <div class="journey-text" data-reveal="left">
-                <p class="section-eyebrow">Our Journey</p>
-                <h2 class="section-title">From a Vision to a <span class="gold">Legacy</span></h2>
+    <!-- ═══ GET IN TOUCH + FORM ═══ -->
+    <section id="contact-main">
+        <div class="contact-inner">
+            <div class="contact-left" data-reveal="left">
+                <p class="section-eyebrow">Get In Touch With Us</p>
+                <h2 class="section-title">Corporate <span class="gold">Office</span></h2>
                 <span class="gold-divider"></span>
-                <p>Founded with a vision to redefine real estate through honesty and professionalism, SMD Group
-                    began its journey with a single mission — to make land ownership simple, safe, and
-                    profitable.</p>
-                <p>Over the years, we've delivered multiple successful land and farmhouse projects across Uttar
-                    Pradesh &amp; Uttarakhand, earning the trust of hundreds of clients who proudly call SMD
-                    Group their real estate partner.</p>
-                <p>Our consistent focus on transparency, legal assurance, and customer-first service has made us
-                    one of the most reliable names in the region's land development market. Join our growing
-                    community of satisfied landowners and experience what it means to invest with a brand that
-                    values your trust above everything else.</p>
+                <div class="contact-info-cards">
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><svg viewBox="0 0 24 24">
+                                <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg></div>
+                        <div>
+                            <h4>Corporate Office</h4>
+                            <p>A-324, Pacific Business Park, Sahibabad, Ghaziabad, Uttar Pradesh-201010</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><svg viewBox="0 0 24 24">
+                                <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg></div>
+                        <div>
+                            <h4>Regional Office</h4>
+                            <p>Gali No 5, NTPC Colony, Pondha, Dehradun, Uttarakhand – 248007</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg></div>
+                        <div>
+                            <h4>Call / WhatsApp</h4>
+                            <p>+91 8307 050 700, +91 9548 051 243</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@summermultidevelopers.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><svg viewBox="0 0 24 24">
+                                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg></div>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Monday – Sunday | 10:00 AM – 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <div class="map-pin"></div>
+                    <div class="map-label">SMD Group — Ghaziabad &amp; Dehradun</div>
+                </div>
             </div>
-            <div class="journey-highlights" data-reveal="right">
-                <div class="journey-highlight">
-                    <div class="journey-highlight-icon"><svg viewBox="0 0 24 24">
-                            <path
-                                d="M11 21H5a2 2 0 01-2-2v-6.5M13 21h6a2 2 0 002-2v-6.5M8 12l4-4 4 4M12 8v13" />
-                        </svg></div>
-                    <p>"When you invest with SMD Group, you're not just buying land — you're becoming part of a
-                        vision built on trust, growth, and legacy."</p>
-                </div>
-                <div class="journey-highlight">
-                    <div class="journey-highlight-icon"><svg viewBox="0 0 24 24">
-                            <path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1m4 0h1m-6 4h1m4 0h1m-6 4h1m4 0h1" />
-                        </svg></div>
-                    <p>"Land is not just property — it's the foundation of your dreams." Our dedicated team
-                        ensures a smooth, hassle-free journey from start to finish.</p>
-                </div>
+            <div data-reveal="right">
+                <p class="section-eyebrow" style="margin-bottom:16px">Site Visit Enquiry</p>
+                <h3 class="section-title" style="font-size:1.8rem;margin-bottom:32px">Request a <span
+                        class="gold">Callback</span></h3>
+                <form class="contact-form" id="contactPageForm" onsubmit="handleContactPageSubmit(event)">
+                    <div class="form-group"><input type="text" placeholder=" " id="cf-name" required /><label
+                            class="form-label" for="cf-name">First Name *</label></div>
+                    <div class="form-row">
+                        <div class="form-group"><input type="tel" placeholder=" " id="cf-phone"
+                                required /><label class="form-label" for="cf-phone">Phone Number *</label></div>
+                        <div class="form-group"><input type="email" placeholder=" " id="cf-email"
+                                required /><label class="form-label" for="cf-email">Email Address *</label></div>
+                    </div>
+                    <div class="form-group">
+                        <select id="cf-location" required onchange="updateProjectOptions()">
+                            <option value="" disabled selected>Preferred Location *</option>
+                            <option value="garhmukteshwar">Garhmukteshwar</option>
+                            <option value="dehradoon">Dehradoon</option>
+                            <option value="mussoorie">Mussoorie</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="cf-project" required onchange="updateSizeOptions()" disabled>
+                            <option value="" disabled selected>Select a location first</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="cf-size" required disabled>
+                            <option value="" disabled selected>Select a project first</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="position:relative">
+                        <textarea placeholder=" " id="cf-message" maxlength="250"
+                            oninput="document.getElementById('cf-char-count').textContent = this.value.length"></textarea><label class="form-label" for="cf-message">Message</label>
+                        <span class="char-counter"><span id="cf-char-count">0</span> / 250</span>
+                    </div>
+                    <button type="submit" class="form-submit">Submit</button>
+                </form>
             </div>
         </div>
     </section>
     <div class="sep"></div>
 
-    <!-- ═══ CTA BANNER ═══ -->
-    <section id="about-cta-section" style="padding:90px 6%">
-        <div class="about-cta" data-reveal="up">
-            <p class="section-eyebrow">Ready When You Are</p>
-            <h2 class="section-title">Join Our Growing Community of <span class="gold">Landowners</span></h2>
-            <p>Experience the confidence of investing with a brand that values your trust above everything
-                else. Let's find the right address for your future.</p>
-            <a href="index.html#contact" class="btn-primary"><span>Get In Touch</span></a>
+    <!-- ═══ TRUST BADGES ═══ -->
+    <section id="contact-trust" style="padding-top:56px">
+        <div class="trust-badges" data-reveal="up">
+            <div class="trust-badge">
+                <div class="trust-badge-icon"><svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M9 12l2 2 4-4" />
+                    </svg></div>
+                <div>
+                    <h4>100% Privacy Guaranteed</h4>
+                    <p>Your information is safe with us.</p>
+                </div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon"><svg viewBox="0 0 24 24">
+                        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg></div>
+                <div>
+                    <h4>Quick Response &amp; Support</h4>
+                    <p>Complete project assistance from our expert team.</p>
+                </div>
+            </div>
         </div>
     </section>
 
 
- @include('template/footer')
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="nav-logo">SMD GROUP<span>Summer Multi Developers</span></div>
+                <p>Building Wealth Through Luxury Living. India's premier luxury farmhouse and land development company,
+                    trusted by 1000+ investors across Delhi NCR.</p>
+                <div class="footer-social">
+                    <a class="social-icon" href="https://www.facebook.com/share/1Fvk9VGm1x/" title="Facebook"
+                        target="_blank" rel="noopener"><img src="./assets/img/icons/facebook.png"
+                            alt="Facebook"></a>
+                    <a class="social-icon" href="https://www.instagram.com/smdgr_oup" title="Instagram"
+                        target="_blank" rel="noopener"><img src="./assets/img/icons/instagram.png"
+                            alt="Instagram"></a>
+                    <a class="social-icon" href="https://youtube.com/@smd_group-smd" title="YouTube" target="_blank"
+                        rel="noopener"><img src="./assets/img/icons/youtube.png" alt="YouTube"></a>
+                    <a class="social-icon" href="https://wa.me/918307050700" title="WhatsApp" target="_blank"
+                        rel="noopener"><img src="./assets/img/icons/whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about-us.html">About SMD</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="index.html#why">Why Choose Us</a></li>
+                    <li><a href="index.html#projects">Our Projects</a></li>
+                    <li><a href="index.html#director">Our Directors</a></li>
+                    <li><a href="index.html#testimonials">Investor Reviews</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Projects</h4>
+                <ul>
+                    <li><a href="index.html#projects">SMD Golden Residency</a></li>
+                    <li><a href="index.html#projects">SMD Royal Greens</a></li>
+                    <li><a href="index.html#projects">SMD Elite Farms</a></li>
+                    <li><a href="index.html#projects">SMD Green Valley</a></li>
+                    <li><a href="index.html#projects">SMD Imperial Township</a></li>
+                    <li><a href="index.html#contact">Upcoming Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-newsletter">
+                <h4>Stay Connected</h4>
+                <p>Subscribe to exclusive project updates, investment insights, and luxury real estate opportunities.
+                </p>
+                <div class="newsletter-input">
+                    <input type="email" placeholder="Your email address" />
+                    <button><svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></button>
+                </div>
+                <p style="font-size:0.7rem;color:var(--text-dim);margin-top:14px;letter-spacing:0.05em;">RERA Reg.
+                    No.: UPRERAPRJ XXXXX &nbsp;|&nbsp; MahaRERA Reg. No.: XXXXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 <a href="#">SMD Group — Summer Multi Developers</a>. All Rights Reserved.</p>
+            <p>Designed with excellence &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a
+                    href="#">Terms of Use</a></p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING CHAT BUTTON -->
+    <a href="https://wa.me/918307050700?text=Hi%2C%20I%27m%20interested%20in%20SMD%20Group%20properties."
+        target="_blank" rel="noopener" id="whatsappBtn" aria-label="Chat with us on WhatsApp">
+        <span class="wa-ring"></span>
+        <span class="wa-tooltip">Chat with us</span>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+                d="M12.001 2C6.478 2 2 6.478 2 12c0 1.836.494 3.578 1.435 5.098L2 22l5.048-1.415A9.945 9.945 0 0012.001 22C17.523 22 22 17.522 22 12S17.523 2 12.001 2zm0 18.083c-1.605 0-3.15-.425-4.5-1.23l-.323-.19-3.14.88.86-3.121-.21-.334A8.062 8.062 0 013.94 12c0-4.442 3.617-8.058 8.062-8.058S20.06 7.558 20.06 12s-3.617 8.083-8.06 8.083z" />
+        </svg>
+    </a>
+
     <script>
-
         /* ── CURSOR ── */
         const cur = document.getElementById('cursor');
         const curRing = document.getElementById('cursor-ring');
-        let mx = 0, my = 0, rx = 0, ry = 0;
+        let mx = 0,
+            my = 0,
+            rx = 0,
+            ry = 0;
         document.addEventListener('mousemove', e => {
-            mx = e.clientX; my = e.clientY;
-            cur.style.left = mx + 'px'; cur.style.top = my + 'px'
+            mx = e.clientX;
+            my = e.clientY;
+            cur.style.left = mx + 'px';
+            cur.style.top = my + 'px'
         });
+
         function animCursor() {
-            rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-            curRing.style.left = rx + 'px'; curRing.style.top = ry + 'px';
+            rx += (mx - rx) * 0.12;
+            ry += (my - ry) * 0.12;
+            curRing.style.left = rx + 'px';
+            curRing.style.top = ry + 'px';
             requestAnimationFrame(animCursor)
         }
         animCursor();
-        document.querySelectorAll('a,button,.why-card,.value-card,.social-icon,#whatsappBtn').forEach(el => {
+        document.querySelectorAll('a,button,.contact-info-card,.trust-badge,.social-icon,#whatsappBtn').forEach(el => {
             el.addEventListener('mouseenter', () => {
-                cur.style.width = '18px'; cur.style.height = '18px';
-                curRing.style.width = '54px'; curRing.style.height = '54px'
+                cur.style.width = '18px';
+                cur.style.height = '18px';
+                curRing.style.width = '54px';
+                curRing.style.height = '54px'
             });
             el.addEventListener('mouseleave', () => {
-                cur.style.width = '10px'; cur.style.height = '10px';
-                curRing.style.width = '32px'; curRing.style.height = '32px'
+                cur.style.width = '10px';
+                cur.style.height = '10px';
+                curRing.style.width = '32px';
+                curRing.style.height = '32px'
             });
         });
 
@@ -1298,7 +1372,10 @@ footer{
         window.addEventListener('load', () => {
             setTimeout(() => {
                 gsap.to('#loader', {
-                    opacity: 0, duration: 0.8, delay: 0.3, ease: 'power2.inOut',
+                    opacity: 0,
+                    duration: 0.8,
+                    delay: 0.3,
+                    ease: 'power2.inOut',
                     onComplete: () => {
                         document.getElementById('loader').style.display = 'none';
                         initAnimations();
@@ -1311,25 +1388,40 @@ footer{
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         let W, H, particles = [];
-        function resizeCanvas() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight }
+
+        function resizeCanvas() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight
+        }
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
+
         function createParticle() {
             return {
-                x: Math.random() * W, y: Math.random() * H,
+                x: Math.random() * W,
+                y: Math.random() * H,
                 size: Math.random() * 1.2 + 0.3,
-                speedX: (Math.random() - 0.5) * 0.25, speedY: -Math.random() * 0.4 - 0.1,
-                alpha: Math.random() * 0.35 + 0.08, decay: Math.random() * 0.0015 + 0.0008,
+                speedX: (Math.random() - 0.5) * 0.25,
+                speedY: -Math.random() * 0.4 - 0.1,
+                alpha: Math.random() * 0.35 + 0.08,
+                decay: Math.random() * 0.0015 + 0.0008,
                 isEmerald: Math.random() > 0.6
             }
         }
         for (let i = 0; i < 70; i++) particles.push(createParticle());
+
         function animParticles() {
             ctx.clearRect(0, 0, W, H);
             particles.forEach((p, i) => {
-                p.x += p.speedX; p.y += p.speedY; p.alpha -= p.decay;
-                if (p.alpha <= 0 || p.y < -10) { particles[i] = createParticle(); particles[i].y = H + 10 }
-                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                p.x += p.speedX;
+                p.y += p.speedY;
+                p.alpha -= p.decay;
+                if (p.alpha <= 0 || p.y < -10) {
+                    particles[i] = createParticle();
+                    particles[i].y = H + 10
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
                 ctx.fillStyle = p.isEmerald ? `rgba(39,86,168,${p.alpha})` : `rgba(212,175,106,${p.alpha})`;
                 ctx.fill();
             });
@@ -1347,6 +1439,7 @@ footer{
             document.getElementById('hamburger').classList.toggle('active', isOpen);
             document.body.classList.toggle('menu-open', isOpen);
         }
+
         function closeMobileMenu() {
             document.getElementById('mobileMenu').classList.remove('open');
             document.getElementById('hamburger').classList.remove('active');
@@ -1358,62 +1451,183 @@ footer{
             gsap.registerPlugin(ScrollTrigger);
 
             gsap.utils.toArray('[data-reveal="up"]').forEach(el => {
-                gsap.fromTo(el, { opacity: 0, y: 50 }, {
-                    opacity: 1, y: 0, duration: 1, ease: 'power3.out',
-                    scrollTrigger: { trigger: el, start: 'top 85%' }
+                gsap.fromTo(el, {
+                    opacity: 0,
+                    y: 50
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 85%'
+                    }
                 });
             });
             gsap.utils.toArray('[data-reveal="left"]').forEach(el => {
-                gsap.fromTo(el, { opacity: 0, x: -60 }, {
-                    opacity: 1, x: 0, duration: 1.1, ease: 'power3.out',
-                    scrollTrigger: { trigger: el, start: 'top 80%' }
+                gsap.fromTo(el, {
+                    opacity: 0,
+                    x: -60
+                }, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1.1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 80%'
+                    }
                 });
             });
             gsap.utils.toArray('[data-reveal="right"]').forEach(el => {
-                gsap.fromTo(el, { opacity: 0, x: 60 }, {
-                    opacity: 1, x: 0, duration: 1.1, ease: 'power3.out',
-                    scrollTrigger: { trigger: el, start: 'top 80%' }
+                gsap.fromTo(el, {
+                    opacity: 0,
+                    x: 60
+                }, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1.1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 80%'
+                    }
                 });
             });
 
-            gsap.utils.toArray('.why-card').forEach((el, i) => {
-                gsap.fromTo(el, { opacity: 0, y: 30 }, {
-                    opacity: 1, y: 0, duration: 0.7, delay: i * 0.06, ease: 'power3.out',
-                    scrollTrigger: { trigger: '#about-why', start: 'top 70%' }
-                });
-            });
-            gsap.utils.toArray('.value-card').forEach((el, i) => {
-                gsap.fromTo(el, { opacity: 0, y: 24 }, {
-                    opacity: 1, y: 0, duration: 0.6, delay: i * 0.06, ease: 'power3.out',
-                    scrollTrigger: { trigger: '#about-values', start: 'top 75%' }
+            gsap.utils.toArray('.contact-info-card').forEach((el, i) => {
+                gsap.to(el, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.6,
+                    delay: i * 0.08,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: '#contact-main',
+                        start: 'top 75%'
+                    }
                 });
             });
         }
 
-        /* ── TILT on cards ── */
-        document.querySelectorAll('.why-card,.value-card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const r = card.getBoundingClientRect();
-                const x = (e.clientX - r.left) / r.width - 0.5;
-                const y = (e.clientY - r.top) / r.height - 0.5;
-                card.style.transform = `translateY(-4px) rotateX(${-y*5}deg) rotateY(${x*5}deg)`
+        /* ── DEPENDENT DROPDOWNS: Location -> Project -> Plot/Cottage Size ── */
+        const PROJECT_DATA = {
+            garhmukteshwar: {
+                projects: {
+                    royal_orchid: 'The Royal Orchid Farms'
+                },
+                sizes: {
+                    royal_orchid: {
+                        label: 'Plot Size',
+                        options: ['300 sq yd', '600 sq yd', '900 sq yd', '1200 sq yd']
+                    }
+                }
+            },
+            dehradoon: {
+                projects: {
+                    anandvan: 'Aanandvan Resort',
+                    alaknanda: 'Alaknanda Farms'
+                },
+                sizes: {
+                    anandvan: {
+                        label: 'Cottage Size',
+                        options: ['250 sq yd', '500 sq yd', '750 sq yd']
+                    },
+                    alaknanda: {
+                        label: 'Plot Size',
+                        options: ['250 sq yd', '500 sq yd', '750 sq yd']
+                    }
+                }
+            },
+            mussoorie: {
+                projects: {
+                    oak_hill: 'Oak Hill Gardens'
+                },
+                sizes: {
+                    oak_hill: {
+                        label: 'Plot Size',
+                        options: ['400 sq yd']
+                    }
+                }
+            }
+        };
+
+        function updateProjectOptions() {
+            const loc = document.getElementById('cf-location').value;
+            const projectSelect = document.getElementById('cf-project');
+            const sizeSelect = document.getElementById('cf-size');
+            const data = PROJECT_DATA[loc];
+
+            projectSelect.innerHTML = '<option value="" disabled selected>Preferred Project *</option>';
+            Object.entries(data.projects).forEach(([key, label]) => {
+                const opt = document.createElement('option');
+                opt.value = key;
+                opt.textContent = label;
+                projectSelect.appendChild(opt);
             });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
-                card.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)'
+            projectSelect.disabled = false;
+
+            sizeSelect.innerHTML = '<option value="" disabled selected>Select a project first</option>';
+            sizeSelect.disabled = true;
+        }
+
+        function updateSizeOptions() {
+            const loc = document.getElementById('cf-location').value;
+            const proj = document.getElementById('cf-project').value;
+            const sizeSelect = document.getElementById('cf-size');
+            const sizeData = PROJECT_DATA[loc].sizes[proj];
+
+            sizeSelect.innerHTML = `<option value="" disabled selected>${sizeData.label} *</option>`;
+            sizeData.options.forEach(size => {
+                const opt = document.createElement('option');
+                opt.value = size;
+                opt.textContent = size;
+                sizeSelect.appendChild(opt);
             });
-            card.addEventListener('mouseenter', () => { card.style.transition = 'transform 0.1s' });
-        });
+            sizeSelect.disabled = false;
+        }
+
+        /* ── FORM SUBMIT ── */
+        function handleContactPageSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('.form-submit');
+            btn.textContent = 'Sending...';
+            btn.style.opacity = '0.8';
+            setTimeout(() => {
+                btn.textContent = 'Message Sent ✓';
+                btn.style.background = 'linear-gradient(135deg,#1A3A6B,#2756A8)';
+                setTimeout(() => {
+                    btn.textContent = 'Submit';
+                    btn.style.background = 'linear-gradient(135deg,var(--navy-mid),var(--navy-light))';
+                    btn.style.opacity = '1';
+                    e.target.reset();
+                    document.getElementById('cf-char-count').textContent = '0';
+                    document.getElementById('cf-project').innerHTML =
+                        '<option value="" disabled selected>Select a location first</option>';
+                    document.getElementById('cf-project').disabled = true;
+                    document.getElementById('cf-size').innerHTML =
+                        '<option value="" disabled selected>Select a project first</option>';
+                    document.getElementById('cf-size').disabled = true;
+                }, 2600);
+            }, 1400);
+        }
 
         /* ── SMOOTH SCROLL (only true in-page "#section" links) ── */
         document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(a => {
             a.addEventListener('click', e => {
                 const t = document.querySelector(a.getAttribute('href'));
-                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }) }
+                if (t) {
+                    e.preventDefault();
+                    t.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    })
+                }
             });
         });
-
     </script>
 </body>
+
 
 </html>

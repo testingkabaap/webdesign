@@ -13,46 +13,7 @@
 </head>
 
 <body>
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
-    <canvas id="particles"></canvas>
-
-    <!-- LOADER -->
-    <div id="loader">
-        <div class="loader-logo">SMD GROUP</div>
-        <div class="loader-tagline">Summer Multi Developers</div>
-        <div class="loader-bar-wrap">
-            <div class="loader-bar"></div>
-        </div>
-    </div>
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#about" onclick="closeMobileMenu()">About</a>
-        <a href="#why" onclick="closeMobileMenu()">Why Us</a>
-        <a href="#projects" onclick="closeMobileMenu()">Projects</a>
-        <a href="#director" onclick="closeMobileMenu()">Directors</a>
-        <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
-        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-    </div>
-
-    <!-- NAV -->
-    <nav id="navbar">
-        <div class="nav-logo"><img src="./assets/img/logo/SMD-Logos-6-251x300.webp" alt="SMD Group Logo" width="40"
-                height="auto" /></div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#why">Why Us</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#director">Directors</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact" class="nav-cta">Contact Us</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
+    @include('template/header')
 
     <!-- ═══ main ═══ -->
     <section id="main">
@@ -104,13 +65,13 @@
             <div class="about-image-collage" data-reveal="left">
                 <div class="collage-main">
                     <div class="collage-img-placeholder">
-                        <img src="./assets/img/about/about-main.jpg" alt="SMD Group luxury farmhouse project"
+                        <img src="./assets/img/gallery/gallery-1.webp" alt="SMD Group luxury farmhouse project"
                             loading="lazy">
                     </div>
                 </div>
                 <div class="collage-secondary">
                     <div class="collage-img-placeholder">
-                        <img src="./assets/img/about/about-secondary.jpg" alt="SMD Group villa exterior" loading="lazy">
+                        <img src="./assets/img/gallery/gallery-1.webp" alt="SMD Group villa exterior" loading="lazy">
                     </div>
                 </div>
                 <div class="collage-accent">
@@ -953,94 +914,8 @@
                 style="width:100%;height:100%;object-fit:contain;display:block">
         </div>
     </div>
+    @include('template/footer')
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <div class="nav-logo">SMD GROUP<span>Summer Multi Developers</span></div>
-                <p>Building Wealth Through Luxury Living. India's premier luxury farmhouse and land development company,
-                    trusted by 1000+ investors across Delhi NCR.</p>
-                <div class="footer-social">
-                    <a class="social-icon" href="#" title="Facebook" target="_blank" rel="noopener"><i
-                            class="fa-brands fa-square-facebook"></i></a>
-                    <a class="social-icon" href="#" title="Instagram" target="_blank" rel="noopener"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a class="social-icon" href="#" title="YouTube" target="_blank" rel="noopener"><i
-                            class="fa-brands fa-youtube"></i></a>
-                    <a class="social-icon" href="#" title="WhatsApp" target="_blank" rel="noopener"><i
-                            class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#about">About SMD</a></li>
-                    <li><a href="#why">Why Choose Us</a></li>
-                    <li><a href="#projects">Our Projects</a></li>
-                    <li><a href="#director">Our Directors</a></li>
-                    <li><a href="#testimonials">Investor Reviews</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Projects</h4>
-                <ul>
-                    <li><a href="#projects">SMD Golden Residency</a></li>
-                    <li><a href="#projects">SMD Royal Greens</a></li>
-                    <li><a href="#projects">SMD Elite Farms</a></li>
-                    <li><a href="#projects">SMD Green Valley</a></li>
-                    <li><a href="#projects">SMD Imperial Township</a></li>
-                    <li><a href="#contact">Upcoming Projects</a></li>
-                </ul>
-            </div>
-            <div class="footer-col footer-newsletter">
-                <h4>Stay Connected</h4>
-                <p>Subscribe to exclusive project updates, investment insights, and luxury real estate opportunities.
-                </p>
-                <div class="newsletter-input">
-                    <input type="email" placeholder="Your email address" />
-                    <button><svg viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg></button>
-                </div>
-                <p style="font-size:0.7rem;color:var(--text-dim);margin-top:14px;letter-spacing:0.05em;">RERA Reg.
-                    No.: UPRERAPRJ XXXXX &nbsp;|&nbsp; MahaRERA Reg. No.: XXXXX</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 <a href="#">SMD Group — Summer Multi Developers</a>. All Rights Reserved.</p>
-            <p>Designed with excellence &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a
-                    href="#">Terms of Use</a></p>
-        </div>
-    </footer>
-    <div class="wa-chat-container">
-        <div class="wa-chat-widget">
-            <div class="wa-widget-header">
-                <img decoding="async"
-                    src="https://web.astrologydivine.com/smd-group/assets/img/logo/SMD-Logos-6-251x300.webp"
-                    alt="SMD Group Logo"
-                    onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=SMD%20Group&background=random&color=fff&font-size=0.5';">
-                <span class="wa-brand-name">SMD Group</span>
-                <button class="wa-widget-close" aria-label="Close Chat">&times;</button>
-            </div>
-            <div class="wa-widget-body">
-                <p class="wa-widget-body-message">Hello! How can we assist you today?</p>
-            </div>
-            <div class="wa-widget-footer">
-                <a href="https://wa.me/8800124158?text=Hello%2C%20I%20have%20a%20question%20about..." target="_blank"
-                    rel="noopener noreferrer">Chat with us</a>
-            </div>
-        </div>
-        <button class="wa-float-button" aria-label="Open WhatsApp Chat">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
-                viewbox="0 0 50 50">
-                <path fill="currentColor"
-                    d="M 25 2 C 12.318 2 2 12.318 2 25 C 2 28.96 3.0228906 32.853062 4.9628906 36.289062 L 2.0371094 46.730469 C 1.9411094 47.073469 2.03325 47.440312 2.28125 47.695312 C 2.47225 47.892313 2.733 48 3 48 C 3.08 48 3.1612344 47.989703 3.2402344 47.970703 L 14.136719 45.271484 C 17.463719 47.057484 21.21 48 25 48 C 37.682 48 48 37.682 48 25 C 48 12.318 37.682 2 25 2 z M 16.642578 14 C 17.036578 14 17.428437 14.005484 17.773438 14.021484 C 18.136437 14.039484 18.624516 13.883484 19.103516 15.021484 C 19.595516 16.189484 20.775875 19.058563 20.921875 19.351562 C 21.069875 19.643563 21.168656 19.984047 20.972656 20.373047 C 20.776656 20.762047 20.678813 21.006656 20.382812 21.347656 C 20.086813 21.688656 19.762094 22.107141 19.496094 22.369141 C 19.200094 22.660141 18.892328 22.974594 19.236328 23.558594 C 19.580328 24.142594 20.765484 26.051656 22.521484 27.597656 C 24.776484 29.583656 26.679531 30.200188 27.269531 30.492188 C 27.859531 30.784188 28.204828 30.734703 28.548828 30.345703 C 28.892828 29.955703 30.024969 28.643547 30.417969 28.060547 C 30.810969 27.477547 31.204094 27.572578 31.746094 27.767578 C 32.288094 27.961578 35.19125 29.372062 35.78125 29.664062 C 36.37125 29.956063 36.766062 30.102703 36.914062 30.345703 C 37.062062 30.587703 37.062312 31.754234 36.570312 33.115234 C 36.078313 34.477234 33.717984 35.721672 32.583984 35.888672 C 31.565984 36.037672 30.277281 36.10025 28.863281 35.65625 C 28.006281 35.38625 26.907047 35.028734 25.498047 34.427734 C 19.575047 31.901734 15.706156 26.012047 15.410156 25.623047 C 15.115156 25.234047 13 22.46275 13 19.59375 C 13 16.72475 14.524406 15.314469 15.066406 14.730469 C 15.608406 14.146469 16.248578 14 16.642578 14 z">
-                </path>
-            </svg>
-        </button>
-    </div>
     <script>
         /* ── CURSOR ── */
         const cur = document.getElementById('cursor');
@@ -1148,11 +1023,17 @@
 
         /* ── MOBILE MENU ── */
         function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('open')
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.getElementById('hamburger');
+            menu.classList.toggle('open');
+            hamburger.classList.toggle('active');
         }
 
         function closeMobileMenu() {
-            document.getElementById('mobileMenu').classList.remove('open')
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.getElementById('hamburger');
+            menu.classList.remove('open');
+            hamburger.classList.remove('active');
         }
 
         /* ── ANIMATIONS ── */
