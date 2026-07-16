@@ -870,8 +870,7 @@
                     </div>
                 </div>
                 <div class="contact-map">
-                    <div class="map-pin"></div>
-                    <div class="map-label">SMD Group — Delhi NCR</div>
+                   <iframe width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBVizdQeh3udy11xDc5Ao2YStR2gLc-rfc&amp;q=A-324%2C%20Pacific%20Business%20Park%2C%20Sahibabad%2C%20Ghaziabad%2C%20Uttar%20Pradesh-201010&amp;maptype=roadmap&amp;zoom=14"><a href="https://www.maps.ie/create-google-map/">Embed Google Streetview</a></iframe>
                 </div>
             </div>
             <div data-reveal="right">
